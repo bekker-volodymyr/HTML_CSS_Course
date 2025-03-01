@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 5</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aliceblue;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            background-color: gray;
+            gap: 25px;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+
+        article {
+            flex-basis: 75%;
+        }
+
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        table {
+            border-radius: 50px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 20px;
+        }
+
+        th {
+            text-align: left;
+            border-top-left-radius: 35px;
+            border-top-right-radius: 35px;
+            background-color: rgb(61, 61, 122);
+            color: aliceblue;
+        }
+
+        td {
+            border-top: 1px solid rgb(77, 77, 123);
+            background-color: rgb(106, 156, 173);
+            color: rgb(77, 77, 123);
+        }
+
+        table tr:last-child td:last-child {
+            border-bottom-right-radius: 35px;
+            border-bottom-left-radius: 35px;
+        }
+
+        @media screen and (min-width:600px) and (max-width:800px) {
+            .container {
+                flex-direction: column;
+            }
+
+            aside {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .container {
+                flex-direction: column;
+            }
+
+            aside {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <article>
+            <h1>Introduction</h1>
+            <p>
+                Aenean eleifend hendrerit aliquet. Aenean sit amet sodales nulla. Aliquam neque dolor, finibus vitae
+                vestibulum ut, fringilla id ante. Quisque vitae sapien non eros rutrum condimentum. Cras ornare est
+                augue, vitae ornare eros porttitor non. Donec faucibus a libero ut vulputate. Vivamus vel est
+                condimentum, imperdiet nisl non, condimentum elit. Ut suscipit sem nec quam feugiat suscipit. Maecenas
+                vestibulum eros a sapien congue, non faucibus massa accumsan. Nunc aliquet velit sit amet justo
+                sollicitudin, tincidunt ullamcorper est mattis. Orci varius natoque penatibus et magnis dis parturient
+                montes, nascetur ridiculus mus. Nullam risus ligula, porttitor non iaculis at, accumsan sit amet neque.
+                Mauris porttitor ante sit amet erat venenatis sagittis. Sed et cursus dui. Sed ac pellentesque ipsum.
+                Vivamus quam orci, consectetur et felis ac, vestibulum lobortis diam.
+            </p>
+            <h3>Additional information</h3>
+            <p>
+                Sed imperdiet felis non metus rutrum porta. Sed placerat, nisl in mattis imperdiet, lorem eros dignissim
+                quam, quis dapibus leo nisi ac diam. Donec euismod, augue sit amet placerat ultricies, urna diam
+                porttitor urna, nec dictum urna augue ac nulla. Mauris metus elit, convallis viverra leo id, rutrum
+                pharetra metus. Morbi non gravida ipsum, sed semper odio. Sed eu pellentesque quam. Vivamus vestibulum,
+                quam id tincidunt dignissim, erat nisl iaculis tortor, euismod imperdiet augue augue at eros. Vestibulum
+                vulputate ligula erat, ut tempus metus porttitor at. Maecenas imperdiet pretium sapien eu suscipit.
+                Praesent dignissim, ipsum at interdum accumsan, sapien libero fringilla sem, vitae venenatis eros elit
+                sit amet lorem.
+            </p>
+            <p>
+                Etiam aliquam, metus et fermentum fringilla, ante lorem suscipit ex, ac pellentesque tortor dui pulvinar
+                tellus. Nam laoreet, dolor ut cursus viverra, neque quam vestibulum mauris, vitae rhoncus sem quam at
+                ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In ornare
+                erat bibendum maximus aliquam. Mauris non luctus ex. Nunc viverra ipsum dui, ut efficitur quam suscipit
+                quis. Nam mattis feugiat nisi a tincidunt. Fusce at libero leo.
+            </p>
+        </article>
+        <aside>
+            <div>
+                <table>
+                    <tr>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>Donec euismod, augue sit amet ultricies.</td>
+                    </tr>
+                    <tr>
+                        <td>Aliquam neque dolor, finibus ut, fringilla.</td>
+                    </tr>
+                    <tr>
+                        <td>Quisque non eros rutrum condimentum.</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Plans</th>
+                    </tr>
+                    <tr>
+                        <td>Morbi non gravida ipsum, sed semper odio.</td>
+                    </tr>
+                    <tr>
+                        <td>Mauris non luctus ex.</td>
+                    </tr>
+                </table>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>

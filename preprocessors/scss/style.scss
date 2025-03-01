@@ -1,0 +1,15 @@
+@import "_reset";
+@import "_variables";
+
+body {
+    font: {
+        family: $myFont;
+        size: $myFontSize;
+    }
+
+    color: $myColor;
+}
+
+#container {
+    width: $myWidth;
+}

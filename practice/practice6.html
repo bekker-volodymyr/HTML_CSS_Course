@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Бічне меню */
+        aside {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        aside img {
+            width: 80px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            padding: 15px;
+            border-bottom: 1px solid #444;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            background-color: #555;
+        }
+
+        /* Основний контент */
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: calc(100vw - 300px);
+        }
+
+        .dashboard-header {
+            background-color: white;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .card {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 80%;
+            height: auto;
+        }
+
+        .table-container {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            overflow-x: scroll;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        /* Адаптивний дизайн */
+        @media (max-width: 900px) {
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .content {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <img src="resources/logo.png">
+        <nav>
+            <ul>
+                <li>DASHBOARD</li>
+                <li>USERS</li>
+                <li>FILE MANAGER</li>
+                <li>POSTS</li>
+                <li>EVENTS</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="content">
+        <div class="dashboard-header">Dashboard - May 25, 2019</div>
+
+        <div class="cards">
+            <div class="card">
+                <h2>Traffic</h2>
+                <img src="resources/chart1.png">
+            </div>
+            <div class="card">
+                <h2>Loads</h2>
+                <img src="resources/chart2.png">
+            </div>
+        </div>
+
+        <div class="table-container">
+            <h2>Recent Activity</h2>
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Etiam eu erat sit amet nisi eleifend aliquam</td>
+                    <td>Phoebe Britton</td>
+                    <td>25/05/19</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ut maximus lacus ut ante tristique</td>
+                    <td>Rosina Clay</td>
+                    <td>25/05/19</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Donec eget ligula sed diam pharetra</td>
+                    <td>Ayush Horn</td>
+                    <td>24/05/19</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Curabitur bibendum odio in velit pretium</td>
+                    <td>Jillian Carver</td>
+                    <td>23/05/19</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

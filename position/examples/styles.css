@@ -1,0 +1,13 @@
+body {
+    background-color: #D8C4B6;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.div-demo {
+    background-color: brown;
+    border: 1px solid black;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    padding-top: 20px;
+}

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="index.html" target="_blank">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Bootstrap</title>
+    <style>
+        h2 {
+            font-size: 2em;
+        }
+
+        p,
+        ul,
+        li,
+        pre {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+
+    <div class="container bg-light">
+        <h1 class="bg-secondary text-light" style="font-size: 2.8em;">Bootstrap</h1>
+        <div class="container border m-1 rounded">
+            <div class="row">
+                <div class="examples col-sm border rounded m-1">
+                    <h2>Приклади</h2>
+                    <ul class="list-group-numbered">
+                        <li class="list-group-item"><a href="BS5Example.html">First Bootstrap Responsive Page</a></li>
+                        <li class="list-group-item"><a href="container_example.html">Responsive Fixed Size Container</a>
+                        </li>
+                        <li class="list-group-item"><a href="container_fluid_example.html">Full Width Container</a></li>
+                        <li class="list-group-item"><a href="patterns/index.html">Accordion</a></li>
+                        <li class="list-group-item"><a href="breadcrubs/index.html">Breadcrumbs</a></li>
+                        <li class="list-group-item"><a href="patterns/index.html">Cards</a></li>
+                        <li class="list-group-item"><a href="patterns/index.html">Carousel</a></li>
+                        <li class="list-group-item"><a href="bs-patterns/pagination.html">Pagination</a></li>
+                    </ul>
+                </div>
+                <div class="contents col-sm border rounded m-1">
+                    <h2>Вміст</h2>
+                    <ul class="list-group-numbered">
+                        <li class="list-group-item"><a href="#t1">Підключення Bootstrap</a></li>
+                        <li class="list-group-item"><a href="#t2">Кольорова схема Bootstrap</a></li>
+                        <li class="list-group-item"><a href="#t3">Grid система</a></li>
+                        <li class="list-group-item"><a href="#t4">Утиліти</a></li>
+                        <li class="list-group-item"><a href="#t5">Зображення та відео</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--Підключення-->
+        <div class="border container m-1 rounded" id="t1">
+            <h2>Підключення Bootstrap</h2>
+            <p>Bootstrap — це безкоштовний фронтенд-фреймворк для швидшої та зручнішої розробки вебсайтів.</p>
+
+            <p>Bootstrap включає шаблони дизайну на основі HTML та CSS для типографії, форм, кнопок, таблиць, навігації,
+                модальних вікон, каруселей зображень та багатьох інших елементів, а також необов'язкові JavaScript
+                плагіни.</p>
+
+            <p>Bootstrap також дає змогу легко створювати адаптивні дизайни.</p>
+            <p>Де отримати Bootstrap 5?</p>
+
+            <p>Є два способи почати використовувати Bootstrap 5 на своєму вебсайті.</p>
+
+            <p>Ви можете:</p>
+            <ul>
+                <li>Включити Bootstrap 5 з CDN</li>
+                <li>Завантажити Bootstrap 5 з <a href="https://getbootstrap.com" target="_blank">getbootstrap.com</a>
+                </li>
+            </ul>
+
+            <p><strong>Bootstrap 5 CDN</strong></p>
+            <p>Якщо ви не хочете завантажувати та хостити Bootstrap 5 на своєму сервері, ви можете включити його з CDN
+                (Content Delivery Network).</p>
+
+            <pre class="rounded border bg-info">
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+</pre>
+        </div>
+
+        <!--Кольорова схема-->
+        <div class="border container m-1 rounded" id="t2">
+            <h2>Колірна схема Bootstrap</h2>
+            <p>Bootstrap пропонує використовувати десять різних класів для зміни кольору тексту або фону елемента. Назви
+                класів пов'язані не з кольором, а з контекстом елемента. Виділяють наступні класи:</p>
+            <ul>
+                <li><strong>primary</strong> — основний (первинний) колір</li>
+                <li><strong>secondary</strong> — допоміжний (вторинний) колір</li>
+                <li><strong>success</strong> — колір вдалого виконання дії</li>
+                <li><strong>danger</strong> — колір невдалого виконання дії</li>
+                <li><strong>warning</strong> — колір попередження (акценту)</li>
+                <li><strong>info</strong> — колір інформаційних блоків</li>
+                <li><strong>light</strong> — світлий (<code>rgb(248, 249, 250)</code>)</li>
+                <li><strong>dark</strong> — темний (<code>rgb(52, 58, 64)</code>)</li>
+                <li><strong>white</strong> — білий</li>
+                <li><strong>transparent</strong> — прозорий</li>
+            </ul>
+            <div class="row">
+                <div class="col bg-primary">primary</div>
+                <div class="col bg-info">info</div>
+            </div>
+            <div class="row">
+                <div class="col bg-secondary">secondary</div>
+                <div class="col bg-light">light</div>
+            </div>
+            <div class="row">
+                <div class="col bg-success">success</div>
+                <div class="col bg-dark">dark</div>
+            </div>
+            <div class="row">
+                <div class="col bg-danger">danger</div>
+                <div class="col bg-white">white</div>
+            </div>
+            <div class="row">
+                <div class="col bg-warning">warning</div>
+                <div class="col bg-transparent">transparent</div>
+            </div>
+            <p>Для того, щоб застосувати колір для тексту, слід перед префіксом написати «text-», а для завдання
+                фонового
+                кольору — клас «bg-».</p>
+            <pre class="border bg-info rounded">
+&lt;div class="bg-dark text-white"&gt;bg-dark text-white&lt;/div&gt;
+&lt;div class="bg-light text-dark"&gt;bg-light text-dark&lt;/div&gt;
+&lt;div class="bg-info text-light"&gt;bg-info text-light&lt;/div&gt;
+</pre>
+        </div>
+
+        <!--Grid система-->
+        <div class="border container m-1 rounded" id="t3">
+            <h2>Grid система</h2>
+            <p>Фреймворк Bootstrap пропонує гнучку систему побудови сіткової структури, з використанням якої можна
+                порівняно
+                легко та швидко отримати адаптивну сторінку.</p>
+            <p>Bootstrap використовує п'ять типорозмірів ширини пристрою для формування сітки. Кожному пристрою
+                відповідає
+                свій префікс класу.</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Пристрій</th>
+                        <th>Ширина пристрою</th>
+                        <th>Префікс класу</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Мобільні телефони</td>
+                        <td>&lt;576px</td>
+                        <td>Без префікса</td>
+                    </tr>
+                    <tr>
+                        <td>Мобільні телефони</td>
+                        <td>&ge;576px</td>
+                        <td>-sm</td>
+                    </tr>
+                    <tr>
+                        <td>Планшети</td>
+                        <td>&ge;768px</td>
+                        <td>-md</td>
+                    </tr>
+                    <tr>
+                        <td>Монітори</td>
+                        <td>&ge;992px</td>
+                        <td>-lg</td>
+                    </tr>
+                    <tr>
+                        <td>Широкоформатні монітори</td>
+                        <td>&ge;1200px</td>
+                        <td>-xl</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Основним елементом структури сітки є контейнер, який призначений для розміщення та/або центрування
+                елементів
+                всередині нього.</p>
+            <p>Bootstrap пропонує використовувати три різних класи для контейнера:</p>
+            <ul>
+                <li><code>container</code> — встановлює фіксовану ширину для кожного пристрою.</li>
+                <li><code>container-fluid</code> — встановлює ширину, що дорівнює 100% ширині батьківського елемента.
+                </li>
+                <li><code>container-{префікс класу, що визначає пристрій}</code> — встановлює ширину 100% для пристроїв,
+                    менших за вказаний у префіксі, та фіксовану ширину для зазначеного пристрою.</li>
+            </ul>
+            <p>Всередині контейнера знаходяться рядки (елементи з класом «row»), кожен з яких містить стовпці (елементи
+                з класом «col»).</p>
+            <p>Класи стовпців мають число, що вказує на кількість стовпців у рядку. Максимальна кількість стовпців у
+                рядку — 12. Ширина стовпця ніколи не фіксується, оскільки задається у відсотках від ширини батьківського
+                елемента-рядка.</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col bg-dark text-white">
+                        col bg-dark text-white
+                    </div>
+                    <div class="col bg-primary text-white">
+                        col bg-primary text-white
+                    </div>
+                    <div class="col bg-success text-white">
+                        col bg-success text-white
+                    </div>
+                    <div class="col bg-warning text-white">
+                        col bg-warning text-white
+                    </div>
+                    <div class="col bg-info text-white">
+                        col bg-info text-white
+                    </div>
+                </div>
+            </div>
+            <pre class="border bg-info rounded">
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col bg-dark text-white"&gt;
+            col bg-dark text-white
+        &lt;/div&gt;
+        &lt;div class="col bg-primary text-white"&gt;
+            col bg-primary text-white
+        &lt;/div&gt;
+        &lt;div class="col bg-success text-white"&gt;
+            col bg-success text-white
+        &lt;/div&gt;
+        &lt;div class="col bg-warning text-white"&gt;
+            col bg-warning text-white
+        &lt;/div&gt;
+        &lt;div class="col bg-info text-white"&gt;
+            col bg-info text-white
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;      
+</pre>
+            <p>При використанні префіксів пристроїв є можливість перевизначити ширину стовпців залежно від пристрою.
+                Розглянемо це на прикладі. Створімо рядок з чотирьох стовпчиків. На мобільних пристроях стовпці
+                займатимуть усю ширину контейнера, на планшетах — половину, на моніторах і широкоформатних моніторах —
+                1/3 частину ширини контейнера.
+            </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3 bg-dark text-white">
+                        col-12 col-md-6 col-lg-3 bg-dark text-white
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 bg-primary text-white">
+                        col-12 col-md-6 col-lg-3 bg-primary text-white
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 bg-success text-white">
+                        col-12 col-md-6 col-lg-3 bg-success text-white
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 bg-warning text-white">
+                        col-12 col-md-6 col-lg-3 bg-warning text-white
+                    </div>
+                </div>
+            </div>
+            <pre class="border bg-info rounded">
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-12 col-md-6 col-lg-3 bg-dark text-white"&gt;
+            col-12 col-md-6 col-lg-3 bg-dark text-white
+        &lt;/div&gt;
+        &lt;div class="col-12 col-md-6 col-lg-3 bg-primary text-white"&gt;
+            col-12 col-md-6 col-lg-3 bg-primary text-white
+        &lt;/div&gt;
+        &lt;div class="col-12 col-md-6 col-lg-3 bg-success text-white"&gt;
+            col-12 col-md-6 col-lg-3 bg-success text-white
+        &lt;/div&gt;
+        &lt;div class="col-12 col-md-6 col-lg-3 bg-warning text-white"&gt;
+            col-12 col-md-6 col-lg-3 bg-warning text-white
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;            
+</pre>
+            <p>З прикладу бачимо, що стовпці на різних пристроях займають різну ширину. Ми досягли цього завдяки
+                прописуванню класів до кожного стовпчика. У випадку, якщо ширина стовпців у рядку має бути однаковою, а
+                їх
+                кількість має змінюватися залежно від пристрою, Bootstrap пропонує використовувати для рядків клас
+                «row-cols-*». Символ зірочки означає максимальну кількість стовпців у рядку.</p>
+            <pre class="border bg-info rounded">
+&lt;div class="container"&gt;
+&lt;div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5"&gt;
+&lt;div class="col bg-primary text-white"&gt;col bg-primary text-white&lt;/div&gt;
+&lt;div class="col bg-success text-white"&gt;col bg-success text-white&lt;/div&gt;
+&lt;div class="col bg-warning text-white"&gt;col bg-warning text-white&lt;/div&gt;
+&lt;div class="col bg-dark text-white"&gt;col bg-dark text-white&lt;/div&gt;
+&lt;div class="col bg-info text-white"&gt;col bg-info text-white&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;        
+</pre>
+            <div class="container">
+                <div class="row row row-cols-2 row-cols-sm-3 row-cols-lg-5">
+                    <div class="col bg-primary text-white">col bg-primary text-white</div>
+                    <div class="col bg-success text-white">col bg-success text-white</div>
+                    <div class="col bg-warning text-white">col bg-warning text-white</div>
+                    <div class="col bg-dark text-white">col bg-dark text-white</div>
+                    <div class="col bg-info text-white">col bg-info text-white</div>
+                </div>
+            </div>
+        </div>
+
+        <!--Утиліти-->
+        <div class="container border m-1 rounded" id="t4">
+            <h2>Утиліти</h2>
+            <p>Утилітами називають допоміжні функції, які виконують певні завдання і полегшують верстання. Фреймворк
+                Bootstrap пропонує 20 різних утиліт. Розглянемо застосування найбільш використовуваних із них.</p>
+            <h3>Рамка</h3>
+            <p>Щоб задати межі елементу, достатньо прописати один з класів: border, border-top, border-right,
+                border-bottom, border-left.</p>
+            <p>Щоб додати колір до рамки, достатньо додати клас «border border-*», в якому зірочка — це назва потрібного
+                кольору класу.</p>
+            <p>Для того, щоб закруглити кути елемента, пропишіть один з класів: rounded, rounded-top, rounded-bottom,
+                rounded-left, rounded-right. Для більшого або меншого радіусу необхідно додати в кінець префікс -lg або
+                -sm до зазначених класів.</p>
+            <p>Для отримання кола потрібно використовувати клас rounded-circle для квадратних елементів. А для отримання
+                напівкруглих меж у прямокутних елементів скористайтеся класом rounded-pill.</p>
+            <div class="container">
+                <div class="row row-cols-4">
+                    <div class="col border border-primary rounded">
+                        border border-primary rounded
+                    </div>
+                    <div class="col border-bottom border-success">
+                        border-bottom border-success
+                    </div>
+                    <div class="col border border-bottom-0 border-warning">
+                        border border-bottom-0 border-warning
+                    </div>
+                    <div class="col border border-dark rounded-pill">
+                        border border-dark rounded-pill
+                    </div>
+                </div>
+            </div>
+            <pre class="border bg-info rounded">
+&lt;div class="container"&gt;
+    &lt;div class="row row-cols-4"&gt;
+        &lt;div class="col border border-primary rounded"&gt;
+            border border-primary rounded
+        &lt;/div&gt;
+        &lt;div class="col border-bottom border-success"&gt;
+            border-bottom border-success
+        &lt;/div&gt;
+        &lt;div class="col border border-bottom-0 border-warning"&gt;
+            border border-bottom-0 border-warning
+        &lt;/div&gt;
+        &lt;div class="col border border-dark rounded-pill"&gt;
+            border border-dark rounded-pill
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            <h3>Тіні</h3>
+            <p>Додати або видалити тінь можна за допомогою класів:</p>
+            <ul>
+                <li>shadow-none — тінь відсутня;</li>
+                <li>shadow-sm — невелика тінь;</li>
+                <li>shadow — звичайна тінь;</li>
+                <li>shadow-lg — велика тінь.</li>
+            </ul>
+            <pre class="border bg-info rounded">
+&lt;div class="container"&gt;
+    &lt;div class="row row-cols-4"&gt;
+        &lt;div class="col shadow-none"&gt;shadow-none&lt;/div&gt;
+        &lt;div class="col shadow-sm"&gt;shadow-sm&lt;/div&gt;
+        &lt;div class="col shadow"&gt;shadow&lt;/div&gt;
+        &lt;div class="col shadow-lg"&gt;shadow-lg&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            <h3>Поля та відступи</h3>
+            <p>Bootstrap пропонує використовувати класи для завдання адаптивних зовнішніх і внутрішніх відступів.</p>
+
+            <p>Класи будуються за наступним форматом:
+                <code>[властивість][сторона]-[префікс класу, що визначає пристрій]-[розмір]</code>.
+            </p>
+
+            <p><strong>Властивість</strong> може бути:</p>
+            <ul>
+                <li><code>m</code> — margin (зовнішній відступ)</li>
+                <li><code>p</code> — padding (внутрішній відступ)</li>
+            </ul>
+
+            <p><strong>Сторона або сторони визначається наступними префіксами:</strong></p>
+            <ul>
+                <li><code>t</code> — верхня</li>
+                <li><code>b</code> — нижня</li>
+                <li><code>l</code> — ліва</li>
+                <li><code>r</code> — права</li>
+                <li><code>x</code> — ліва і права</li>
+                <li><code>y</code> — верхня і нижня</li>
+                <li>порожньо — всі 4 сторони елемента</li>
+            </ul>
+
+            <p><strong>Розмір визначається одним із наступних префіксів:</strong></p>
+            <ul>
+                <li><code>0</code> — видалення полів або відступів, встановлюється значення <code>0</code></li>
+                <li><code>1</code> — встановлюється значення <code>0.25</code></li>
+                <li><code>2</code> — встановлюється значення <code>0.5</code></li>
+                <li><code>3</code> — встановлюється значення <code>1</code></li>
+                <li><code>4</code> — встановлюється значення <code>1.5</code></li>
+                <li><code>5</code> — встановлюється значення <code>3</code></li>
+                <li><code>auto</code> — встановлює значення <code>auto</code> для зовнішніх відступів</li>
+            </ul>
+
+            <p>Розглянемо приклад. Створимо 4 стовпчики з різними внутрішніми відступами зліва для всіх видів пристроїв
+                і з верхнім або нижнім внутрішнім відступом для пристроїв, починаючи з планшета. Також додамо зовнішній
+                верхній відступ для пристроїв, починаючи з планшета.</p>
+
+            <pre class="border rounded bg-info">
+&lt;div class="container-fluid"&gt;
+    &lt;div class="row row-cols-4"&gt;
+        &lt;div class="col bg-info pl-5 pt-md-2 mt-md-3"&gt;
+            pl-5 pt-md-2 mt-md-3
+        &lt;/div&gt;
+        &lt;div class="col bg-warning pl-4 pb-md-2 mt-md-3"&gt;
+            pl-4 pb-md-2 mt-md-3
+        &lt;/div&gt;
+        &lt;div class="col bg-light pl-3 pt-md-2 mt-md-3"&gt;
+            pl-3 pt-md-2 mt-md-3
+        &lt;/div&gt;
+        &lt;div class="col bg-success pl-2 pb-md-2 mt-md-3"&gt;
+            pl-2 pb-md-2 mt-md-3
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            <div class="container-fluid">
+                <div class="row row-cols-4">
+                    <div class="col bg-info pl-5 pt-md-2 mt-md-3">
+                        pl-5 pt-md-2 mt-md-3
+                    </div>
+                    <div class="col bg-warning pl-4 pb-md-2 mt-md-3">
+                        pl-4 pb-md-2 mt-md-3
+                    </div>
+                    <div class="col bg-light pl-3 pt-md-2 mt-md-3">
+                        pl-3 pt-md-2 mt-md-3
+                    </div>
+                    <div class="col bg-success pl-2 pb-md-2 mt-md-3">
+                        pl-2 pb-md-2 mt-md-3
+                    </div>
+                </div>
+            </div>
+            <p>Фреймворк Bootstrap пропонує інструментарій для зміни ширини і висоти еле­ментів.
+                Для зміни ширини і висоти відносно батьківського елемента, використовуйте один з класів, які
+                представлені в приклади нижче.</p>
+            <p><strong>Ширина:</strong></p>
+            <pre class="border rounded bg-info">
+&lt;div class="container"&gt;
+    &lt;div class="pl-3 bg-info w-25"&gt;w-25&lt;/div&gt;
+    &lt;div class="pl-3 bg-warning w-50"&gt;w-50&lt;/div&gt;
+    &lt;div class="pl-3 border bg-light w-75"&gt;w-75&lt;/div&gt;
+    &lt;div class="pl-3 bg-success w-100"&gt;w-100&lt;/div&gt;
+    &lt;div class="pl-3 bg-danger w-auto"&gt;w-auto&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            <div class="container">
+                <div class="pl-3 bg-info w-25">w-25</div>
+                <div class="pl-3 bg-warning w-50">w-50</div>
+                <div class="pl-3 border bg-light w-75">w-75</div>
+                <div class="pl-3 bg-success w-100">w-100</div>
+                <div class="pl-3 bg-danger w-auto">w-auto</div>
+            </div>
+            <p><strong>Висота:</strong></p>
+            <pre class="border rounded bg-info">
+&lt;div class="container"&gt;
+    &lt;div class="row bg-info" style="height: 100px;"&gt;
+        &lt;div class="col h-25 bg-warning"&gt;h-25&lt;/div&gt;
+        &lt;div class="col h-50 bg-primary"&gt;h-50&lt;/div&gt;
+        &lt;div class="col h-75 bg-success"&gt;h-75&lt;/div&gt;
+        &lt;div class="col h-100 bg-light"&gt;h-100&lt;/div&gt;
+        &lt;div class="col h-auto bg-danger"&gt;h-auto&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            <h3>Відображення</h3>
+            <div class="container">
+                <p>Щоб показати або приховати елементи на різних пристроях, потрібно скористатися класом, який
+                    утворюється за таким форматом: <code>d-[префікс класу, що визначає пристрій]-[значення]</code>.</p>
+
+                <p>Значенням може бути одне із значень властивості display:</p>
+                <ul>
+                    <li>none;</li>
+                    <li>inline;</li>
+                    <li>inline-block;</li>
+                    <li>block;</li>
+                    <li>table;</li>
+                    <li>table-cell;</li>
+                    <li>table-row;</li>
+                    <li>flex;</li>
+                    <li>inline-flex;</li>
+                </ul>
+
+                <p>Розглянемо на прикладі створення рядка із 5 стовпців:</p>
+                <ul>
+                    <li>Перший стовпчик буде прихованим тільки на найменшому пристрої, а на решті пристроїв
+                        відображатиметься.</li>
+                    <li>Другий стовпчик буде прихованим тільки при відображенні на мобільних пристроях.</li>
+                    <li>Третій стовпчик відображатиметься на усіх пристроях, крім планшетів.</li>
+                    <li>Четвертий стовпчик буде прихованим на усіх пристроях, крім мобільних телефонів.</li>
+                    <li>П'ятий стовпчик буде прихованим на усіх пристроях, крім планшетів.</li>
+                </ul>
+            </div>
+            <pre class="border rounded bg-info">
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col border d-none d-sm-block"&gt;
+            1 d-none d-sm-block
+        &lt;/div&gt;
+        &lt;div class="col border d-sm-none d-md-block"&gt;
+            2 d-sm-none d-md-block
+        &lt;/div&gt;
+        &lt;div class="col border d-md-none d-lg-block"&gt;
+            3 d-md-none d-lg-block
+        &lt;/div&gt;
+        &lt;div class="col border d-none d-sm-block d-md-none"&gt;
+            4 d-none d-sm-block d-md-none
+        &lt;/div&gt;
+        &lt;div class="col border d-none d-md-block d-lg-none"&gt;
+            5 d-none d-md-block d-lg-none
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col border d-none d-sm-block">
+                        1 d-none d-sm-block
+                    </div>
+                    <div class="col border d-sm-none d-md-block">
+                        2 d-sm-none d-md-block
+                    </div>
+                    <div class="col border d-md-none d-lg-block">
+                        3 d-md-none d-lg-block
+                    </div>
+                    <div class="col border d-none d-sm-block d-md-none">
+                        4 d-none d-sm-block d-md-none
+                    </div>
+                    <div class="col border d-none d-md-block d-lg-none">
+                        5 d-none d-md-block d-lg-none
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Зображення та відео-->
+        <div class="container border m-1 rounded" id="t5">
+            <h2>Зображення та відео</h2>
+            <p>Зображення є невід'ємною частиною будь-якого сайту. Фреймворк Bootstrap пропонує використовувати наступні
+                класи для зображень.</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Клас</th>
+                        <th>Опис</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>img-fluid</td>
+                        <td>Задає зображенню властивості «max-width: 100%;» та «height: auto;».</td>
+                    </tr>
+                    <tr>
+                        <td>img-thumbnail</td>
+                        <td>Використовується для додання зображенню закругленої межі в 1px.</td>
+                    </tr>
+                    <tr>
+                        <td>float-left</td>
+                        <td>Застосовується для вирівнювання зображення за лівим краєм.</td>
+                    </tr>
+                    <tr>
+                        <td>float-right</td>
+                        <td>Застосовується для вирівнювання зображення за правим краєм.</td>
+                    </tr>
+                    <tr>
+                        <td>mx-auto d-block</td>
+                        <td>Застосовується для вирівнювання зображення по центру. Для цього потрібно перетворити
+                            зображення на блоковий елемент використовуючи клас d-block.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="container">
+                <p>Для вбудованих елементів, таких, як &lt;iframe&gt;, &lt;embed&gt;, &lt;video&gt; та &lt;object&gt;, 
+                    необхідно використовувати блоковий елемент-обгортку з класом «ratio». Для вбудованих 
+                    елементів задається відповідне співвідношення сторін.</p>
+            
+                <p>Також можливо налаштувати співвідношення сторін за допомогою класів-модифікаторів:</p>
+                <ul>
+                    <li>ratio-21x9</li>
+                    <li>ratio-16x9</li>
+                    <li>ratio-4x3</li>
+                    <li>ratio-1x1</li>
+                </ul>
+            </div>
+            
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-12">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/DZKf9l42WCo"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

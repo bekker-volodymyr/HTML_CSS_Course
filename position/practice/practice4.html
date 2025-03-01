@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Випадаюче меню</title>
+
+    <style>
+        nav {
+            width: 100%;
+            background: #007acc;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            transition: background 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #005a9c;
+        }
+
+        nav ul li .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #005a9c;
+            padding: 0;
+            width: 200px;
+        }
+
+        nav ul li .submenu li {
+            width: 100%;
+        }
+
+        nav ul li .submenu li a {
+            padding: 10px;
+            background: #005a9c;
+        }
+
+        nav ul li .submenu li a:hover {
+            background: #003f6b;
+        }
+
+        nav ul li .submenu .hidden-two {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+        }
+
+        nav ul li .submenu li:hover .hidden-two {
+            display: block;
+        }
+
+        nav ul .menu:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="menu"><a href="#">Categories</a>
+                <ul class="submenu">
+                    <li><a href="#">Man</a></li>
+                    <li><a href="#">Women</a>
+                        <ul class="hidden-two">
+                            <li><a href="#">Dress</a></li>
+                            <li><a href="#">Pants</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Kids</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores excepturi labore deleniti illum, modi in
+        animi eius cum ea sunt distinctio rem illo error expedita, odio laborum earum. Dolor earum, reprehenderit ipsa
+        optio pariatur quos enim ullam dolores odio accusantium. Optio totam voluptas minus asperiores inventore
+        possimus pariatur ab corrupti vero ullam iure veritatis, odit dolorem quasi modi at ipsa eveniet quod vel harum.
+        Atque corrupti vero nesciunt pariatur cumque eum iste eius harum tempora provident quas illo corporis, repellat
+        eaque voluptatibus molestiae id dignissimos in consectetur voluptates consequatur asperiores dolores quaerat!
+        Maiores a, architecto aut autem, animi maxime itaque amet molestiae voluptatibus, voluptate nemo exercitationem
+        excepturi necessitatibus eveniet natus tempora voluptatem modi iste! Tempora officia iste ut dolorem nam
+        perspiciatis optio laudantium molestiae, a doloremque, voluptatem facere blanditiis rem accusamus, dolor modi
+        labore odit debitis ad placeat id amet itaque ea. Doloremque alias earum ratione, porro velit vel tempora esse
+        delectus dolor sint temporibus mollitia aspernatur excepturi modi dignissimos dicta non rem officia suscipit
+        voluptatibus libero minus sequi ipsa magnam. Fuga, quisquam quam laborum dolore officia optio corporis ex,
+        eligendi recusandae quibusdam iure est explicabo. Odit optio velit, adipisci magnam libero excepturi
+        necessitatibus. Voluptatem harum nesciunt sequi doloremque. Itaque magnam assumenda fugit modi quis, quam
+        obcaecati a voluptas dolorem non quisquam voluptatem incidunt, perspiciatis distinctio? Quam rerum dolore
+        tempora molestiae, laborum iste maxime veritatis adipisci sapiente provident, pariatur delectus repudiandae
+        architecto dignissimos odio consequatur tempore. Maxime distinctio sit atque tempore, molestiae amet magnam
+        accusantium doloribus. Eveniet labore at dolore optio voluptatem architecto suscipit. Quod, rerum. In, officiis!
+        At possimus ullam aperiam ea vitae? Consequatur fugiat nisi autem quos sed placeat magnam non laborum ab eum,
+        quia temporibus suscipit est quae omnis? Voluptatem, placeat ipsam id non suscipit ab quibusdam, recusandae
+        illum obcaecati, odio libero commodi. Facilis, eligendi. Dolorum, numquam error? Doloremque quos accusamus
+        voluptatibus asperiores impedit quaerat aliquam ducimus distinctio voluptate quo laboriosam placeat aliquid
+        rerum omnis in architecto eum nulla a, eius natus inventore rem incidunt. Maiores pariatur nisi tempore
+        asperiores porro cum, dolor ipsam ea laboriosam labore deleniti quidem sapiente facilis iste sunt earum
+        accusamus mollitia. In neque eius suscipit dignissimos voluptate sapiente illum perspiciatis distinctio
+        accusantium nisi laborum libero blanditiis porro placeat, quasi error dolore ab alias cumque vel eum? A ad illum
+        animi, praesentium debitis libero. Non debitis architecto, aperiam quibusdam magnam consequuntur aliquam ex
+        assumenda molestias cupiditate facere quo nisi doloremque libero iure doloribus!</p>
+</body>
+
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зображення, посилання, рамка, відступи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="header">Зображення, посилання, рамка, відступи</h1>
+    </header>
+
+    <div class="container topics">
+        <div>
+            <h2>HTML</h2>
+            <ul class="list">
+                <li>Зображення: тег &lt;img&gt;</li>
+                <li>Посилання: тег &lt;a&gt;</li>
+            </ul>
+        </div>
+        <div>
+            <h2>CSS</h2>
+            <ul class="list">
+                <li>Рамка: властивість border</li>
+                <li>Відступи: margin, padding</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h2>Посилання: тег &lt;a&gt;</h2>
+        <h3>Посилання</h3>
+        <p>Посилання дозволяють переходити зі сторінки на сторінку.</p>
+        <p>Посиланням може виступати не тільки текст.</p>
+        <p>Для створення посилання обгорніть його в тег &lt;a&gt;. В атрибут href вкажіть шлях до іншої сторінки:</p>
+        <pre>
+&lt;a href="https://uk.wikipedia.org/wiki/HTML"&gt;Посилання на wikipedia&lt;/a&gt;
+</pre>
+        <p>Результат:</p>
+        <p><a href="https://uk.wikipedia.org/wiki/HTML">Посилання на wikipedia</a></p>
+        <h3>Атрибут target</h3>
+        <pre>
+&lt;a href="https://www.w3schools.com/" target="_blank"&gt;Visit W3Schools!&lt;/a&gt;
+</pre>
+        <ul>
+            <li><a href="https://uk.wikipedia.org/wiki/HTML" target="_self">_self</a> - стандарт, відкриває сторінку в
+                поточному вікні/вкладці</li>
+            <li><a href="https://uk.wikipedia.org/wiki/HTML" target="_blank">_blank</a> - відкриває сторінку в новому
+                вікні або вкладці</li>
+            <li><a href="https://uk.wikipedia.org/wiki/HTML" target="_parent">_parent</a> - відкриває сторінку в
+                батьківському фреймі</li>
+            <li><a href="https://uk.wikipedia.org/wiki/HTML" target="_top">_top</a> - відкриває в повноекранному режимі
+            </li>
+        </ul>
+        <h3>Абсолютні та відносні шляхи</h3>
+        <p>Абсолютні шляхи - повне веб-посилання.</p>
+        <p>Відносні - посилання в рамках одного веб-ресурсу.</p>
+        <pre>
+&lt;a href="https://uk.wikipedia.org/wiki/HTML"&gt;Абсолютне посилання&lt;/a&gt;
+&lt;a href="link.html&gt;Відносне посилання - сторінки в одній папці.&lt;/a&gt;
+&lt;a href="additional/linkadd.html"&gt;Відносне посилання - сторінки в різних папках&lt;/a&gt;   
+</pre>
+        <ul>
+            <li><a href="https://uk.wikipedia.org/wiki/HTML">Абсолютне посилання</a></li>
+            <li><a href="link.html">Відносне посилання - сторінки в одній папці.</a></li>
+            <li><a href="additional/linkadd.html">Відносне посилання - сторінки в різних папках</a></li>
+        </ul>
+        <h3>Стилізація посилань</h3>
+        <ul>
+            <li><strong>Невідвідане посилання</strong> — підкреслене та синього кольору.</li>
+            <li><strong>Відвідане посилання</strong> — підкреслене та фіолетового кольору.</li>
+            <li><strong>Активне посилання</strong> — підкреслене та червоного кольору.</li>
+        </ul>
+        <pre>
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+              
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+              
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+              
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+</pre>
+        <h3>Закладки</h3>
+        <p>
+            Ви можете додати посилання-закладку на конкретний елемент за допомогою атрибуту id
+        </p>
+        <pre>
+&lt;h1 id="header"&gt;Зображення, посилання, рамка, відступи&lt;/h1&gt;
+
+
+&lt;a href="#header"&gt;Повернутись на початок&lt;/a&gt;
+</pre>
+        <a href="#header">Повернутись на початок</a>
+    </div>
+
+    <!--Зображення-->
+    <div class="container">
+        <h2>Зображення: тег &lt;img&gt;</h2>
+        <p>Для додавання зображення використовується тег &lt;img&gt;.</p>
+        <p>Цей тег є пустим.</p>
+        <p>Вимагає два атрибути: src - шлях до зображення та alt - альтернативний текст.</p>
+        <pre>
+&lt;img src="https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-html/sta-je-html.jpg" alt="HTML LOGO" &gt;
+</pre>
+        <img src="https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-html/sta-je-html.jpg"
+            alt="HTML LOGO">
+        <h3>Атрибут src</h3>
+        <p>Атрибут src (source) - містить посилання на зображення. Це може бути абсолютне посилання на ресурс в
+            інтернеті, або відносне посилання на ресурс всередині проєкту.</p>
+        <h3>Атрибут alt</h3>
+        <p>Текст вказаний в цьому атрибуті буде відображатись, якщо з зображенням виникли проблеми (повільне
+            завантаження, помилка в шляху тощо), а також використовується читачами екрану.</p>
+        <p>
+            Екранний читач — це програмне забезпечення, яке зчитує HTML-код і дозволяє користувачеві "слухати" вміст.
+            Екранні читачі корисні для людей із порушеннями зору або труднощами в навчанні.
+        </p>
+        <p>Значення атрибуту alt повинно описувати зображення.</p>
+        <h3>Розміри зображення</h3>
+        <p>Розміри зображення можна вказувати за допомогою атрибутів width та height.</p>
+        <pre>
+&lt;img src="https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-html/sta-je-html.jpg" alt="HTML LOGO" width="100" height="45"&gt;
+</pre>
+        <img src="https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-html/sta-je-html.jpg" alt="HTML LOGO"
+            width="300" height="145">
+        <p>Але краще використовувати стилі</p>
+        <pre>
+img {
+    width: 100%;
+    height: auto;
+}
+</pre>
+        <img src="https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-html/sta-je-html.jpg" alt="HTML LOGO"
+            style="width: 50%; height: auto;">
+    </div>
+
+    <!--border-->
+    <div class="container">
+        <h2>Властивість border-style</h2>
+        <p>Визначає, який тип межі (бордера) відображати.</p>
+
+        <h3>Доступні значення:</h3>
+        <ul>
+            <li><strong>dotted</strong> — точкова межа</li>
+            <li><strong>dashed</strong> — пунктирна межа</li>
+            <li><strong>solid</strong> — суцільна межа</li>
+            <li><strong>double</strong> — подвійна межа</li>
+            <li><strong>groove</strong> — 3D межа з ефектом "гравіювання" (залежить від кольору межі)</li>
+            <li><strong>ridge</strong> — 3D межа з ефектом "виступу" (залежить від кольору межі)</li>
+            <li><strong>inset</strong> — 3D межа з ефектом "втиснення" (залежить від кольору межі)</li>
+            <li><strong>outset</strong> — 3D межа з ефектом "випуклості" (залежить від кольору межі)</li>
+            <li><strong>none</strong> — без межі</li>
+            <li><strong>hidden</strong> — прихована межа</li>
+        </ul>
+
+        <h3>Приклад стилізації:</h3>
+
+        <div style="border: 3px dotted black; padding: 10px; margin-bottom: 10px;">dotted</div>
+        <div style="border: 3px dashed black; padding: 10px; margin-bottom: 10px;">dashed</div>
+        <div style="border: 3px solid black; padding: 10px; margin-bottom: 10px;">solid</div>
+        <div style="border: 3px double black; padding: 10px; margin-bottom: 10px;">double</div>
+        <div style="border: 3px groove black; padding: 10px; margin-bottom: 10px;">groove</div>
+        <div style="border: 3px ridge black; padding: 10px; margin-bottom: 10px;">ridge</div>
+        <div style="border: 3px inset black; padding: 10px; margin-bottom: 10px;">inset</div>
+        <div style="border: 3px outset black; padding: 10px; margin-bottom: 10px;">outset</div>
+        <div style="border: none; padding: 10px; margin-bottom: 10px;">none</div>
+        <div style="border: hidden; padding: 10px; margin-bottom: 10px;">hidden</div>
+        <h2>Властивість border-width</h2>
+        <p>Визначає ширину всіх чотирьох меж (бордерів).</p>
+
+        <h3>Можливі значення:</h3>
+        <ul>
+            <li>Конкретний розмір (наприклад, px, pt, cm, em тощо)</li>
+            <li><strong>thin</strong> — тонка межа</li>
+            <li><strong>medium</strong> — середня межа</li>
+            <li><strong>thick</strong> — товста межа</li>
+        </ul>
+
+        <h3>Приклад стилізації:</h3>
+
+        <div style="border: thin solid black; padding: 10px; margin-bottom: 10px;">thin</div>
+        <div style="border: medium solid black; padding: 10px; margin-bottom: 10px;">medium</div>
+        <div style="border: thick solid black; padding: 10px; margin-bottom: 10px;">thick</div>
+        <div style="border: 5px solid black; padding: 10px; margin-bottom: 10px;">5px</div>
+        <div style="border: 0.5em solid black; padding: 10px; margin-bottom: 10px;">0.5em</div>
+
+        <p>Властивість border-width може мати декілька значень для різних сторін (від одного до 4)</p>
+
+        <pre>
+p.one {
+    border-style: solid;
+    border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+}
+  
+p.two {
+    border-style: solid;
+    border-width: 20px 5px; /* 20px top and bottom, 5px on the sides */
+}
+  
+p.three {
+    border-style: solid;
+    border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+}
+</pre>
+        <h2>Властивість border-color</h2>
+        <p>Вказує на колір рамки</p>
+        <pre>
+p.one {
+    border-style: solid;
+    border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+}
+  
+  p.two {
+    border-style: solid;
+    border-color: green;
+}
+  
+p.three {
+    border-style: dotted;
+    border-color: blue;
+}
+</pre>
+        <h2>Рамка: властивість border</h2>
+        <p>
+            CSS-властивість border визначає рамку навколо будь якого HTML-елементу. Це скорочення яке приймає три
+            значення: ширину (border-width), стиль (border-style, обов'язковий), колір(border-color).
+        </p>
+        <pre>
+p {
+    border: 2px solid powderblue;
+}
+</pre>
+
+        <h2>Закруглені кути: border-radius</h2>
+        <p>Властивість border-radius дозволяє скруглити кути вашої рамки елементу</p>
+        <p>Приклади за посиланням: <a
+                href="https://www.w3schools.com/css/tryit.asp?filename=trycss_border_round">border-radius</a></p>
+    </div>
+
+    <!--Відступи-->
+    <div class="container">
+        <h2>Відступи: padding та margin</h2>
+        <p>
+            Властивість padding визначає відстань між текстом та рамкою.
+        </p>
+        <pre>
+p {
+    border: 2px solid powderblue;
+    padding: 30px;
+}
+
+</pre>
+
+        <h2>Внутрішні відступи (Padding) для окремих сторін</h2>
+
+        <p>CSS має властивості для задання внутрішніх відступів (padding) для кожної сторони елемента:</p>
+
+        <ul>
+            <li><code>padding-top</code> — відступ зверху</li>
+            <li><code>padding-right</code> — відступ справа</li>
+            <li><code>padding-bottom</code> — відступ знизу</li>
+            <li><code>padding-left</code> — відступ зліва</li>
+        </ul>
+
+        <h3>Доступні значення:</h3>
+        <ul>
+            <li><strong>Довжина (length)</strong> — задає відступ у px, pt, cm тощо.</li>
+            <li><strong>Відсотки (%)</strong> — задає відступ у відсотках від ширини батьківського елемента.</li>
+            <li><strong>inherit</strong> — успадковує відступ від батьківського елемента.</li>
+        </ul>
+
+        <p><strong>Примітка:</strong> Від’ємні значення не допускаються.</p>
+
+        <h3>Приклад:</h3>
+
+        <div style="border: 2px solid black; padding: 20px 40px 10px 30px; background: lightgray;">
+            Це елемент із різними внутрішніми відступами.
+        </div>
+
+        <pre>
+div {
+  padding-top: 20px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+</pre>
+        <h2>Padding і ширина елемента</h2>
+
+        <p>Властивість <code>width</code> у CSS визначає ширину області вмісту елемента. Ця область знаходиться
+            всередині padding, border і margin (модель коробки).</p>
+
+        <p>Якщо у елемента встановлена конкретна ширина, то доданий padding збільшить загальну ширину елемента. Це часто
+            є небажаним ефектом.</p>
+
+        <h3>Приклад:</h3>
+        <p>Тут елементу <code>&lt;div&gt;</code> задана ширина 300px, але його фактична ширина стане 350px (300px + 25px
+            лівий padding + 25px правий padding).</p>
+
+        <pre>
+div {
+  width: 300px;
+  padding: 25px;
+}
+</pre>
+
+        <div style="width: 300px; padding: 25px; border: 2px solid black; background: lightgray;">
+            Це <code>div</code> з шириною 300px та padding 25px.
+        </div>
+
+        <h3>Збереження фіксованої ширини за допомогою <code>box-sizing</code></h3>
+
+        <p>Щоб зберегти ширину елемента 300px незалежно від padding, можна використовувати властивість
+            <code>box-sizing: border-box;</code>. Це дозволяє padding впливати лише на область вмісту, а не на загальну
+            ширину елемента.
+        </p>
+
+        <pre>
+div {
+  width: 300px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+</pre>
+
+        <div
+            style="width: 300px; padding: 25px; border: 2px solid black; background: lightblue; box-sizing: border-box;">
+            Це <code>div</code> з шириною 300px та padding 25px, але без збільшення загальної ширини.
+        </div>
+
+        <p>Властивість margin визначає простір за межами рамки.</p>
+        <pre>
+p {
+    border: 2px solid powderblue;
+    margin: 50px;
+}
+</pre>
+        <h2>Margin — індивідуальні сторони</h2>
+        <p>CSS має властивості для встановлення відступів (margin) для кожної сторони елемента:</p>
+
+        <ul>
+            <li><strong>margin-top</strong> — верхній відступ</li>
+            <li><strong>margin-right</strong> — правий відступ</li>
+            <li><strong>margin-bottom</strong> — нижній відступ</li>
+            <li><strong>margin-left</strong> — лівий відступ</li>
+        </ul>
+
+        <h3>Можливі значення:</h3>
+        <ul>
+            <li><strong>auto</strong> — браузер сам розраховує відступ</li>
+            <li><strong>length</strong> — задає відступ у px, pt, cm тощо</li>
+            <li><strong>%</strong> — задає відступ у відсотках від ширини батьківського елемента</li>
+            <li><strong>inherit</strong> — успадковує значення від батьківського елемента</li>
+        </ul>
+
+        <p><strong>Підказка:</strong> Дозволяється використовувати від’ємні значення.</p>
+
+        <h3>Приклад стилізації:</h3>
+        <pre>
+p {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+}
+</pre>
+        <div style="border: 1px solid black; margin-left: 50px; padding: 10px;">margin-left: 50px</div>
+        <h2>Злиття відступів (Margin Collapse)</h2>
+
+        <p>Верхні та нижні відступи елементів інколи зливаються в один, який дорівнює найбільшому з двох.</p>
+
+        <p><strong>Це не стосується лівого та правого відступів! Тільки верхніх і нижніх!</strong></p>
+
+        <h3>Приклад:</h3>
+
+        <p>Демонстрація злиття відступів:</p>
+
+        <pre>
+h1 {
+  margin: 0 0 50px 0;
+}
+
+h2 {
+  margin: 20px 0 0 0;
+}
+</pre>
+
+        <p>У прикладі вище:</p>
+        <ul>
+            <li>Елемент <code>&lt;h1&gt;</code> має нижній відступ <strong>50px</strong>.</li>
+            <li>Елемент <code>&lt;h2&gt;</code> має верхній відступ <strong>20px</strong>.</li>
+        </ul>
+
+        <p>Здавалося б, відстань між <code>&lt;h1&gt;</code> і <code>&lt;h2&gt;</code> мала б бути <strong>70px</strong>
+            (50px + 20px), але через злиття відступів фактичний відступ становить лише <strong>50px</strong> (найбільший
+            з двох).</p>
+
+        <h3>Візуальна демонстрація:</h3>
+
+        <div style="border: 1px solid black; padding: 10px;">
+            <h1 style="background: lightblue; margin: 0 0 50px 0;">Заголовок H1</h1>
+            <h2 style="background: lightgreen; margin: 20px 0 0 0;">Заголовок H2</h2>
+        </div>
+
+    </div>
+
+    <!--Background Image-->
+    <div class="container">
+        <h2>CSS background-image</h2>
+
+        <p>Властивість <code>background-image</code> задає фонове зображення для елемента.</p>
+
+        <p>За замовчуванням зображення повторюється, щоб покрити весь елемент.</p>
+
+        <h3>Приклад: Встановлення фонового зображення для сторінки</h3>
+
+        <pre>
+body {
+  background-image: url("paper.gif");
+}
+</pre>
+
+        <h3>Приклад: Погане поєднання тексту та фону</h3>
+
+        <p>Цей приклад демонструє, як текст може стати важко читабельним через невдалий вибір фонового зображення.</p>
+
+        <pre>
+body {
+  background-image: url("bgdesert.jpg");
+}
+</pre>
+
+        <p
+            style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png'); padding: 20px; color: white;">
+            Це текст на фоні зображення. Важливо підбирати фон так, щоб текст залишався читабельним.
+        </p>
+
+        <h3>Приклад: Фонове зображення для окремих елементів</h3>
+
+        <p>Фонове зображення можна встановлювати не тільки для всього документа, а й для окремих елементів, наприклад,
+            для абзаців <code>&lt;p&gt;</code>:</p>
+
+        <pre>
+p {
+  background-image: url("paper.gif");
+}
+</pre>
+
+        <p
+            style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png'); padding: 20px; border: 1px solid black;">
+            Це абзац із власним фоновим зображенням.
+        </p>
+        <h2>CSS background-repeat</h2>
+
+        <p>За замовчуванням властивість <code>background-image</code> повторює зображення як по горизонталі, так і по
+            вертикалі.</p>
+
+        <a href="background.html">Приклад</a>
+
+        <h3>CSS background-position</h3>
+
+        <p>Щоб змінити розташування фонового зображення, використовуйте <code>background-position</code>.</p>
+
+        <h4>Приклад: Розташування у верхньому правому куті</h4>
+
+        <pre>
+        body {
+          background-image: url("img_tree.png");
+          background-repeat: no-repeat;
+          background-position: right top;
+        }
+        </pre>
+
+        <div
+            style="background-image: url('img_tree.png'); background-repeat: no-repeat; background-position: right top; width: 300px; height: 150px; border: 1px solid black;">
+            Фон розташований у верхньому правому куті.
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="index.html" target="_blank">
+    <link rel="stylesheet" href="general.css">
+    <title>Position</title>
+</head>
+
+<body>
+    <header>
+        <h1>Позиціонування</h1>
+    </header>
+
+    <div class="grid">
+        <div class="examples">
+            <h2>Приклади</h2>
+            <ul>
+                <li><a href="/examples/all-examples.html">Всі варіанти <code>position</code></a></li>
+                <li><a href="/examples/static-example.html">Статичне позиціонування</a></li>
+                <li><a href="/examples/relative-example.html">Відносне позиціонування</a></li>
+                <li><a href="/examples/fixed-example.html">Фіксоване позиціонування</a></li>
+                <li><a href="/examples/absolute-example.html">Абсолютне позиціонування</a></li>
+                <li><a href="/examples/sticky-example.html">Липке позиціоновання</a></li>
+                <li><a href="/examples/z-index-example.html">z-index</a></li>
+            </ul>
+        </div>
+        <div class="contents">
+            <h2>Вміст</h2>
+            <ol>
+                <li><a href="#t1" target="_self">Позиціонування</a></li>
+                <li><a href="#t2" target="_self">Відносне позиціонування</a></li>
+                <li><a href="#t3" target="_self">Фіксоване позиціонування</a></li>
+                <li><a href="#t4" target="_self">Абсолютне позиціонування</a></li>
+                <li><a href="#t5" target="_self">Липке позиціонування</a></li>
+                <li><a href="#t6" target="_self">Використання z-index</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic" id="t1">
+        <h2>Позиціонування</h2>
+        <p>За допомогою CSS-властивості <code>position</code> ми можемо налаштувати логіку за якою елемент розміщається
+            на сторінці.</p>
+        <p>У нас є 5 різних варіантів:</p>
+        <dl>
+            <dt><code>static</code></dt>
+            <dd>звичайне позиціонування елементу в потоці сторінки (за замовчуванням)</dd>
+            <dt><code>relative</code></dt>
+            <dd>позиціонування відносно статичної позиції</dd>
+            <dt><code>fixed</code></dt>
+            <dd>розташування відносно вікна перегляду (viewport)</dd>
+            <dt><code>absolute</code></dt>
+            <dd>розташування відносно батьківського елемента (але не статичного)</dd>
+            <dt><code>sticky</code></dt>
+            <dd>розташування відносно прокрутки</dd>
+        </dl>
+        <p>Після вказання типу позиціонування ми можемо налаштувати позицію елемента властивостями:</p>
+        <ul>
+            <li><code>left</code></li>
+            <li><code>top</code></li>
+            <li><code>bottom</code></li>
+            <li><code>right</code></li>
+        </ul>
+        <p>Ці властивості представляють відступ від точки позиціонування.</p>
+        <p>Поки не вказаний тип позиціонування ці властивості не будуть мати ефекту.</p>
+        <p>Властивості <code>left top bottom right</code> - це відстань. Задається за допомгою абсолютних (px,cm) або
+            відносних (%, vw, vh) величин.</p>
+        <a href="/examples/all-examples.html">Приклад з усіма типами позиціонування</a>
+        <p>
+            Значення <code>position</code> за замовченням для всіх елементів є <code>static</code>. Це означає, що
+            ніякого особливого
+            позиціонування не застосовується. Позиція розраховується згідно потоку сторінки.
+        </p>
+        <a href="/examples/static-example.html">Приклад статичного позиціонування</a>
+    </div>
+
+    <div class="topic" id="t2">
+        <h2>Відносне позиціонування</h2>
+        <p>Для відносного позиціонування використовуємо значення <code>relative</code> властивості
+            <code>position</code>.
+        </p>
+        <p>При такому позиціонуванні місце елементу буде розраховуватись від його звичайної позиції.</p>
+        <p>Наприклад:</p>
+        <pre>
+div {
+    position: relative;
+    left: 35px;
+}
+</pre>
+        <p>В цьому випадку елемент зміститься на 35 пікселів ліворуч від своєї звичайної позиції.</p>
+        <p>Встановіть значення <code>left top bottom</code> або <code>right</code> щоб змістити елемент відносно його
+            звичайної позиції у відповідному напрямку.</p>
+        <p>Таке позиціонування не вплине на розміщення інших елемнтів. Вони не заповнять утворений простір і можуть
+            накладатись один на одний.</p>
+        <a href="/examples/relative-example.html">Приклад відносного позиціонування.</a>
+    </div>
+
+    <div class="topic" id="t3">
+        <h2>Фіксоване позиціонування</h2>
+        <p>Елемент із <code>position: fixed;</code> розташовується відносно вікна перегляду (viewport), що означає, що
+            він завжди залишається на одному місці, навіть якщо сторінка прокручується.</p>
+        <p>
+            Властивості <code>top right bottom</code> і <code>left</code> використовуються для визначення його
+            положення - це відступи від відповідних сторін вікна перегляду (viewport).
+        </p>
+        <p>
+            Фіксований елемент не залишає порожнього місця на сторінці там, де він зазвичай знаходився б.
+        </p>
+        <a href="/examples/fixed-example.html">Приклад фіксованого позиціонування.</a>
+        <p>Встановіть значення <code>position</code> на <code>fixed</code>, а значення <code>top</code> на
+            <code>0</code>, щоб створити елемент, що завжди буде згори екрану:
+        </p>
+        <pre>
+div {
+    position: fixed;
+    top: 0;
+}
+</pre>
+    </div>
+
+    <div class="topic" id="t4">
+        <h2>Абсолютне позиціонування</h2>
+        <p>Елемент із <code>position: absolute;</code> розташовується відносно наближчого батьківського елемнту з
+            заданим (не статичним) позиціонуванням (замість розташування відносно вікна перегляду, як у
+            <code>fixed</code>).
+        </p>
+        <p>
+            Однак, якщо абсолютний елемент не має позиціонованих предків, він використовує body як точку відліку та
+            переміщується разом із прокруткою сторінки (аналогічно <code>fixed</code>).
+        </p>
+        <p>
+            Примітка: Абсолютно позиціоновані елементи вилучаються з нормального потоку документа і можуть перекривати
+            інші елементи.
+        </p>
+        <a href="/examples/absolute-example.html" target="_blank">Приклад абсолютного позиціонування</a>
+    </div>
+
+    <div class="topic" id="t5">
+        <h2>Липке позиціонування</h2>
+        <p>Елемент із <code>position: sticky;</code> розташовується залежно від положення прокрутки користувача.</p>
+
+        <p>Sticky-елемент перемикається між <code>relative</code> і <code>fixed</code>, залежно від
+            прокрутки. Спочатку він поводиться як відносно позиціонований (<code>relative</code>), але коли досягає
+            вказаного зміщення у вікні перегляду, він <strong>"прилипає"</strong> і фіксується на місці (як
+            <code>fixed</code>).
+        </p>
+
+        <p>Щоб змусити елемент "прилипнути" до верхнього краю вікна задайте наступні стилі:</p>
+        <pre>
+div {
+    position: sticky;
+    top: 0;
+}
+</pre>
+
+        <a href="/examples/sticky-example.html" target="_blank">Приклад липкого позиціонування</a>
+    </div>
+
+    <div class="topic" id="t6">
+        <h2>Використання z-index</h2>
+        <p>Коли елементи позиціонуються, вони можуть перекривати інші елементи.</p>
+
+        <p>Властивість <code>z-index</code> визначає порядок накладання елементів (який елемент має бути розташований
+            попереду або позаду інших).</p>
+        <p><strong>Примітка:</strong> Властивість <code>z-index</code> працює тільки для позиціонованих елементів
+            (<code>position: absolute;</code>, <code>position: relative;</code>, <code>position: fixed;</code>,
+            <code>position: sticky;</code>) та flex-елементів (тобто елементів, які є безпосередніми нащадками елемента
+            з <code>display: flex;</code>).
+        </p>
+        <p>Якщо два позиціоновані елементи перекривають один одного без вказаного <code>z-index</code>, то елемент, який
+            визначений останнім у HTML-коді, буде відображатися поверх інших.</p>
+        <a href="/examples/z-index-example.html" target="_blank">Приклад використання z-index.</a>
+    </div>
+
+    <div class="topic" id="t7">
+        <h2>Відображення</h2>
+        <p>Властивість <code>display</code> використовується для вказання, як елемент буде відображатись на сторінці.
+        </p>
+        <p>Значень властивості <code>display</code> багато. Розглянемо основні:</p>
+        <dl>
+            <dt><code>inline</code></dt>
+            <dd>відображає елемент як рядковий (елемент займає стільки місця, скільки його контент, задання
+                <code>margin</code>, <code>width</code>, <code>height</code> недоступні)
+            </dd>
+            <dt><code>block</code></dt>
+            <dd>відображає елемент як блоковий</dd>
+            <dt><code>flex</code></dt>
+            <dd>перетворює елемент на flex-контейнер</dd>
+            <dt><code>grid</code></dt>
+            <dd>перетворює елемент на grid-контейнер</dd>
+            <dt><code>none</code></dt>
+            <dd>прибирає елемент зі сторінки</dd>
+        </dl>
+    </div>
+
+    <div class="topic" id="t8">
+        <h2>Випадаючий елемент</h2>
+        <p>Розглянемо наступний приклад:</p>
+        <a href="/examples/show-hover.html">Випадаючий елемент</a>
+        <p>Для реалізації такого прикладу нам знадобляться властивості <code>position</code> та <code>display</code>.
+        </p>
+        <pre>
+.hover-elem {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    margin: auto;
+    background-color: brown;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.hidden-elem {
+    display: none;
+    position: relative;
+    width: 100px;
+    height: 70px;
+    background-color: burlywood;
+    margin: auto;
+    top: 30px;
+}
+
+.hover-elem:hover .hidden-elem {
+    display: block;
+}    
+</pre>
+        <p>Важливо, щоб випадаючий (прихований) елемент був дочірнім елементу, якому налаштовуємо ефект
+            <code>hover</code>.
+        </p>
+        <pre>
+&lt;div class="hover-elem"&gt;Наведи на мене!
+    &lt;div class="hidden-elem"&gt;Я прихований елемент!&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    </div>
+
+    <div class="grid">
+        <div class="practice">
+            <h2>Практика</h2>
+            <ul>
+                <li><a href="/practice/practice1.html">Завдання 1</a></li>
+            </ul>
+        </div>
+        <div class="hw">
+            <h2>Домашнє завдання</h2>
+            <ul>
+                <li><a href="/hw/hw3.html">Домашнє завдання</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

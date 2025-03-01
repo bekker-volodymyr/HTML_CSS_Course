@@ -1,0 +1,116 @@
+/*
+lassdfasd
+asdfasd
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+pre {
+    background-color: beige;
+    border-radius: 15px;
+    padding: 10px;
+    overflow-x: scroll;
+}
+
+p {
+    margin: 10px;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul {
+    padding-left: 35px;
+}
+
+.list li {
+    background: #ddd;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.topics {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.topics div {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    .topics {
+        flex-direction: column;
+    }
+}
+
+.normal {
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.lighter {
+    font-weight: lighter;
+}
+
+.weight100 {
+    font-weight: 100;
+}
+
+.weight900 {
+    font-weight: 900;
+}

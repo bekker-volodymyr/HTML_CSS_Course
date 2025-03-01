@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Frame</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* Висота на весь екран */
+            text-align: center;
+            /* Вирівнювання по горизонталі */
+        }
+
+        .image-container {
+            display: inline-block;
+            /* Щоб контейнер займав розмір картинки */
+            position: relative;
+            /* Для позиціонування псевдоелемента */
+            margin-top: 20vh;
+            /* Вирівнювання по вертикалі */
+        }
+
+        .image-container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: calc(100% + 20px);
+            /* Рамка більша за картинку */
+            height: calc(100% + 20px);
+            background: transparent;
+            border: 5px solid #007acc;
+            /* Колір рамки */
+            transform: rotate(45deg);
+            /* Поворот рамки */
+            z-index: -1;
+            /* Поміщаємо рамку під картинку */
+        }
+
+        img {
+            display: block;
+            /* Забираємо відступи картинки */
+            border: 3px solid #333;
+            /* Рамка самої картинки */
+            max-width: 100%;
+            /* Обмеження по ширині */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="/resources/chart1.png" alt="Sample Image">
+    </div>
+</body>
+
+</html>

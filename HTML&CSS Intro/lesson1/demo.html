@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Вступне заняття з HTML/CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            color: #333;
+        }
+
+        .container {
+            background: #ffffffcc;
+            backdrop-filter: blur(8px);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+            text-align: center;
+            color: #005a9c;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 1.2em;
+            color: #007acc;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin-top: 1em;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        ul {
+            margin: 10px 0 10px 20px;
+            padding: 0;
+            list-style: disc;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        pre {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 1.35em;
+            line-height: 1.5;
+        }
+
+        code {
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>HTML</h2>
+        <ul>
+            <li>Що таке HTML</li>
+            <li>Базова структура HTML сторінки</li>
+            <li>Теги, елементи, атрибути</li>
+            <li>Тег head</li>
+            <li>Тег title</li>
+            <li>Додавання іконки</li>
+            <li>Тег body</li>
+            <li>Заголовки, параграфи</li>
+            <li>DevTools</li>
+            <li>Блокові та рядкові теги</li>
+            <li>Цитати (Quotations)</li>
+        </ul>
+        <h2>CSS</h2>
+        <ul>
+            <li>Що таке CSS</li>
+            <li>Inline стилі</li>
+            <li>Стилі для сторінки</li>
+        </ul>
+        <h2>Загальне</h2>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Вступ до HTML/CSS</h1>
+
+        <h2>Основи HTML</h2>
+        <h3>Що таке HTML</h3>
+        <p>
+            HTML (HyperText Markup Language) — це мова розмітки, яка використовується для створення структури
+            веб-сторінок.
+        </p>
+        <ul>
+            <li><strong>Структурування вмісту:</strong> визначення заголовків, абзаців, списків та інших елементів
+                сторінки.</li>
+            <li><strong>Взаємодія з браузером:</strong> браузери інтерпретують HTML для відображення контенту.</li>
+            <li><strong>Фундамент для подальшого стилювання:</strong> HTML є базою для роботи з CSS та JavaScript.</li>
+        </ul>
+
+        <h3>Базова структура HTML документа</h3>
+        <p>
+            Створення HTML-документа передбачає розмітку всього вмісту у вигляді тегів (перша назва — дескрипторів), які
+            записуються в кутових дужках. Текст повинен розташовуватися між відкриваючим (початковим) та закриваючим
+            (кінцевим) тегами. Наприклад, теги абзацу з текстом виглядають так:
+        </p>
+
+        <pre><code>&lt;p&gt; Текст абзацу &lt;/p&gt;</code></pre>
+
+        <p>
+            Існує ще одне поняття — це поняття елемента. Весь текст, укладений між початковим і кінцевим тегом,
+            включаючи
+            самі теги, називається елементом. Сам текст між тегами є змістом елемента. Враховуйте, що зміст елемента
+            може
+            включати будь-який текст, у тому числі й інші елементи.
+
+            Для будь-якого тега можна встановити додаткові властивості, які називаються атрибутами. Розміщуються вони
+            тільки
+            в тег, що відкриває, і являють собою пари виду «властивість = "значення"», розділені пробілами.
+        </p>
+
+        <pre><code>&lt;p id="test" class="par"&gt; Текст абзацу &lt;/p&gt;</code></pre>
+
+        <p>
+            HTML є реєстронезалежною мовою розмітки, тому припустимо писати теги як у верхньому, так і в нижньому
+            регістрі.
+            Проте правилом де-факто стало вже давно написання тегів тільки в нижньому регістрі.
+
+            Документи HTML є текстовими документами. Вони мають розширення .html або .htm, і для їх перегляду необхідний
+            браузер, а для зміни — редактор коду, про вибір якого ми поговоримо нижче.
+
+            Ще однією особливістю HTML є ігнорування пробілів та переносів рядків. Як би ви не відформатували текст у
+            HTML-документі ДО додавання тегів — з відступами, зробленими клавішею TAB, з перенесенням кожного рядка
+            (клавіша ENTER) — в браузері він буде просто суцільним текстом.
+        </p>
+
+        <p>
+            Приклад базової структури HTML-файлу:
+        </p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Назва сторінки&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Заголовок&lt;/h1&gt;
+    &lt;p&gt;Це абзац тексту.&lt;/p&gt;
+    &lt;br&gt;
+    &lt;p&gt;І ще один абзац, розділений розривом рядка.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h3>Основні теги</h3>
+        <p>
+            Розглянемо основні теги, які використовуватимуться на занятті:
+        </p>
+        <ul>
+            <li><code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code></li>
+            <li><code>&lt;title&gt;</code> та <code>&lt;meta charset&gt;</code></li>
+            <li>Заголовки: <code>&lt;h1&gt;</code> – <code>&lt;h6&gt;</code></li>
+            <li>Абзаци: <code>&lt;p&gt;</code></li>
+            <li>Розрив рядка: <code>&lt;br&gt;</code></li>
+            <li>Лінія: <code>&lt;hr&gt;</code></li>
+        </ul>
+
+        <h3>Lorem ipsum</h3>
+        <p>
+            Lorem ipsum — це умовний текст-«риба», який використовується в поліграфії та веб-дизайні для заповнення
+            макетів. Він дозволяє зосередитись на дизайні та візуальному оформленні сторінки, не відволікаючись на
+            зміст. Наприклад:
+            <br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+        </p>
+        <p>
+            Ось приклад тексту-риби українською мовою:
+            <br><br>
+            Невідоме сяйво мрій розбиває сумні тіні, пробуджуючи уяву до
+            нових горизонтів. Кожен рядок цього тексту – мов відлуння забутих спогадів, що дарує натхнення і підсилює
+            бажання творити. Нехай цей абзац служить прикладом для демонстрації типографіки та композиції сторінки.
+        </p>
+
+        <h2>Практика</h2>
+        <p>
+            Розробити HTML-сторінку за прикладом.
+            Сторінка повинна містити наступні елементи:
+        <ol>
+            <li>Заголовок з текстом "Хто я?"</li>
+            <li>Абзац в якому ви розказуєте щонебудь про себе: як вас звуть, скільки років, які у вас хобі та
+                захоплення.</li>
+            <li>Заголовок другого рівня з назвою "Анекдот яника"</li>
+            <li>Абзац який містить будь-який анекдот яниковича. Якщо не можете згадати жодного - загугліть. Анекдот з
+                тумбочкой можна використати - вічна класика.</li>
+            <li>Заголовок третього рівня з текстом "Лорем іпсум"</li>
+            <li>Абзац з згенерованим текстом лорем іпсум. Генератор за посиланням: <a
+                    href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj12NyM66mLAxX6IhAIHe9lBh4QFnoECAoQAQ&url=https%3A%2F%2Fwww.lipsum.com%2F&usg=AOvVaw3IbaiMywyUbmgvR0gmOYy8&opi=89978449">Lorem
+                    Ipsum Generator</a> або <a href="https://chatgpt.com">ChatGPT</a></li>
+            <li>Перед кожним заголовком (окрім першого) розміщується лінія</li>
+        </ol>
+        </p>
+
+        <h2>Підсумок</h2>
+        <ul>
+            <li>Що таке HTML та його роль у створенні веб-сторінок.</li>
+            <li>Основні теги: <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>,
+                <code>&lt;title&gt;</code>, <code>&lt;meta&gt;</code>, <code>&lt;h1&gt;-&lt;h6&gt;</code>,
+                <code>&lt;p&gt;</code>, <code>&lt;br&gt;</code>.
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

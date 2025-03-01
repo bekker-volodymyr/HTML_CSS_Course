@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <title>Списки</title>
+</head>
+
+<body>
+    <header>
+        <h1>Списки</h1>
+    </header>
+
+    <div class="grid">
+        <div class="examples">
+            <h2>Приклади</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_description">Приклад списку
+                        визначень</a></li>
+                <li><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu">Приклад
+                        горизонтального списку</a></li>
+                <li><a href="examples/before-after-example.html">Приклад псевдоелементів ::before та ::after</a></li>
+            </ul>
+        </div>
+        <div class="contents">
+            <h2>Вміст</h2>
+            <ul>
+                <li><a href="#t1">Списки</a></li>
+                <li><a href="#t2">Нумерований список</a></li>
+                <li><a href="#t3">Маркерований список</a></li>
+                <li><a href="#t4">Списки визначень</a></li>
+                <li><a href="#t5">Вкладені списки</a></li>
+                <li><a href="#t6">Горизонтальний список</a></li>
+                <li><a href="#t7">Позиція списку</a></li>
+                <li><a href="#t8">Зображення списку</a></li>
+                <li><a href="#t9">Псевдоелементи ::before та ::after</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="topic" id="t1">
+        <h2>Списки</h2>
+        <p>На багатьох сторінках в інтернеті використовують перелік будь-яких варіантів послуг або товарів. Для такого
+            переліку чудово підходять списки. У HTML їх існує 3 види: списки визначень, впорядковані (нумеровані) та
+            невпорядковані (марковані). За допомогою списків можна впорядкувати та систематизувати різні види даних та
+            подати їх у зручному для користувача вигляді.</p>
+    </div>
+
+    <div class="topic" id="t2">
+        <h2>Нумерований список</h2>
+        <pre>
+&lt;ol&gt;  
+    &lt;li&gt; Effective new strategy, new ideas, new products &lt;/li&gt;  
+    &lt;li&gt; Business and team transformation &lt;/li&gt;  
+    &lt;li&gt; Ambitious and achievable business and team goals &lt;/li&gt;  
+    &lt;li&gt; Focusing and coordination of actions &lt;/li&gt;  
+    &lt;li&gt; Mastering the methodology of strategy development &lt;/li&gt;  
+    &lt;li&gt; Growth, development and capitalization of business &lt;/li&gt;  
+&lt;/ol&gt;        
+</pre>
+        <h3>Результат:</h3>
+        <ol>
+            <li> Effective new strategy, new ideas, new products </li>
+            <li> Business and team transformation </li>
+            <li> Ambitious and achievable business and team goals </li>
+            <li> Focusing and coordination of actions </li>
+            <li> Mastering the methodology of strategy development </li>
+            <li> Growth, development and capitalization of business </li>
+        </ol>
+        <p>
+            Замість арабських цифр ми можемо застосувати нумерацію римськими цифрами або літерами латинського алфавіту,
+            причому як малими, так і великими, а також вказати нумерацію на основі грецької, вірменської або грузинської
+            мов. Для цього в HTML4 існував атрибут type, який на даний момент є застарілим. У HTML5 замість нього
+            прийнято вказувати тип списку за допомогою стилів, а саме за допомогою CSS-властивості list-style-type
+        </p>
+        <pre>
+list-style-type: decimal (за замовчуванням, можна не вказувати) | 
+                decimal-leading-zero | armenian | georgian | lower-alpha | 
+                lower-greek | lower-latin | lower-roman | upper-alpha | 
+                upper-latin | upper-roman;
+</pre>
+        <ul>
+            <li>Арабські цифри (1, 2, 3, ...) — <code>decimal</code></li>
+            <li>Арабські цифри з нулем попереду для цифр першого десятку (01, 02, 03, ..., 09) —
+                <code>decimal-leading-zero</code>
+            </li>
+            <li>Вірменська нумерація — <code>armenian</code></li>
+            <li>Грузинська нумерація — <code>georgian</code></li>
+            <li>Прописні латинські літери (A, B, C, ...) — <code>upper-alpha</code> або <code>upper-latin</code></li>
+            <li>Малі латинські літери (a, b, c, ...) — <code>lower-alpha</code> або <code>lower-latin</code></li>
+            <li>Римські цифри верхнього регістра (I, II, III, ...) — <code>upper-roman</code></li>
+            <li>Римські цифри нижнього регістра (i, ii, iii, ...) — <code>lower-roman</code></li>
+            <li>Малі букви грецького алфавіту — <code>lower-greek</code></li>
+        </ul>
+        <p>
+            Нумеровані списки мають також додаткові атрибути: start для тегу
+            &lt;ol&gt; і value для тегу &lt;li&gt;. У цьому випадку список починається не з цифри 1, а з тієї, що
+            вказана в атрибуті start. Як правило, цей атрибут буває необхідним, якщо список потрібно розірвати будь-яким
+            поясненням або зображенням.
+        </p>
+        <pre>
+&lt;p&gt; At an interview with a candidate for a vacant position, first of all,  
+    the following indicators are evaluated: &lt;/p&gt;  
+&lt;ol&gt;  
+    &lt;li&gt; Candidate's knowledge and skills &lt;/li&gt;  
+    &lt;li&gt; Education &lt;/li&gt;  
+    &lt;li&gt; IT experience &lt;/li&gt;  
+    &lt;li&gt; Team work skills &lt;/li&gt;  
+&lt;/ol&gt;  
+&lt;p&gt; After a successful interview, the candidate will be offered  
+    the following tests: &lt;/p&gt;   
+&lt;ol start=&quot;5&quot;&gt;  
+    &lt;li&gt; English proficiency test &lt;/li&gt;  
+    &lt;li&gt; External certification &lt;/li&gt;  
+    &lt;li&gt; Knowledge assessment &lt;/li&gt;  
+    &lt;li&gt; Evaluating performance in a time-limited environment &lt;/li&gt;  
+&lt;/ol&gt;
+</pre>
+        <h3>Результат:</h3>
+        <p> At an interview with a candidate for a vacant position, first of all,
+            the following indicators are evaluated: </p>
+        <ol>
+            <li> Candidate's knowledge and skills </li>
+            <li> Education </li>
+            <li> IT experience </li>
+            <li> Team work skills </li>
+        </ol>
+        <p> After a successful interview, the candidate will be offered
+            the following tests: </p>
+        <ol start="5">
+            <li> English proficiency test </li>
+            <li> External certification </li>
+            <li> Knowledge assessment </li>
+            <li> Evaluating performance in a time-limited environment </li>
+        </ol>
+        <p>
+            Ще один атрибут для тегу &lt;ol&gt;, який рідко використовується — reversed — змінює порядок нумерації
+            списку на зворотній.
+        </p>
+    </div>
+
+    <div class="topic" id="t3">
+        <h2>Маркеровний список</h2>
+        <pre>
+&lt;ul&gt;  
+    &lt;li&gt;Biographies (255)&lt;/li&gt;  
+    &lt;li&gt;Action (1581)&lt;/li&gt;   
+    &lt;li&gt;Westerns (76)&lt;/li&gt;  
+    &lt;li&gt;War (237)&lt;/li&gt;  
+    &lt;li&gt;Detective (627)&lt;/li&gt;  
+    &lt;li&gt;Documental (64)&lt;/li&gt;  
+    &lt;li&gt;Dramas (2814)&lt;/li&gt;  
+    &lt;li&gt;Historical (237)&lt;/li&gt;  
+    &lt;li&gt;Comedy (1983)&lt;/li&gt;   
+&lt;/ul&gt;        
+</pre>
+        <h3>Результат:</h3>
+        <ul>
+            <li>Biographies (255)</li>
+            <li>Action (1581)</li>
+            <li>Westerns (76)</li>
+            <li>War (237)</li>
+            <li>Detective (627)</li>
+            <li>Documental (64)</li>
+            <li>Dramas (2814)</li>
+            <li>Historical (237)</li>
+            <li>Comedy (1983)</li>
+        </ul>
+        <p>За допомогою застарілого атрибуту type раніше визначався вид маркеру, який на даний момент замінюється
+            CSS-властивістю list-style-type:</p>
+        <pre>
+list-style-type: disc | circle | square | none
+</pre>
+        <ul>
+            <li>disc — темний кружечок (значення за замовчуванням, можна не вказувати);</li>
+            <li>circle — пустий кружечок;</li>
+            <li>square — темний квадрат;</li>
+            <li>none — маркери (нумерація) відсутні.</li>
+        </ul>
+    </div>
+
+    <div class="topic" id="t4">
+        <h2>Списки визначень</h2>
+        <p>Списки визначень потрібні на тих сайтах, які, як правило, присвячені навчанню.</p>
+        Створюється список за допомогою 3-х тегів:
+        <ul>
+            <li>dl — definition list — основний або батьківський тег;</li>
+            <li>dt — definition termin — вкладений тег;</li>
+            <li>dd — definition description — вкладений тег.</li>
+        </ul>
+        <p><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_description">Приклад</a></p>
+    </div>
+
+    <div class="topic" id="t5">
+        <h2>Вкладені списки</h2>
+        <p>Багаторівневим списком є список, усередині елементів &lt;li&gt; якого розміщується список другого рівня.
+            Тобто, другий список вкладається всередину першого, тому такі списки називають ще вкладеними</p>
+        <pre>
+    &lt;ol&gt;  
+    &lt;li&gt;Squares  
+        &lt;ul&gt;  
+            &lt;li&gt;Palace Square&lt;/li&gt;  
+            &lt;li&gt;Market Square&lt;/li&gt;  
+        &lt;/ul&gt;  
+    &lt;/li&gt;  
+    &lt;li&gt;Castles  
+        &lt;ul&gt;  
+            &lt;li&gt;Royal Castle&lt;/li&gt;  
+            &lt;li&gt;Wilanów Palace&lt;/li&gt;  
+        &lt;/ul&gt;  
+    &lt;/li&gt;  
+    &lt;li&gt;Stare Miasto&lt;/li&gt;  
+    &lt;li&gt;Museums  
+        &lt;ul&gt;  
+            &lt;li&gt;Historical Museum&lt;/li&gt;  
+            &lt;li&gt;Polish Army Museum&lt;/li&gt;  
+            &lt;li&gt;Cartoon Museum&lt;/li&gt;  
+            &lt;li&gt;Marie Curie Museum&lt;/li&gt;  
+            &lt;li&gt;Chopin Museum&lt;/li&gt;  
+            &lt;li&gt;National Museum&lt;/li&gt;  
+        &lt;/ul&gt;  
+    &lt;/li&gt;  
+    &lt;li&gt;Krakowskie Przedmieście&lt;/li&gt;  
+&lt;/ol&gt;        
+</pre>
+        <h3>Результат:</h3>
+        <ol>
+            <li>Squares
+                <ul>
+                    <li>Palace Square</li>
+                    <li>Market Square</li>
+                </ul>
+            </li>
+            <li>Castles
+                <ul>
+                    <li>Royal Castle</li>
+                    <li>Wilanów Palace</li>
+                </ul>
+            </li>
+            <li>Stare Miasto</li>
+            <li>Museums
+                <ul>
+                    <li>Historical Museum</li>
+                    <li>Polish Army Museum</li>
+                    <li>Cartoon Museum</li>
+                    <li>Marie Curie Museum</li>
+                    <li>Chopin Museum</li>
+                    <li>National Museum</li>
+                </ul>
+            </li>
+            <li>Krakowskie Przedmieście</li>
+        </ol>
+    </div>
+
+    <div class="topic" id="t6">
+        <h2>Горизонтальний список</h2>
+        <p>Якщо задати <code>list-style-type: none</code>, то можна отримати горизонтальний список. Це часто
+            використовується для горизонтального меню.</p>
+        <p><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu">Приклад</a></p>
+    </div>
+
+    <div class="topic" id="t7">
+        <h2>Позиція списку</h2>
+        <pre>
+list-style-position: outside | inside | inherit
+</pre>
+        <p>
+            За замовчуванням всі списки list-style-position: outside, тому використовувати це значення ви будете рідко.
+            Воно передбачає, що маркери (цифри) розміщуються зліва від тексту елементу списку. Значення
+            list-style-position: inside розміщує маркери (цифри) всередині тексту елемента списку
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <img src="resources/image.png" alt="list position inside and outside comparison">
+        </div>
+    </div>
+
+    <div class="topic" id="t8">
+        <h2>Зображення списку</h2>
+        <p>
+            Третьою, досить популярною властивістю є list-style-image, яка дозволяє встановити зображення як маркер
+            списку:
+        </p>
+        <pre>
+list-style-image: url('resources/icon.png');
+</pre>
+        <ul style="list-style-image: url('resources/icons8-one-free-16.png')">
+            <li>Пункт 1</li>
+            <li>Пункт 2</li>
+            <li>Пункт 3</li>
+            <li>Пункт 4</li>
+        </ul>
+    </div>
+
+    <div class="topic" id="t9">
+        <h2>Псевдоелементи ::before та ::after</h2>
+        <p>
+            Псевдоелементи мають приставку псевдо- перед знайомим вам вже словом «елемент», тому що в початковому
+            HTML-коді їх немає. До речі, їх і не буде в коді взагалі, тому що вони з'являються виключно за допомогою
+            CSS. Існує декілька псевдоелементів, а саме ::first-line, ::first-letter, ::selection, ::before і ::after.
+            Причому їм доступний синтаксис як із двома двокрапками перед найменуванням (CSS3), так і з однією (CSS2),
+            оскільки у версії CSS3 було прийнято рішення відокремити псевдоелементи від псевдокласів, додавши до
+            псевдоелементів другу двокрапку. Тому не дивуйтеся, якщо ви побачите різне їхнє написання.
+        </p>
+        <p>
+            З приводу :before і :after можна сказати, що ці псевдоелементи дозволяють додати певний контент (текстовий
+            чи візуальний вміст) перед текстом елементу або в кінці елементу, тобто після вмісту елементу. Причому текст
+            псевдоелементу не виділятиметься, а CSS-властивості для нього можна задати такі ж, як і для звичайних
+            елементів.
+        </p>
+        <pre>
+p { 
+    font-style: italic; 
+}
+p:before, p:after { 
+    background-color: #ccc; 
+}
+p:before { 
+    content: 'Start'; 
+}
+p:after {
+    content: "End"; 
+}
+</pre>
+        <p><a href="examples/before-after-example.html" target="_blank">Приклад</a></p>
+    </div>
+</body>
+
+</html>

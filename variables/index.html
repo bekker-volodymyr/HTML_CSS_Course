@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <title>variables</title>
+</head>
+
+<body>
+    <header>
+        <h1>CSS Змінні</h1>
+    </header>
+
+    <div class="grid">
+        <div class="examples">
+            <h2>Приклади</h2>
+        </div>
+
+        <div class="contents">
+            <h2>Зміст</h2>
+            <ul>
+                <li><a href="#t1">Для чого потрібні змінні та функція var()</a></li>
+                <li><a href="#t2">Синтаксис</a></li>
+                <li><a href="#t3">Як var() працює?</a></li>
+                <li><a href="#t4">Локальні змінні</a></li>
+                <li><a href="#t5">Змінні у медіа-запитах</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic" id="t1">
+        <h2>Для чого потрібні змінні та функція var()</h2>
+        <p>
+            Функція var() використовується щоб підставити значення змінної.
+        </p>
+        <p>
+            Змінні CSS мають доступ до DOM, що означає, що ви можете створювати змінні з локальною або глобальною
+            областю видимості, змінювати змінні за допомогою JavaScript і змінювати змінні на основі медіа-запитів.
+        </p>
+        <p>
+            Змінні CSS можна використовувати, коли мова йде про кольори вашого сайту. Замість того, щоб
+            копіювати та вставляти ті самі кольори знову і знову, ви можете розмістити їх у змінних.
+        </p>
+    </div>
+
+    <div class="topic" id="t2">
+        <h2>Синтаксис</h2>
+        <pre>
+var (--name, value)
+</pre>
+        <table>
+            <tr>
+                <th>Значення</th>
+                <th>Опис</th>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>Обов'язкове. Назва змінної (повинна розпочинатись з двох --)</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>Опціональне. Значення, яке буде використовуватись, якщо змінна не була знайдена.</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="topic" id="t3">
+        <h2>Як var() працює?</h2>
+        <p>Перш за все: змінні CSS можуть мати глобальну або локальну область видимості.</p>
+        <p>
+            До глобальних змінних можна отримати доступ/використовувати їх у всьому документі, тоді як локальні змінні
+            можна використовувати лише всередині селектора, де вони оголошені.</p>
+        <p>
+            Щоб створити змінну з глобальною областю, оголосите її всередині селектора :root. Селектор :root відповідає
+            кореневому елементу документа.</p>
+        <p>
+            Щоб створити змінну з локальною областю видимості, оголосите її всередині селектора, який її
+            використовуватиме.
+        </p>
+        <pre>
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+  }
+  
+  body { background-color: var(--blue); }
+  
+  h2 { border-bottom: 2px solid var(--blue); }
+  
+  .container {
+    color: var(--blue);
+    background-color: var(--white);
+    padding: 15px;
+  }
+  
+  button {
+    background-color: var(--white);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    padding: 5px;
+  }
+</pre>
+        <p>
+            Переваги використання var() такі:
+        </p>
+        <ul>
+            <li>робить код легшим для читання (більш зрозумілим)</li>
+            <li>значно полегшує зміну значень кольорів</li>
+        </ul>
+        <p>
+            Щоб змінити синьо-білий колір на більш м’який синьо-білий, вам просто потрібно змінити значення двох змінних
+        </p>
+    </div>
+
+    <div class="topic" id="t4">
+        <h2>Локальні змінні</h2>
+        <p>
+            Іноді ми хочемо, щоб змінні змінювалися лише в певному розділі сторінки.</p>
+
+        <p>Припустімо, що нам потрібен інший колір синього для елементів кнопки. Потім ми можемо повторно оголосити
+            змінну --blue всередині селектора кнопки. Коли ми використовуємо var(--blue) всередині цього селектора, він
+            використовуватиме локальне значення змінної --blue, оголошене тут.</p>
+
+        <p>Ми бачимо, що локальна змінна --blue замінить глобальну змінну --blue для елементів кнопки</p>
+        <pre>
+button {
+    --blue: #0000ff; /* local variable will override global */
+    background-color: var(--white);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    padding: 5px;
+}
+</pre>
+        <p>
+            Також ми можемо визначити нову змінну локально в тому селекторі, де плануємо її використовувати.
+        </p>
+        <pre>
+button {
+    --button-blue: #0000ff; /* new local variable */
+    background-color: var(--white);
+    color: var(--button-blue);
+    border: 1px solid var(--button-blue);
+    padding: 5px;
+}
+</pre>
+    </div>
+
+    <div class="topic" id="t5">
+        <h2>Змінні у медіа-запитах</h2>
+        <p>Тепер ми хочемо змінити значення змінної в медіа-запиті.</p>
+        <pre>
+.container {
+    --fontsize: 25px;
+}
+
+.container {
+    color: var(--blue);
+    background-color: var(--white);
+    padding: 15px;
+    font-size: var(--fontsize);
+}
+  
+  @media screen and (min-width: 450px) {
+    .container {
+      --fontsize: 50px;
+    }
+}
+</pre>
+    </div>
+</body>
+
+</html>

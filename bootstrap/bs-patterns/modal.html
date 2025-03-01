@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Modal</title>
+</head>
+
+<body>
+    <!-- кнопка, при натисканні на яку відкриється модальне вікно. Має зв'язок з вікном 
+     через ідентифікатор модального вікна, який прописується після # в атрибуті 
+     data-target -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalWindow">
+        Клацни, щоб побачити модальне вікно
+    </button>
+    <!-- блоковий елемент-контейнер з класом modal і унікальним ідентифікатором 
+         modalWindow, який пов'язаний з кнопкою. -->
+    <div class="modal fade" id="modalWindow" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <!-- блоковий елемент-контейнер для діалогового модального вікна -->
+        <div class="modal-dialog">
+            <!-- блоковий елемент-контейнер для контенту -->
+            <div class="modal-content">
+                <!-- блоковий елемент-контейнер для шапки контенту -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Заголовок модального вікна</h5>
+                    <!-кнопка для закриття модального вікна -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <!-- блоковий елемент-контейнер для основної частини -->
+                <div class="modal-body">
+                    <p>Основний вміст модального вікна</p>
+                </div>
+                <!-- блоковий елемент-контейнер для подвалу контенту -->
+                <div class="modal-footer">
+                    <!-- кнопка для закриття модального вікна -->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                    <!-додаткові кнопки з різним функціоналом -->
+                        <button type="button" class="btn btn-primary">Кнопка в підвалі</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Селектори, зображення, посилання. Шрифти та кольори</title>
+</head>
+
+<body>
+    <header>
+        Селектори, зображення, посилання. Шрифти та кольори
+    </header>
+
+    <div class="container grid">
+        <h2>Тести:</h2>
+        <ul class="list">
+            <li><a href="https://www.w3schools.com/html/html_intro.asp">HTML Intro</a></li>
+            <li><a href="https://www.w3schools.com/html/html_basic.asp">HTML Basic</a></li>
+            <li><a href="https://www.w3schools.com/html/html_elements.asp">HTML Elements</a></li>
+            <li><a href="https://www.w3schools.com/html/html_attributes.asp">HTML Attributes</a></li>
+            <li><a href="https://www.w3schools.com/html/html_headings.asp">HTML Headings</a></li>
+            <li><a href="https://www.w3schools.com/html/html_paragraphs.asp">HTML Paragraphs</a></li>
+            <li><a href="https://www.w3schools.com/css/css_syntax.asp">CSS Syntax</a></li>
+        </ul>
+    </div>
+
+    <div class="container topics">
+        <div>
+            <h2>HTML</h2>
+            <ul class="list">
+                <li>Тег &lt;pre&gt;: додавання преформатованого тексту</li>
+                <li>Теги форматування</li>
+                <li>Теги цитування</li>
+            </ul>
+        </div>
+        <div>
+            <h2>CSS</h2>
+            <ul class="list">
+                <li>Селектори: елемент, id, class, універсальний, груповий</li>
+                <li>Підключення зовнішнього файлу стилів</li>
+                <li>Коментарі в CSS-документі</li>
+                <li>Вирівнювання тексту: властивість text-align</li>
+                <li>Властивості color та background-color. Способи вказання кольорів</li>
+                <li>Шрифти та їх властивості</li>
+                <li>Одиниці вимірювання в CSS</li>
+            </ul>
+        </div>
+    </div>
+    <!--Тег pre-->
+    <div class="container">
+        <h2>Тег &lt;pre&gt;</h2>
+        <p>Тег &lt;pre&gt; використовується для відображення тексту у фіксованому форматі з урахуванням пробілів та
+            нових рядків.</p>
+        <pre>
+&lt;pre&gt;
+    Це приклад преформатованого тексту.
+    Всі пробіли та рядки збережені.
+&lt;/pre&gt;</pre>
+        <p>Інший приклад преформатованого тексту:</p>
+        <pre>
+My Bonnie lies over the ocean.
+
+My Bonnie lies over the sea.
+
+My Bonnie lies over the ocean.
+
+Oh, bring back my Bonnie to me.</pre>
+    </div>
+    <!--Цитування-->
+    <div class="container">
+        <h2>Цитування</h2>
+        <p>Для створення цитати з іншого джерела використовується тег &lt;blockquote&gt;</p>
+        <pre>
+&lt;blockquote cite="http://www.worldwildlife.org/who/index.html"&gt;
+    For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation organization, 
+    WWF works in nearly 100 countries. At every level, we collaborate with people around the world to develop and 
+    deliver innovative solutions that protect communities, wildlife, and the places in which they live.
+&lt;/blockquote&gt;</pre>
+        <p>Для коротких цитат можна використовувати тег &lt;q&gt;:</p>
+        <pre>
+&lt;p&gt;WWF's goal is to: &lt;q&gt;Build a future where people live in harmony with nature.&lt;/q&gt;&lt;/p&gt;
+</pre>
+        <p>Результат: </p>
+        <p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+        <p>HTML-тег &lt;abbr&gt; визначає абревіатуру або акронім, такі як "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".
+            Позначення абревіатур може надати корисну інформацію браузерам, системам перекладу та пошуковим системам.
+            Порада: Використовуйте глобальний атрибут title, щоб відобразити опис абревіатури/акроніма при наведенні
+            курсору на елемент.</p>
+        <pre>
+&lt;p&gt;The &lt;abbr title="World Health Organization"&gt;WHO&lt;/abbr&gt; was founded in 1948.&lt;/p&gt;
+</pre>
+        <p>Результат: </p>
+        <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+    </div>
+
+    <!--Форматування-->
+    <div class="container">
+        <h2>Форматування</h2>
+        <ul class="list">
+            <li>&lt;b&gt;</li>
+            <p><b>This text is bold</b></p>
+            <li>&lt;strong&gt;</li>
+            <p><strong>This text is important!</strong></p>
+            <li>&lt;i&gt;</li>
+            <p><i>This text is italic</i></p>
+            <li>&lt;em&gt;</li>
+            <p><em>This text is emphasized</em></p>
+            <li>&lt;mark&gt;</li>
+            <p>Do not forget to buy <mark>milk</mark> today.</p>
+            <li>&lt;small&gt;</li>
+            <p><small>This is some smaller text.</small></p>
+            <li>&lt;del&gt;</li>
+            <p>My favorite color is <del>blue</del> red.</p>
+            <li>&lt;ins&gt;</li>
+            <p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
+            <li>&lt;sub&gt;</li>
+            <p>This is <sub>subscripted</sub> text.</p>
+            <li>&lt;sup&gt;</li>
+            <p>This is <sup>superscripted</sup> text.</p>
+        </ul>
+    </div>
+
+    <!--Селектори-->
+    <div class="container">
+        <h2>Селектори</h2>
+        <p>Ми можемо розділити CSS-селектори на п’ять категорій:
+        <ul>
+            <li>Прості селектори (вибирають елементи за ім’ям, id, класом).</li>
+            <li>Комбінаторні селектори (вибирають елементи на основі певного зв’язку між ними).</li>
+            <li>Селектори псевдокласів (вибирають елементи залежно від їхнього стану).</li>
+            <li>Селектори псевдоелементів (вибирають і стилізують частину елемента).</li>
+            <li>Селектори атрибутів (вибирають елементи на основі атрибута або його значення).</li>
+        </ul>
+        </p>
+        <h3>Селектор елементу</h3>
+        <p>
+            Обирає HTML елемент з відповідною назвою.
+        </p>
+        <pre>
+p {
+    text-align: center;
+    color: red;
+}
+</pre>
+        <h3>Селектор id</h3>
+        <p>Селектор id використовує атрибут id HTML-елемента для вибору конкретного елемента. id елемента є унікальним
+            на сторінці, тому селектор id використовується для вибору лише одного унікального
+            елемента! Щоб вибрати елемент із певним id, напишіть символ решітки (#), а потім ім'я id елемента.</p>
+        <pre>
+#para1 {
+    text-align: center;
+    color: red;
+}
+</pre>
+        <h3>Селектор класу</h3>
+        <p>
+            Селектор класу вибирає HTML-елементи з певним атрибутом class.
+            Щоб вибрати елементи з конкретним класом, напишіть крапку (.), а потім ім'я класу.
+        </p>
+        <pre>
+.center {
+    text-align: center;
+    color: red;
+}
+</pre>
+        <p>
+            Ви також можете вказати, що лише певні HTML-елементи повинні бути під впливом класу.
+        </p>
+        <pre>
+p.center {
+    text-align: center;
+    color: red;
+}
+</pre>
+        <p>HTML елементи можуть мати декілька класів. Всі класи вказуємо через пробіл.</p>
+        <pre>
+&lt;p class="center large"&gt;This paragraph refers to two classes.&lt;/p&gt;
+</pre>
+        <h3>Універсальний селектор</h3>
+        <p>Універсальний селектор використовується для задання стилів всіх HTML елементів.</p>
+        <pre>
+* {
+    text-align: center;
+    color: blue;
+}            
+</pre>
+        <h3>Груповий селектор</h3>
+        <p>Груповий селектор використвується коли декілька елементів мають однакову стилізацію:</p>
+        <pre>
+h1, h2, p {
+    text-align: center;
+    color: red;
+}
+</pre>
+    </div>
+    <!--Підключення зовнішнього файлу стилів-->
+    <div class="container">
+        <h2>Зовнішні стилі</h2>
+        <p>Ми вже використовували два способи підключення стилів: inline (до елементу) та сторінковий (тег style)</p>
+        <p>Для великих сайтів зазвичай використовується третій спосіб: підключення зовнішнього файлу.</p>
+        <p>Спочатку необхідно створити файл з розширенням .css</p>
+        <p>Щоб підключити створений файл стилів до HTML документу використовуємо тег link всередині тегу head</p>
+        <pre>
+&lt;link rel="stylesheet" href="style.css"&gt;
+</pre>
+    </div>
+    <!--Коментарі в CSS-документі-->
+    <div class="container">
+        <h2>Коментарі в CSS документі</h2>
+        <p>
+            Коментарі у CSS створюються за допомогою символів /* (початок коментарю) */ (кінець коментарю).
+        </p>
+        <pre>
+/* This is a single-line comment */
+p {
+    color: red;
+}
+</pre>
+    </div>
+    <!--Вирівнювання тексту: властивість text-align-->
+    <div class="container">
+        <h2>Вирівнювання тексту</h2>
+        <p>Для вирівнювання тексту всередині блоку використвується властивість <b>text-align</b></p>
+        <div style="text-align: left; border: 1px solid #000; padding: 10px;">
+            <p>Текст вирівняний ліворуч (text-align: left).</p>
+        </div>
+
+        <div style="text-align: center; border: 1px solid #000; padding: 10px;">
+            <p>Текст вирівняний по центру (text-align: center).</p>
+        </div>
+
+        <div style="text-align: right; border: 1px solid #000; padding: 10px;">
+            <p>Текст вирівняний праворуч (text-align: right).</p>
+        </div>
+
+        <div style="text-align: justify; border: 1px solid #000; padding: 10px;">
+            <p>Текст вирівняний по ширині (text-align: justify). Це дозволяє тексту зайняти всю ширину блоку, зокрема
+                додаючи проміжки між словами.</p>
+        </div>
+    </div>
+    <!--Властивості color та background-color. Способи вказання кольорів-->
+    <div class="container">
+        <h2>Кольори</h2>
+        <p>Для налаштування кольору тексту використовується властивість <b>color</b></p>
+        <p>Для налаштування кольору фону елементу використовується властивість <b>background-color</b></p>
+        <p>Варіанти вказування кольорів</p>
+        <ul class="list">
+            <li>
+                <pre>
+color: blue; /* назва кольору англійською мовою */    
+</pre>
+            </li>
+            <li>
+                <pre>
+color: #ff0000; /* 16-річне значення кольору, що використовує цифри від 0 до 9 та літери від a до f */
+</pre>
+            </li>
+            <li>
+                <pre>
+color: #f00; /* усічене 16-річне значення для кольорів, у яких однакові пари цифр */
+</pre>
+            </li>
+            <li>
+                <pre>
+color: rgb (255, 0, 0); /* значення кольору у системіrgb. По кожному каналу r - red, g - green, b - blue значення кольору змінюються від 0 до 255 одиниць*/
+</pre>
+            </li>
+            <li>
+                <pre>
+color: rgba(255, 0, 0, .5); /* значення кольору системіrgb+ альфа-канал, тобто, можливість задати прозорість для кольору від 0 до 1*/
+</pre>
+            </li>
+            <li>
+                <pre>
+color: hsl(0, 100%, 50%); /* значення кольору у системіhsl- hue -saturation - lightness */
+</pre>
+            </li>
+            <li>
+                <pre>
+color: hsla(0, 100%, 50%, .5); /* значення кольору у системіhsl+ альфа-канал, тобто, можливість задати прозорість для кольору від 0 до 1*/
+</pre>
+            </li>
+        </ul>
+    </div>
+    <!--Шрифти та їх властивості-->
+    <div class="container">
+        <h2>Шрифти</h2>
+        <h3>Загальні сімейства шрифтів</h3>
+        <p>
+            У CSS існує п’ять загальних сімейств шрифтів:
+        </p>
+        <ul>
+            <li>Serif – шрифти з невеликими засічками на краях кожної літери. Вони створюють відчуття формальності та
+                елегантності.</li>
+            <li>Sans-serif – шрифти без засічок, з чистими лініями. Вони виглядають сучасно та мінімалістично.</li>
+            <li>Monospace – у цих шрифтах усі літери мають однакову фіксовану ширину, що створює механічний вигляд.</li>
+            <li>Cursive – шрифти, що імітують людський почерк.</li>
+            <li>Fantasy – декоративні або ігрові шрифти.</li>
+        </ul>
+        <p>
+            Усі різні назви шрифтів належать до одного з цих загальних сімейств шрифтів.
+        </p>
+        <h3>Властивість font-family в CSS</h3>
+        <p>
+            У CSS ми використовуємо властивість font-family, щоб вказати шрифт для тексту.
+        </p>
+        <p>
+            Примітка: Якщо назва шрифту складається з кількох слів, її потрібно брати в лапки, наприклад: "Times New
+            Roman".
+        </p>
+        <p>
+            Порада: Властивість font-family повинна містити кілька назв шрифтів як систему резервних варіантів
+            ("fallback"),
+            щоб забезпечити максимальну сумісність між браузерами та операційними системами. Починайте з бажаного шрифту
+            і
+            завершуйте загальним сімейством (щоб браузер міг вибрати схожий шрифт, якщо інші недоступні). Назви шрифтів
+            потрібно розділяти комами.
+        </p>
+        <pre>
+.p1 {
+    font-family: "Times New Roman", Times, serif;
+}
+                          
+.p2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+                          
+.p3 {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+</pre>
+        <h3>Стилізація шрифтів</h3>
+        <h4>Font Style</h4>
+        <p>
+            The font-style property is mostly used to specify italic text.
+        </p>
+        <p>
+            This property has three values:
+        <ul>
+            <li>normal - The text is shown normally</li>
+            <li>italic - The text is shown in italics</li>
+            <li>oblique - The text is "leaning" (oblique is very similar to italic, but less supported)</li>
+        </ul>
+        </p>
+        <pre>
+p.normal {
+    font-style: normal;
+}
+              
+p.italic {
+    font-style: italic;
+}
+              
+p.oblique {
+    font-style: oblique;
+}
+</pre>
+        <h4>Font Weight</h4>
+        <p>Властивість font-weight використовується для налаштування жирності шрифту</p>
+        <pre>
+.bold {
+    font-weight: bold;
+}
+
+.weight100 {
+    font-weight: 100;
+}
+</pre>
+        <p class="normal">Цей текст має normal (звичайну) вагу шрифту.</p>
+        <p class="bold">Цей текст має bold (жирний) шрифт.</p>
+        <p class="bolder">Цей текст має bolder (більш жирний) шрифт.</p>
+        <p class="lighter">Цей текст має lighter (більш легкий) шрифт.</p>
+        <p class="weight100">Цей текст має font-weight 100 (найбільш легкий).</p>
+        <p class="weight900">Цей текст має font-weight 900 (найбільш жирний).</p>
+        <h2>Розмір шрифту</h2>
+        <p>Властивість font-size визначає розмір тексту.</p>
+
+        <p>Здатність керувати розміром тексту важлива в веб-дизайні. Однак не слід використовувати зміни розміру шрифту,
+            щоб
+            робити абзаци схожими на заголовки, або заголовки схожими на абзаци.</p>
+
+        <p>Завжди використовуйте відповідні HTML теги, такі як <code>&lt;h1&gt; - &lt;h6&gt;</code> для заголовків та
+            <code>&lt;p&gt;</code> для абзаців.
+        </p>
+
+        <h3>Абсолютний розмір:</h3>
+        <ul>
+            <li>Встановлює текст на заданий розмір</li>
+            <li>Не дозволяє користувачеві змінювати розмір тексту в усіх браузерах (погано для доступності)</li>
+            <li>Корисний, коли фізичний розмір вихідного пристрою відомий</li>
+        </ul>
+
+        <h3>Відносний розмір:</h3>
+        <ul>
+            <li>Встановлює розмір, відносно оточуючих елементів</li>
+            <li>Дозволяє користувачеві змінювати розмір тексту в браузерах</li>
+        </ul>
+
+        <pre>
+h1 {
+    font-size: 40px;
+}
+              
+h2 {
+    font-size: 30px;
+}
+              
+p {
+    font-size: 14px;
+}
+</pre>
+        <h2>Встановлення розміру шрифту за допомогою Em</h2>
+        <p>Щоб дозволити користувачам змінювати розмір тексту (через меню браузера), багато розробників використовують
+            em замість пікселів.</p>
+
+        <p>1em дорівнює поточному розміру шрифту. За замовчуванням розмір тексту в браузерах становить 16px. Тому
+            стандартний розмір 1em — 16px.</p>
+
+        <p>Розмір можна обчислити з пікселів в em за допомогою цієї формули: <code>пікселі / 16 = em</code></p>
+        <pre>
+h1 {
+    font-size: 2.5em; /* 40px/16=2.5em */
+}
+      
+h2 {
+    font-size: 1.875em; /* 30px/16=1.875em */
+}
+      
+p {
+    font-size: 0.875em; /* 14px/16=0.875em */
+}
+</pre>
+        <p>У наведеному вище прикладі розмір тексту в em такий самий, як у попередньому прикладі в пікселях. Однак із
+            використанням розміру em можна налаштувати розмір тексту в усіх браузерах.</p>
+
+    </div>
+
+    <!--Одиниці вимірювання в CSS-->
+    <div class="container">
+        <h2>Одиниці вимірювань у CSS</h2>
+
+        <p><strong>Важливо:</strong> будь-які одиниці вимірювань пишуться разом із цифрами. Наприклад, вірно:
+            <code>16px</code>.
+        </p>
+
+        <h3>Абсолютні одиниці:</h3>
+        <ul>
+            <li><strong>cm</strong> — сантиметри</li>
+            <li><strong>mm</strong> — міліметри</li>
+            <li><strong>in</strong> — дюйми</li>
+            <li><strong>pt</strong> — пункти (1/72 дюйма)</li>
+            <li><strong>pc</strong> — піки (1/6 дюйма)</li>
+            <li><strong>px</strong> — пікселі (найпоширеніша одиниця)</li>
+        </ul>
+
+        <h3>Відносні одиниці:</h3>
+        <ul>
+            <li><strong>em</strong> — розмір шрифту батьківського елемента</li>
+            <li><strong>rem</strong> — розмір шрифту кореневого елемента (<code>&lt;html&gt;</code>)</li>
+            <li><strong>%</strong> — відсотки, розмір залежить від батьківського елемента</li>
+            <li><strong>ex</strong> — відносно висоти символу <code>x</code> шрифту, використовується рідко</li>
+            <li><strong>vw</strong> — 1% від ширини області перегляду</li>
+            <li><strong>vh</strong> — 1% від висоти області перегляду</li>
+            <li><strong>vmin</strong> — мінімум між <code>vw</code> і <code>vh</code></li>
+            <li><strong>vmax</strong> — максимум між <code>vw</code> і <code>vh</code></li>
+        </ul>
+
+        <h3>Приклад використання em і %:</h3>
+        <p>1em та 100% — це розмір шрифту батьківського елемента. Наприклад:</p>
+        <pre>
+body { 
+    font-size: 14px; 
+}
+h1 { 
+    font-size: 3em; 
+}  
+/* Розмір шрифту буде 42px */
+</pre>
+
+        <p>Для <code>h1</code> з <code>font-size: 300%</code> буде розраховано так: 14px * 300% / 100% = 42px.</p>
+
+    </div>
+</body>
+
+</html>

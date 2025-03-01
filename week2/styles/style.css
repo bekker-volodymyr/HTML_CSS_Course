@@ -1,0 +1,26 @@
+/* THIS IS A COMMENT */
+* {
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+}
+
+p {
+    background-color: rgba(245, 245, 220, 0.373);
+}
+
+#p-blue {
+    background-color: blue;
+}
+
+p.bg-violet {
+    background-color: violet;
+}
+
+.color-green {
+    color: rgba(137, 134, 61, 0.746);
+}
+
+pre,
+blockquote {
+    color: aquamarine;
+}

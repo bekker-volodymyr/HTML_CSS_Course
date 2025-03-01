@@ -1,0 +1,23 @@
+// Міксин для кнопок
+@mixin button($bg-color, $text-color, $radius) {
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: $radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// Стилі для кнопок
+.btn-primary {
+    @include button(#007bff, #fff, 5px);
+}
+
+.btn-warning {
+    @include button(#ff5733, #fff, 10px);
+}

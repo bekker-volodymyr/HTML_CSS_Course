@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Заняття 2: Розширення знань з HTML та введення в CSS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      color: #333;
+    }
+    .container {
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 900px;
+      margin: 40px auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ddd;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.2em;
+      text-align: center;
+      color: #005a9c;
+    }
+    h2 {
+      font-size: 1.8em;
+      margin-top: 1.2em;
+      color: #007acc;
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 5px;
+    }
+    h3 {
+      font-size: 1.4em;
+      color: #333;
+      margin-top: 1em;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin: 15px 0;
+    }
+    ul {
+      margin: 10px 0 10px 20px;
+      padding: 0;
+      list-style: disc;
+    }
+    li {
+      margin: 8px 0;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+    code {
+      background: #e8e8e8;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Заняття 2: Розширення знань з HTML та введення в CSS</h1>
+    
+    <h2>Розминка та коротке повторення</h2>
+    <ul>
+      <li>Базова структура HTML-документа.</li>
+      <li>Основні теги: <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;title&gt;</code>, <code>&lt;meta charset&gt;</code>, <code>&lt;h1&gt;-&lt;h6&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;br&gt;</code>.</li>
+    </ul>
+
+    <h2>Розширення знань з HTML</h2>
+    <h3>Додаткові теги</h3>
+    <p>
+      Розглянемо інші важливі теги:
+    </p>
+    <ul>
+      <li><strong>Списки:</strong> ненумеровані (<code>&lt;ul&gt;</code>) та нумеровані (<code>&lt;ol&gt;</code>) списки, елементи списків (<code>&lt;li&gt;</code>).</li>
+      <li><strong>Блочний контейнер:</strong> <code>&lt;div&gt;</code> – використовується для групування контенту.</li>
+    </ul>
+
+    <h3>Розширені текстові теги</h3>
+    <p>Деякі важливі текстові теги:</p>
+    <ul>
+      <li><code>&lt;b&gt;</code>: <b>жирний текст</b>, який не має особливого семантичного значення.</li>
+      <li><code>&lt;strong&gt;</code>: <strong>важливий текст</strong>, який підкреслює смислову значущість.</li>
+      <li><code>&lt;i&gt;</code>: <i>курсивний текст</i>, зазвичай використовується для акцентів.</li>
+      <li><code>&lt;em&gt;</code>: <em>курсивний текст із акцентом</em> на змісті.</li>
+    </ul>
+
+    <h3>Блочні та інлайн елементи</h3>
+    <p>
+      Блочні елементи займають всю ширину контейнера та починають новий рядок. Прикладом є <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>.
+    </p>
+    <p>
+      Інлайн елементи займають лише стільки простору, скільки необхідно їхньому контенту, і не починають новий рядок. Прикладом є <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;em&gt;</code>.
+    </p>
+    <p>
+      Аналогія: уявіть блок як коробку з текстом, яка займає всю полицю, а інлайн — як книжку, яку можна поставити поруч із іншими книжками на тій же полиці.
+    </p>
+    <h4>Графічна схема:</h4>
+    <p>Уявіть таку структуру:</p>
+    <pre>
+| [Блоковий елемент: Заголовок ]        |
+| [Блоковий елемент: абзац]             |
+| [Інлайн елементи: слово1 слово2 слово3]
+    </pre>
+
+    <h3>Атрибути тегів</h3>
+    <p>
+      Важливість використання атрибутів:
+    </p>
+    <ul>
+      <li><strong>ID та class:</strong> для унікального та групового стилювання.</li>
+      <li><strong>Універсальні атрибути:</strong> <code>style</code>, <code>data-*</code> – для додаткової інформації або стилізації.</li>
+    </ul>
+
+    <h2>Введення в CSS</h2>
+    <p>
+      CSS (Cascading Style Sheets) використовується для оформлення HTML-документів. Розглянемо:
+    </p>
+    <ul>
+      <li>Основні стильові властивості: кольори, шрифти, розміри, відступи.</li>
+      <li>Способи підключення CSS:
+        <ul>
+          <li><strong>Inline стилі:</strong> використання атрибуту <code>style</code> в HTML-тегах.</li>
+          <li><strong>Зовнішній файл:</strong> створення окремого файлу CSS та підключення його через тег <code>&lt;link&gt;</code> в <code>&lt;head&gt;</code>.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>Практика</h2>
+    <p>
+      Практичні завдання допоможуть закріпити матеріал:
+    </p>
+    <ul>
+      <li>Створити блок із заголовком, абзацом і списком, застосувавши стилі.</li>
+      <li>Додати інлайн-елементи та застосувати до них різні стилі.</li>
+    </ul>
+
+    <h2>Підсумки</h2>
+    <ul>
+      <li>Резюме: розширення можливостей HTML, основи CSS та їх застосування.</li>
+      <li>Відповіді на питання.</li>
+    </ul>
+  </div>
+</body>
+</html>

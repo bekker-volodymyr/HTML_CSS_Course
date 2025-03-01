@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <title>Анімації CSS</title>
+</head>
+
+<body>
+    <header>
+        <h1>CSS Анімації</h1>
+    </header>
+
+    <div class="grid">
+        <div class="examples">
+            <h2>Приклади</h2>
+        </div>
+
+        <div class="contents">
+            <h2>Зміст</h2>
+            <ul>
+                <li><a href="#t1">Анімації</a></li>
+                <li><a href="#t2">Властивість transition</a></li>
+                <li><a href="#t3">Властивість transform</a></li>
+                <li><a href="#t4">2D трансформації</a></li>
+                <li><a href="#t5">3D трансформації</a></li>
+                <li><a href="#t6">Використання transform та transition</a></li>
+                <li><a href="#t7">Властивість animation та правило keyframes</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic" id="t1">
+        <h2>Анімації</h2>
+        <p>
+            CSS-анімації підходять для виконання простих рухів елемента, а також коли не потрібна сумісність із
+            застарілими браузерами.
+        </p>
+        <p>
+            Ефект рухомих елементів на сайті можна створити за допомогою властивостей CSS3:
+        </p>
+        <ul>
+            <li>переходів — transition</li>
+            <li>анімації — animation</li>
+            <li>трансформації — transform. Слід зазначити, що трансформація не створює анімацію, лише трансформує
+                елемент (переміщає, обертає, збільшує). Трансформації часто використовуються разом із властивостями
+                animation і transition.</li>
+        </ul>
+
+        <div class="anim-example-area">
+            <div class="anim-example"></div>
+        </div>
+
+        <a href="do-together/moving-circle.html">Приклад</a>
+    </div>
+
+    <div class="topic" id="t2">
+        <h2>Властивість transition</h2>
+        <p>
+            CSS-переходи (transition), дозволяють CSS-властивостям змінювати одне значення на інше, за певний проміжок
+            часу. Найпростіший приклад подібної поведінки — це зміна кольору фону кнопки-посилання за допомогою
+            псевдокласу :hover, при якому одразу відбувається зміна значень CSS-властивості background-color
+        </p>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition1" target="_blank">Приклад</a>
+        <p>
+            Синтаксис:
+        </p>
+        <pre>
+transition: [властивість] [час] [функція] [затримка];
+</pre>
+        <ul>
+            <li>[властивість] - вказуємо назви властивостей, зміни яких повинні бути анімованими. Можна вказати значення
+                all.</li>
+            <li>[час] - за який відрізок часу стан властивості повинен змінитись, тобто це час анімації.</li>
+            <li>[функція] - функція, яка визначає швидкість зміни властивості. Наприклад, ease-in означає, що зміна
+                розпочнеться повільно, а під кінець прискориться. А функція linear означає, що швидкість зміни
+                властивості буде однаковою весь час.</li>
+            <li>[затримка] - визначає затримку перед початком переходу.</li>
+        </ul>
+        <a href="do-together/transition-example.html" target="_blank">Робимо разом!</a>
+        <p>Ви можете вказати декілька переходів через кому.</p>
+        <pre>
+transition: background-color 0.8s ease 0s, font-size 1s linear 0.2s;
+</pre>
+    </div>
+
+    <div class="topic" id="t3">
+        <h2>Властивість transform</h2>
+        <p>Властивість transform дозволяє трансофрмувати (тобто змінити) елемент. Ви можете його змістити, повернути та
+            змінити розміри.</p>
+        <p>Трансформації бувають двох видів - 2D та 3D.</p>
+        <p>Часто трансформації використовуються разом із переходами. Переходи дозволяють зробити процес трансформації
+            елемента плавним.</p>
+        <div class="anim-example-area">
+            <div style="width: 100px; height: 100px; transform: rotate(45deg); background-color: black;"></div>
+        </div>
+        <pre>
+.div {
+    width: 100px; 
+    height: 100px;  
+    background-color: black;
+    transform: rotate(45deg);
+}
+</pre>
+    </div>
+
+    <div class="topic" id="t4">
+        <h2>2D трансформації</h2>
+        <p>Трансформація відбувається у двох осях: X (по горизонталі) та Y (по вертикалі).</p>
+        <h3>translate</h3>
+        <p>translate(x, y) — зміна розташування елемента на значення <i><q>x</q></i> зліва направо, на значення
+            <i><q>y</q></i> — зверху вниз. Якщо
+            вказуються від'ємні значення, зсув буде спрямований справа наліво і знизу вгору
+        </p>
+        <div class="anim-example-area">
+            <div style="width: 100px; height: 100px; transform: translate(25px, 35px); background-color: black;"></div>
+        </div>
+        <pre>
+.div {
+    width: 100px; 
+    height: 100px;  
+    background-color: black;
+    transform: translate(25px, 35px);
+}
+</pre>
+        <h3>scale</h3>
+        <p>scale(x, y) — масштабує елемент. Якщо вказані значення від 0 до 1, то елемент зменшується. Якщо значення
+            більші за 1, елемент збільшується в масштабі. При від'ємних значеннях елемент відображає дзеркально. Слід
+            зазначити, що при збільшенні елемента, якість відображуваного елемента може погіршитися. Діє для елементів
+            блочного типу. Чому тільки для таких елементів? Оскільки
+            масштабування — це одночасне збільшення ширини та висоти елемента. Змінювати ширину/висоту елемента можна
+            для елементів з блочним або рядково-блочним представленням. Ширина та висота рядкових елементів обчислюється
+            відповідно до вмісту рядкового елемента.</p>
+        <div class="anim-example-area">
+            <div style="width: 100px; height: 100px; transform: scale(2, 0.5); background-color: black;"></div>
+        </div>
+        <pre>
+.div {
+    width: 100px; 
+    height: 100px;  
+    background-color: black;
+    transform: scale(2, 0.5);
+}
+</pre>
+        <h3>rotate</h3>
+        <p>rotate(xdeg) - повертає елемнт на зазначену кількість градусів. Додатні значення обертають за годинниковою
+            стрілкою, від'ємні - проти.</p>
+        <div class="anim-example-area">
+            <div style="width: 100px; height: 100px; transform: rotate(45deg); background-color: black;"></div>
+        </div>
+        <pre>
+.div {
+    width: 100px; 
+    height: 100px;  
+    background-color: black;
+    transform: rotate(45deg);
+}
+</pre>
+        <h3>skew</h3>
+        <p>skew(x, y) - дозволяє "нахилити" елемент.</p>
+        <div class="anim-example-area">
+            <div style="width: 100px; height: 100px; transform: skew(25deg, 30deg); background-color: black;"></div>
+        </div>
+        <pre>
+.div {
+    width: 100px; 
+    height: 100px;  
+    background-color: black;
+    transform: skew(25deg, 30deg);
+}
+</pre>
+    </div>
+
+    <div class="topic" id="t5">
+        <h2>3D трансформації</h2>
+        <p>3D трансформації дозволяють обертати елемент навколо одної з вісей (x, y, z)</p>
+        <h3>rotateX</h3>
+        <div class="anim-example-area">
+            <div style="width: 100px; height: 100px; transform: rotateX(45deg); background-color: black;"></div>
+        </div>
+        <pre>
+.div {
+    width: 100px; 
+    height: 100px;  
+    background-color: black;
+    transform: rotateX(45deg);
+}
+</pre>
+        <h3>rotateY</h3>
+        <div class="anim-example-area">
+            <div style="width: 100px; height: 100px; transform: rotateY(45deg); background-color: black;"></div>
+        </div>
+        <pre>
+.div {
+    width: 100px; 
+    height: 100px;  
+    background-color: black;
+    transform: rotateY(45deg);
+}
+</pre>
+        <h3>rotateZ</h3>
+        <div class="anim-example-area">
+            <div style="width: 100px; height: 100px; transform: rotateZ(45deg); background-color: black;"></div>
+        </div>
+        <pre>
+.div {
+    width: 100px; 
+    height: 100px;  
+    background-color: black;
+    transform: rotateZ(45deg);
+}
+</pre>
+    </div>
+
+    <div class="topic" id="t6">
+        <h2>Використання transform та transition</h2>
+        <p>Для того щоб досягнути ефекту анімації transform та transition можна використовувати разом.</p>
+        <pre>
+.example {
+    width: 100px;
+    height: 100px;
+    transition: all 0.3s ease-in-out 0s;
+    background-color: black;
+}
+.translate:hover {
+    transform: translate(25px, 35px);
+}
+.scale:hover {
+    transform: scale(2, 0.5);
+}
+.rotate:hover {
+    transform: rotate(45deg);
+}
+.skew:hover {
+    transform: skew(25deg, 30deg);
+}
+</pre>
+        <a href="examples/translate-transition.html" target="_blank">Приклад</a>
+    </div>
+
+    <div class="topic" id="t7">
+        <h2>Властивість animation та правило keyframes</h2>
+        <p>Найпростіший вид анімації — це два кадри: початковий та кінцевий. Браузер розумітиме, що необхідно між цими
+            двома кадрами анімувати елемент, залежно від заданих умов.</p>
+        <p>Кадри створюються за допомогою спеціального правила @keyframes. Самі кадри оголошуються ключовими словами:
+            from — «від» або початковий, перший кадр, і to — «до» або кінцевий кадр, другий та останній кадр. Якщо
+            кількість кадрів більше, ніж два, то до кадру звертаються, як до відрізків, вираженим у відсотках пройденого
+            шляху. Наприклад, три кадри: 0% — початковий (перший кадр), 50% — другий кадр, 100% — кінцевий (третій
+            кадр).</p>
+        <pre>
+@keyframes name{
+    from{
+       початкові властивості
+    }
+    to{
+        кінцеві властивості
+    }
+}
+</pre>
+        <a href="do-together/moving-circle.html">Робимо разом</a>
+    </div>
+</body>
+
+</html>

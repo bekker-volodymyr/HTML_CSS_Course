@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout: Вивчення та Практика</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Grid Layout: Вивчення та Практика</h1>
+
+        <h2>Заняття 1: Основи та ключові властивості Grid Layout</h2>
+
+        <h3>Що таке Grid Layout?</h3>
+        <p>Grid Layout — це потужний інструмент CSS для створення гнучких та структурованих макетів веб-сторінок за допомогою поділу на рядки та колонки. На відміну від Flexbox, який краще підходить для вирівнювання елементів по одному напряму, Grid дозволяє працювати з двома вимірами одночасно.</p>
+
+        <h3>Основні поняття</h3>
+        <ul>
+            <li><strong>Грід-контейнер</strong>: батьківський елемент, на якому застосовується властивість <code>display: grid;</code>.</li>
+            <li><strong>Грід-елементи</strong>: дочірні елементи грід-контейнера, які автоматично розташовуються в рядках і колонках.</li>
+            <li><strong>Рядки та колонки</strong>: основні блоки побудови гріда.</li>
+            <li><strong>Трек</strong>: рядок або колонка гріда.</li>
+            <li><strong>Гапи</strong>: проміжки між треками.</li>
+        </ul>
+
+        <h3>1. Створення грід-контейнера</h3>
+        <p>Для початку необхідно задати контейнеру властивість <code>display: grid;</code>. Наприклад:</p>
+        <pre>
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+        </pre>
+        <p>Цей код створює грід із трьома колонками рівної ширини.</p>
+
+        <h3>2. Властивість <code>grid-template-columns</code> та <code>grid-template-rows</code></h3>
+        <p>Визначає кількість та розміри колонок та рядків.</p>
+        <pre>
+.example-grid {
+  display: grid;
+  grid-template-columns: 100px 200px 1fr;
+  grid-template-rows: 50px auto;
+}
+        </pre>
+        <p>Тут перша колонка має ширину 100px, друга — 200px, а третя займає весь залишковий простір.</p>
+
+        <h4>Приклад реалізації:</h4>
+        <div class="grid-demo example-grid">
+            <div class="grid-child-demo">1</div>
+            <div class="grid-child-demo">2</div>
+            <div class="grid-child-demo">3</div>
+            <div class="grid-child-demo">4</div>
+        </div>
+
+        <h3>3. Властивість <code>gap</code></h3>
+        <p>Визначає відступи між рядками та колонками.</p>
+        <pre>
+.grid-gap-example {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+        </pre>
+        <p>Цей код встановлює відступи у 20px між усіма грід-елементами.</p>
+
+        <h4>Приклад реалізації:</h4>
+        <div class="grid-demo grid-gap-example">
+            <div class="grid-child-demo">1</div>
+            <div class="grid-child-demo">2</div>
+        </div>
+
+        <h2>Заняття 2: Динамічні розміри та вирівнювання</h2>
+
+        <h3>1. Властивість <code>minmax()</code></h3>
+        <p>Задає діапазон розмірів для рядків або колонок.</p>
+        <pre>
+.grid-minmax-example {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+}
+        </pre>
+        <p>Колонки матимуть мінімальну ширину 100px і можуть розтягуватися, займаючи залишковий простір.</p>
+
+        <h4>Приклад реалізації:</h4>
+        <div class="grid-demo grid-minmax-example">
+            <div class="grid-child-demo">1</div>
+            <div class="grid-child-demo">2</div>
+            <div class="grid-child-demo">3</div>
+        </div>
+
+        <h3>2. Властивості <code>auto-fit</code> та <code>auto-fill</code></h3>
+        <p>Ці значення дозволяють динамічно заповнювати грід-сітку колонками або рядками.</p>
+        <pre>
+.grid-auto-fit-example {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+        </pre>
+        <p>При використанні <code>auto-fit</code> колонки будуть підлаштовуватись під доступний простір.</p>
+
+        <h4>Приклад реалізації:</h4>
+        <div class="grid-demo grid-auto-fit-example">
+            <div class="grid-child-demo">1</div>
+            <div class="grid-child-demo">2</div>
+            <div class="grid-child-demo">3</div>
+            <div class="grid-child-demo">4</div>
+        </div>
+
+        <h3>3. Вирівнювання елементів у грід-контейнері</h3>
+        <p>Властивості для вирівнювання:</p>
+        <ul>
+            <li><code>place-items</code>: одночасне вирівнювання по горизонталі та вертикалі.</li>
+            <li><code>justify-items</code>: вирівнювання по горизонталі.</li>
+            <li><code>align-items</code>: вирівнювання по вертикалі.</li>
+        </ul>
+        <pre>
+.grid-alignment-example {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 10px;
+}
+        </pre>
+
+        <h4>Приклад реалізації:</h4>
+        <div class="grid-demo grid-alignment-example">
+            <div class="grid-child-demo">1</div>
+            <div class="grid-child-demo">2</div>
+        </div>
+
+        <h2>Підсумки занять</h2>
+        <ul>
+            <li>Ознайомилися з основними властивостями Grid Layout.</li>
+            <li>Розглянули адаптивні та динамічні макети.</li>
+            <li>Вивчили властивості для вирівнювання та зміщення елементів.</li>
+            <li>Практично закріпили отримані знання через численні приклади.</li>
+        </ul>
+    </div>
+</body>
+
+</html>

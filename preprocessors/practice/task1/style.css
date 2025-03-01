@@ -1,0 +1,26 @@
+html, body {
+  margin: 0;
+  font-size: xx-large;
+  box-sizing: border-box;
+}
+
+.header {
+  background: #007acc;
+  color: white;
+  height: 15vh;
+  text-align: center;
+}
+
+.content {
+  background: #f4f4f4;
+  color: #333;
+  height: 75vh;
+  text-align: justify;
+}
+
+.footer {
+  background: #005c99;
+  color: white;
+  height: 10vh;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

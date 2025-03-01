@@ -1,0 +1,28 @@
+@import "_colors";
+
+html, body{
+    margin: 0;
+    font-size: xx-large;
+    box-sizing: border-box;
+}
+
+.header {
+    background: $primary;
+    color: white;
+    height: 15vh;
+    text-align: center;
+}
+
+.content {
+    background: $background;
+    color: $text;
+    height: 75vh;
+    text-align: justify;
+}
+
+.footer {
+    background: darken($primary, 10%);
+    color: white;
+    height: 10vh;
+    text-align: center;
+}

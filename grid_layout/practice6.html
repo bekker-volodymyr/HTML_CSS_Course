@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель управління з розкладом занять</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 20px;
+            background-color: #f7f9fc;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "sidebar content"
+                "footer footer";
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 70px auto 50px;
+            gap: 15px;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #007acc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #ddd;
+            padding: 15px;
+        }
+
+        .teacher-info {
+            display: grid;
+            grid-template-rows: repeat(5, 50px);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .teacher-info div {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .content {
+            grid-area: content;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #007acc;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .schedule {
+            display: grid;
+            grid-template-columns: 100px repeat(5, 1fr);
+            grid-template-rows: 50px repeat(6, 60px);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .schedule div {
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+        }
+
+        .day,
+        .lesson {
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Панель управління з розкладом занять</h1>
+    <div class="dashboard">
+        <div class="header">Шапка панелі</div>
+        <div class="sidebar">
+            <h3>Викладачі</h3>
+            <div class="teacher-info">
+                <div>Викладач 1: Олександр Петров</div>
+                <div>Викладач 2: Марія Іваненко</div>
+                <div>Викладач 3: Дмитро Павленко</div>
+                <div>Викладач 4: Наталія Гаврилюк</div>
+                <div>Викладач 5: Сергій Ковальчук</div>
+            </div>
+        </div>
+        <div class="content">
+            <h2>Розклад занять</h2>
+            <div class="schedule">
+                <div class="day">День</div>
+                <div class="day">Понеділок</div>
+                <div class="day">Вівторок</div>
+                <div class="day">Середа</div>
+                <div class="day">Четвер</div>
+                <div class="day">П'ятниця</div>
+
+                <div class="lesson">8:00</div>
+                <div>Група A: Основи HTML</div>
+                <div>Група B: Основи CSS</div>
+                <div>Група C: Веб-дизайн</div>
+                <div>Група D: JavaScript</div>
+                <div>Група E: Git та GitHub</div>
+
+                <div class="lesson">9:00</div>
+                <div>Група A: Адаптивна верстка</div>
+                <div>Група B: Основи Flexbox</div>
+                <div>Група C: Прототипування</div>
+                <div>Група D: DOM-маніпуляції</div>
+                <div>Група E: Контроль версій</div>
+
+                <div class="lesson">10:00</div>
+                <div>Група A: Взаємодія з API</div>
+                <div>Група B: Grid Layout</div>
+                <div>Група C: Стилізація компонентів</div>
+                <div>Група D: Анімації</div>
+                <div>Група E: Автоматизація проєктів</div>
+
+                <div class="lesson">11:00</div>
+                <div>Група A: Практика верстки</div>
+                <div>Група B: Компонентний підхід</div>
+                <div>Група C: UX-дизайн</div>
+                <div>Група D: Інтерактивність</div>
+                <div>Група E: Реліз проєктів</div>
+
+                <div class="lesson">12:00</div>
+                <div>Група A: HTML & CSS проєкт</div>
+                <div>Група B: Flexbox практикум</div>
+                <div>Група C: Завершення проєкту</div>
+                <div>Група D: Проєкт JavaScript</div>
+                <div>Група E: Презентація проєктів</div>
+
+                <div class="lesson">13:00</div>
+                <div>Група A: Підсумки тижня</div>
+                <div>Група B: Обговорення помилок</div>
+                <div>Група C: Підготовка до демо</div>
+                <div>Група D: Фінальні доопрацювання</div>
+                <div>Група E: Підбиття підсумків</div>
+            </div>
+        </div>
+        <div class="footer">Підвал панелі</div>
+    </div>
+</body>
+
+</html>

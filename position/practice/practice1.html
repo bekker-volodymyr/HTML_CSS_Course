@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальне вікно</title>
+    <style>
+        body {
+            max-width: 1200px;
+            margin: auto;
+            font-size: xx-large;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 50%;
+            height: auto;
+            padding: 25px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.292);
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>What is Lorem Impsum?</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam mi, suscipit nec ornare in, dapibus
+            aliquet turpis. Mauris sodales maximus nulla non scelerisque. Duis congue mi a sapien efficitur, vitae
+            bibendum
+            sapien blandit. Sed scelerisque metus sed varius varius. Nam nec metus vitae urna viverra facilisis. Aliquam
+            erat volutpat. Maecenas molestie diam vestibulum ullamcorper porta. Pellentesque ac nisl auctor tortor
+            semper
+            pulvinar. Duis molestie nunc leo, eget sollicitudin nisi vehicula non. Etiam non libero ac erat aliquet
+            viverra
+            ut nec mi. Nunc orci velit, scelerisque eget accumsan ac, varius at sapien. Nullam rutrum orci in turpis
+            scelerisque vestibulum. Fusce vitae tempus sapien, id rhoncus augue. Morbi a commodo mauris.
+        </p>
+        <h2>Where does it come from?</h2>
+        <p>
+            Phasellus dignissim, erat a interdum molestie, magna sapien suscipit lacus, ac interdum lacus enim ut ante.
+            Nulla rhoncus urna eget hendrerit fermentum. Phasellus tincidunt odio eu felis cursus, ut malesuada ex
+            sagittis.
+            Integer nec sapien luctus, pretium orci sed, molestie massa. Nulla fringilla ligula a ipsum bibendum
+            porttitor.
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus cursus
+            pretium nisl sit amet auctor. Nam hendrerit, dui sit amet mollis bibendum, nisl dui aliquet sem, sit amet
+            dictum
+            enim nulla eu mi.
+        </p>
+        <p>
+            Donec vel mi eget erat ornare finibus. Pellentesque fermentum arcu in porta pellentesque. Sed at diam quam.
+            Aenean congue quam non efficitur facilisis.
+        </p>
+    </div>
+    <div class="overlay"></div>
+    <div class="modal">
+        <h3>MODAL WINDOW</h3>
+        <hr>
+        <p>
+            Mauris tristique sagittis tincidunt. Maecenas congue nisi porttitor volutpat mattis. Aliquam nec lorem mi.
+            Suspendisse ornare, neque eget maximus cursus, augue diam convallis felis, at condimentum quam orci id diam.
+            Aenean mi neque, lobortis in turpis quis, luctus congue lacus. Suspendisse placerat metus non urna
+            hendrerit, at tincidunt elit egestas. Duis rhoncus eros lorem, id congue tellus malesuada a. Aliquam massa
+            velit, tincidunt a rhoncus in, ornare a tellus. Fusce efficitur velit augue, id iaculis nunc pretium id.
+            Vivamus faucibus, nulla at efficitur dapibus, eros arcu convallis sapien, pellentesque iaculis nibh quam
+            vitae libero. Mauris orci lorem, pulvinar vitae nunc in, eleifend lacinia velit. Vivamus ac purus urna.
+        </p>
+    </div>
+</body>
+
+</html>

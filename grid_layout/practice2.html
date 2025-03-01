@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея зображень</title>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 20px;
+      background-color: #f7f9fc;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 2fr 2fr 1fr;
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Галерея зображень</h1>
+  <div class="gallery">
+    <img src="../resources/photo1.png" alt="Зображення 1">
+    <img src="../resources/photo1.png" alt="Зображення 2">
+    <img src="../resources/photo1.png" alt="Зображення 3">
+    <img src="../resources/photo1.png" alt="Зображення 4">
+  </div>
+</body>
+</html>

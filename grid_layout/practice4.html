@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розклад уроків</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 20px;
+        }
+
+        .schedule {
+            display: grid;
+            grid-template-columns: 100px repeat(5, 1fr);
+            grid-template-rows: 50px repeat(5, 60px);
+            gap: 10px;
+        }
+
+        .schedule div {
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+        }
+
+        .day,
+        .lesson {
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Розклад уроків</h1>
+    <div class="schedule">
+        <div class="day">День</div>
+        <div class="day">Понеділок</div>
+        <div class="day">Вівторок</div>
+        <div class="day">Середа</div>
+        <div class="day">Четвер</div>
+        <div class="day">П'ятниця</div>
+
+        <div class="lesson">8:00</div>
+        <div>Математика</div>
+        <div>Історія</div>
+        <div>Фізика</div>
+        <div>Музика</div>
+        <div>Англійська</div>
+
+        <div class="lesson">9:00</div>
+        <div>Література</div>
+        <div>Хімія</div>
+        <div>Біологія</div>
+        <div>Географія</div>
+        <div>Фізкультура</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate transition</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .anim-example-area {
+            display: flex;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .example {
+            width: 100px;
+            height: 100px;
+            transition: all 0.3s ease-in-out 0s;
+            background-color: black;
+        }
+
+        .translate:hover {
+            transform: translate(25px, 35px);
+            background-color: aquamarine;
+        }
+
+        .scale:hover {
+            transform: scale(2, 0.5);
+        }
+
+        .rotate:hover {
+            transform: rotate(45deg);
+        }
+
+        .skew:hover {
+            transform: skew(25deg, 30deg);
+        }
+
+        .rotateX:hover {
+            transform: rotateX(45deg);
+        }
+
+        .rotateY:hover {
+            transform: rotateY(45deg);
+        }
+
+        .rotateZ:hover {
+            transform: rotateZ(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="anim-example-area">
+        <div class="example translate"></div>
+    </div>
+
+    <div class="anim-example-area">
+        <div class="example scale"></div>
+    </div>
+
+    <div class="anim-example-area">
+        <div class="example rotate"></div>
+    </div>
+
+    <div class="anim-example-area">
+        <div class="example skew"></div>
+    </div>
+
+    <div class="anim-example-area">
+        <div class="example rotateX"></div>
+    </div>
+
+    <div class="anim-example-area">
+        <div class="example rotateY"></div>
+    </div>
+
+    <div class="anim-example-area">
+        <div class="example rotateZ"></div>
+    </div>
+</body>
+
+</html>

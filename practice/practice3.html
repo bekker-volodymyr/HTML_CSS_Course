@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 3</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aliceblue;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: gray;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        header {
+            flex-basis: 5vh;
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: rgb(68, 68, 68);
+        }
+
+        .logo {
+            display: flex;
+            font-size: larger;
+            font-weight: bolder;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        main {
+            display: flex;
+            margin: 20px;
+            gap: 15px;
+        }
+
+        article {
+            padding: 25px;
+            background-color: lightgrey;
+        }
+
+        article img {
+            width: 100%;
+            height: auto;
+        }
+
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .events {
+            padding: 20px;
+            background-color: lightgrey;
+        }
+
+        .events {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .quote {
+            padding: 25px;
+            background-color: lightgrey;
+        }
+
+        .event {
+            display: grid;
+            grid-template-columns: auto 75%;
+            align-items: center;
+            font-size: small;
+            gap: 10px;
+        }
+
+        .event img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">LoremSite</div>
+            <nav>
+                <ul>
+                    <li>News</li>
+                    <li>Events</li>
+                    <li>Courses</li>
+                    <li>Jobs</li>
+                    <li>Tests</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h1>What is Lorem Ipsum?</h1>
+                <p>30/30/2019 11:20</p>
+                <img src="resources/html5img.png" alt="article picture">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempus lacus sed turpis eleifend
+                    imperdiet. Fusce diam massa, laoreet a felis eget, blandit maximus purus. Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc scelerisque cursus quam. Sed
+                    non vestibulum quam. In porttitor mollis dignissim. Etiam mattis volutpat tortor vitae porttitor. In
+                    hac habitasse platea dictumst.
+                </p>
+                <p>
+                    Vestibulum sit amet varius justo. Suspendisse tempus leo vel dui bibendum hendrerit eget at felis.
+                    In ut augue facilisis est commodo efficitur ut vel felis. Mauris non nisl ut ex faucibus efficitur.
+                    Suspendisse potenti. Donec a augue et libero lobortis condimentum vel eget dolor. Aliquam suscipit
+                    odio lectus, eget mattis justo blandit at.
+                </p>
+            </article>
+            <aside>
+                <div class="events">
+                    <h2>Events</h2>
+                    <div class="event">
+                        <img src="resources/calendar_19.png" alt="event icon">
+                        <p>
+                            Suspendisse ociosqu ad litora torquent per
+                            conubia nostra, per inceptos himenaeos.
+                        </p>
+                    </div>
+                    <div class="event">
+                        <img src="resources/calendar_7.png" alt="event icon">
+                        <p>
+                            Suspendisse ac hendrerit torquent per
+                            conubia nostra, per inceptos himenaeos.
+                        </p>
+                    </div>
+                    <div class="event">
+                        <img src="resources/calendar_27.png" alt="event icon">
+                        <p>
+                            Class aptent taciti sociosqu ad litora torquent per
+                            conubia nostra, per inceptos himenaeos.
+                        </p>
+                    </div>
+                    <div class="event">
+                        <img src="resources/calendar_7.png" alt="event icon">
+                        <p>
+                            Suspendisse ac hendrerit sem.
+                        </p>
+                    </div>
+                    <div class="event">
+                        <img src="resources/calendar_19.png" alt="event icon">
+                        <p>
+                            Suspendisse ac hendrerit sem. Class aptent taciti sociosqu ad litora torquent per
+                            conubia nostra, per inceptos himenaeos.
+                        </p>
+                    </div>
+                </div>
+                <div class="quote">
+                    "Cras tincidunt risus eget neque volutpat mollis. Nunc ac maximus urna. Mauris eu urna at odio
+                    aliquam rutrum sit amet sit amet purus. "
+                </div>
+            </aside>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="index.html" target="_blank">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <title>Препроцесори</title>
+</head>
+
+<body>
+    <header>
+        <h1>Препроцесори</h1>
+    </header>
+
+    <div class="grid">
+        <div class="examples">
+            <h2>Посилання</h2>
+            <ul>
+                <li><a href="https://lesscss.org">LESS</a></li>
+                <li><a href="https://sass-lang.com">SASS</a></li>
+                <li><a href="https://www.w3schools.com/sass/showsass.php?filename=demo_sass_var1">Використання змінних
+                        SASS</a></li>
+                <li><a href="https://www.w3schools.com/sass/showsass.php?filename=demo_sass_nest1">Вкладені правила
+                        SASS</a></li>
+                <li><a href="https://www.w3schools.com/sass/showsass.php?filename=demo_sass_mixin2">Міксіни</a></li>
+            </ul>
+        </div>
+
+        <div class="contents">
+            <h2>Вміст</h2>
+            <ol>
+                <li><a href="#t1" target="_self">Що таке препроцесори?</a></li>
+                <li><a href="#t2" target="_self">SASS</a></li>
+                <li><a href="#t3" target="_self">Змінні SASS</a></li>
+                <li><a href="#t4" target="_self">Вкладеність SASS</a></li>
+                <li><a href="#t5" target="_self">@import</a></li>
+                <li><a href="#t6" target="_self">Міксіни</a></li>
+                <li><a href="#t7" target="_self">Функції SASS</a></li>
+                <li><a href="#pract" target="_self">Практика</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="topic" id="t1">
+        <h2>Що таке препроцесори?</h2>
+        <p>CSS-препроцесори — це розширення CSS, які дозволяють використовувати змінні, вкладені правила, міксіни,
+            функції та інші корисні можливості.</p>
+        <p>Вони допомагають зробити CSS більш структурованим, гнучким та повторно використовуваним.</p>
+        <h3>Популярні препроцесори</h3>
+        <ul>
+            <li><a href="https://lesscss.org">LESS</a>
+                <ul>
+                    <li>Менш популярний зараз, але використовується в деяких проєктах.</li>
+                    <li>Простий у вивченні, синтаксично дуже схожий на стандартний CSS.</li>
+                </ul>
+            </li>
+            <li><a href="https://sass-lang.com">SASS</a>
+                <ul>
+                    <li>Один із найпопулярніших препроцесорів.</li>
+                    <li>Два синтаксиси: SASS (відступи замість фігурних дужок) і SCSS (майже як CSS, але з додатковими
+                        можливостями).</li>
+                    <li>Має розвинуту екосистему та потужний набір можливостей.</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Недоліки препроцесорів</h3>
+        <ul>
+            <li>Потрібна компіляція перед використанням у браузері.</li>
+            <li>Ускладнюється налагодження стилів (іноді важко знайти джерело проблеми).</li>
+            <li>Деякі можливості вже реалізовані у звичайному CSS (змінні, вкладеність, @import замінюється модулями
+                CSS).</li>
+            <li>Вимагають вивчення додаткового синтаксису.</li>
+        </ul>
+    </div>
+
+    <div class="topic" id="t2">
+        <h2>SASS</h2>
+
+        <p>Браузер не розуміє код Sass. Тому вам знадобиться препроцесор Sass, щоб перетворити код Sass у стандартний
+            CSS.</p>
+
+        <p>Цей процес називається транспіляцією. Отже, вам потрібно надати транспілятору (певній програмі) код Sass, а
+            потім отримати назад код CSS.</p>
+
+        <h3>Способи компіляції SASS</h3>
+        <ul>
+            <li>Live Sass Compiler (плагін для VSCode) — простий у використанні, підходить для початківців.</li>
+            <li>Node.js + npm пакет sass — більш професійний підхід для автоматизації.</li>
+            <li>Ruby SASS (застарілий) — історична згадка, зараз не використовується.</li>
+        </ul>
+        <p>Ми будемо використовувати розширення для VSCode <strong>Live Sass Compiler</strong>.</p>
+
+        <h3>Створення першого SASS файлу</h3>
+        <p>Для роботи з SASS необхідно підготувати папку проєкту. </p>
+        <p>В папці проєкту необхідно створити папку <code>scss</code></p>
+        <p>В цій папці необхідно створити файл <code>style.scss</code>.</p>
+        <p>Файли з кодом SASS майють розширення .scss</p>
+        <p>Після додайте до вашого файлу .scss наступний базовий код:</p>
+
+        <pre>
+$color: #007acc;
+
+body {
+  background-color: $color;
+}
+</pre>
+
+        <p>Далі натисніть кнопку <strong>Watch Sass</strong>. У папці проєкту повинні з'явитися скомпільовані стилі у
+            вигляді звичайного css-файлу.</p>
+    </div>
+
+    <div class="topic" id="t3">
+        <h2>Змінні SASS</h2>
+
+        <p>Змінні — це спосіб зберігати інформацію, яку можна використовувати пізніше.</p>
+
+        <p>За допомогою Sass ви можете зберігати інформацію у змінних, наприклад:</p>
+        <ul>
+            <li>рядки</li>
+            <li>чисел</li>
+            <li>кольори</li>
+            <li>логічні значення</li>
+            <li>списки</li>
+            <li>нулі</li>
+        </ul>
+
+        <p>Sass використовує символ $, за яким слідує ім’я, для оголошення змінних:</p>
+
+        <pre>
+$variablename: value;
+</pre>
+        <p>Наступний приклад демонструє використання змінних SASS:</p>
+        <a href="https://www.w3schools.com/sass/showsass.php?filename=demo_sass_var1" class="example-link">Приклад</a>
+        <pre>
+$myFont: Helvetica, sans-serif;
+$myColor: red;
+$myFontSize: 18px;
+$myWidth: 680px;
+
+body {
+  font-family: $myFont;
+  font-size: $myFontSize;
+  color: $myColor;
+}
+
+#container {
+  width: $myWidth;
+}
+</pre>
+    </div>
+
+    <div class="topic" id="t4">
+        <h2>Вкладеність SASS</h2>
+
+        <h3>Вкладені правила</h3>
+
+        <p>Sass дозволяє вкладати селектори CSS так само, як і HTML.</p>
+
+        <p>Подивіться на приклад коду Sass для навігації сайтом:</p>
+        <pre>
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+    }
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+    }
+}
+</pre>
+
+        <p>Цей SASS-код перекладеться у наступний CSS-код:</p>
+        <pre>
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li {
+    display: inline-block;
+}
+nav a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+}     
+</pre>
+
+        <a href="https://www.w3schools.com/sass/showsass.php?filename=demo_sass_nest1" class="example-link">Приклад</a>
+
+        <p>Оскільки ви можете вкладати властивості в Sass, він чистіший і легший для читання, ніж стандартний CSS.</p>
+
+        <h3>Вкладені властивості</h3>
+        <p>Багато властивостей CSS мають однаковий префікс, наприклад font-family, font-size і font-weight або
+            text-align, text-transform і text-overflow.</p>
+
+        <p>За допомогою Sass ви можете записати їх як вкладені властивості:</p>
+        <pre>
+body {
+    font: {
+        family: $myFont;
+        size: $myFontSize;
+    }
+
+    color: $myColor;
+}
+</pre>
+
+        <p>Цей код буде перекладений в CSS наступним чином:</p>
+        <pre>
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    color: red;
+}
+</pre>
+
+    </div>
+
+    <div class="topic" id="t5">
+        <h2>@import</h2>
+
+        <p>
+            Sass зберігає CSS-код DRY (Don't Repeat Yourself - не повторюйте себе). Один із способів написання СУХОГО
+            коду - зберігати відповідний код в окремих файлах.
+        </p>
+
+        <p>
+            Ви можете створювати невеликі файли з фрагментами CSS для включення в інші файли Sass. Прикладами таких
+            файлів
+            можуть бути: файл скидання, змінні, кольори, шрифти, розміри шрифтів тощо.
+        </p>
+
+        <p>
+            Директива @import дозволяє включати вміст одного файлу в інший.
+        </p>
+
+        <p>
+            Директива CSS @import має серйозний недолік через проблеми з продуктивністю; він створює додатковий запит
+            HTTP кожного разу, коли ви його викликаєте. Однак директива Sass @import включає файл у CSS; тому під час
+            виконання не потрібен додатковий виклик HTTP!
+        </p>
+
+        <h3>Синтаксис:</h3>
+        <pre>
+@import <i>"filename"</i>;
+</pre>
+
+        <p>
+            Порада: вам не потрібно вказувати розширення файлу, Sass автоматично припускає, що ви маєте на увазі файл
+            .sass або .scss. Ви також можете імпортувати файли CSS. Директива @import імпортує файл, і будь-які змінні
+            або міксини, визначені в імпортованому файлі, потім можна використовувати в основному файлі.
+        </p>
+
+        <p>Створимо файл _reset.scss, який буде прибирати стилі за замовчуванням:</p>
+        <pre>
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+</pre>
+
+        <p>Також створимо файл _variables.scss в який перенесемо створенні змінні:</p>
+        <pre>
+$myFont: Helvetica, sans-serif;
+$myColor: red;
+$myFontSize: 18px;
+$myWidth: 680px;
+</pre>
+
+        <p>Імпортуємо створені файли у основний файл стилів:</p>
+        <pre>
+@import "_reset";
+@import "_variables";
+
+body {
+    font: {
+        family: $myFont;
+        size: $myFontSize;
+    }
+
+    color: $myColor;
+}
+
+#container {
+    width: $myWidth;
+}
+</pre>
+
+        <p>Результат у файлі CSS:</p>
+        <pre>
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+#container {
+  width: 680px;
+}
+</pre>
+
+        <p>Зверніть увагу, що при використанні символу <i><q><code>_</code></q></i> на початку імені файлу повідомляє
+            компілятору, що цей файл не треба компілювати в окремий CSS-файл. Весь вміст таких файлів компілюється прямо
+            в основний файл стилів.</p>
+
+    </div>
+
+    <div class="topic" id="t6">
+        <h2>Міксіни</h2>
+        <p>Директива @mixin дозволяє створювати код CSS, який буде повторно використовуватися на веб-сайті.</p>
+
+        <p>Директива @include створена, щоб дозволити вам використовувати (включати) міксин.</p>
+
+        <h3>Синтаксис:</h3>
+        <pre>
+@mixin name {
+    property: value;
+    property: value;
+    ...
+}
+</pre>
+
+        <p>
+            У наступному прикладі створюється міксин під назвою «important-text»:
+        </p>
+        <pre>
+@mixin important-text {
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid blue;
+}    
+</pre>
+
+        <p>Щоб використати створений міксін необхідно використати директиву @include:</p>
+        <pre>
+.danger {
+    @include important-text;
+    background-color: green;
+}
+</pre>
+
+        <p>У звичайний CSS цей приклад перекладеться наступним чином:</p>
+        <pre>
+.danger {
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid blue;
+    background-color: green;
+}
+</pre>
+
+        <h3>Передача змінних у міксини</h3>
+        <p>Міксіни можуть приймати аргументи.</p>
+
+        <pre>
+/* Define mixin with two arguments */
+@mixin bordered($color, $width) {
+    border: $width solid $color;
+}
+
+.myArticle {
+    @include bordered(blue, 1px);  // Call mixin with two values
+}
+
+.myNotes {
+    @include bordered(red, 2px); // Call mixin with two values
+}    
+</pre>
+
+        <p>Ви можете задати значення за замовчуванням для параметрів міксіну:</p>
+        <pre>
+@mixin bordered($color: blue, $width: 1px) {
+    border: $width solid $color;
+}    
+</pre>
+
+        <p>В такому випадку вам необов'язково вказувати всі параметри при включенні міксіну:</p>
+        <pre>
+.myTips {
+    @include bordered($color: orange);
+}    
+</pre>
+
+        <a href="https://www.w3schools.com/sass/showsass.php?filename=demo_sass_mixin2" class="example-link">Приклад</a>
+    </div>
+
+    <div class="topic" id="t7">
+        <h2>Функції SASS</h2>
+        <p>Функції в SASS — це вбудовані методи, які дозволяють виконувати різноманітні операції над значеннями прямо у
+            CSS-коді. Вони допомагають спрощувати обробку кольорів, текстів, чисел та інших даних, роблячи код гнучкішим
+            і ефективнішим.</p>
+        <p>Для чого використовуються:</p>
+        <ul>
+            <li> Автоматичні обчислення розмірів.</li>
+            <li>Маніпуляція кольорами (освітлення, затемнення).</li>
+            <li>Форматування рядків.</li>
+            <li>Конвертація одиниць виміру.</li>
+            <li>Робота з масивами (списками) та картами (асоціативними масивами).</li>
+        </ul>
+        <p>Далі ми розберемо декілька корисних функцій. Повний перелік функцій можна знайти в <a
+                href="https://sass-lang.com/documentation/">документації</a> або на сайті <a
+                href="https://www.w3schools.com/sass/sass_functions_string.php">W3School</a></p>
+        <h3>darken() / lighten()</h3>
+        <p>Змінює яскравість кольору.</p>
+        <pre>
+$main-color: #007acc;
+
+.button {
+  background: darken($main-color, 10%);
+}
+</pre>
+        <p>Результат CSS:</p>
+        <pre>
+.button {
+    background: #005a9c;
+}   
+</pre>
+
+        <h3>mix()</h3>
+        <p>Змішує два кольори в заданій пропорції</p>
+        <pre>
+$color1: #ff0000;
+$color2: #0000ff;
+
+.element {
+    background: mix($color1, $color2, 50%);
+}    
+</pre>
+
+        <p>Результат CSS:</p>
+        <pre>
+.element {
+    background: #800080; /* Фіолетовий */
+}
+</pre>
+
+        <h3>nth()</h3>
+        <p>Повертає значення певного елемента зі списку.</p>
+        <pre>
+$list: red, green, blue;
+
+.color {
+    color: nth($list, 2);
+}
+</pre>
+
+        <p>Результат CSS:</p>
+        <pre>
+.color {
+    color: green;
+}
+</pre>
+
+        <h3>percentage()</h3>
+        <p>Конвертує число у відсоткове значення.</p>
+        <pre>
+.width {
+    width: percentage(0.5);
+}
+</pre>
+
+        <p>Результат CSS:</p>
+        <pre>
+.width {
+    width: 50%;
+}
+</pre>
+
+        <h3>unit()</h3>
+        <p>Повертає одиницю виміру для числа.</p>
+        <pre>
+$value: 10px;
+
+.unit {
+    content: unit($value);
+}
+</pre>
+
+        <p>Результат CSS:</p>
+        <pre>
+.unit {
+    content: "px";
+}
+</pre>
+
+    </div>
+
+    <div class="practice" id="pract">
+        <h2>Практика</h2>
+        <ul>
+            <li><a href="practice/task1/task1.html">Завдання 1</a></li> 
+            <li><a href="practice/task2/task2.html">Завдання 2</a></li> 
+            <li><a href="practice/task3/task3.html">Завдання 3</a></li> 
+        </ul>
+    </div>
+
+</body>
+
+</html>

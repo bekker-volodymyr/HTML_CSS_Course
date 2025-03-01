@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест з CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Тест з Flexbox, Grid та адаптивної верстки</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Яка властивість задає напрямок головної осі в Flexbox?</p>
+            <label><input type="radio" name="q1" value="a"> flex-direction</label><br>
+            <label><input type="radio" name="q1" value="b"> align-items</label><br>
+            <label><input type="radio" name="q1" value="c"> justify-content</label><br>
+            <label><input type="radio" name="q1" value="d"> order</label>
+        </div>
+
+        <div class="question">
+            <p>2. Яке значення display використовується для створення CSS Grid?</p>
+            <label><input type="radio" name="q2" value="a"> flex</label><br>
+            <label><input type="radio" name="q2" value="b"> grid</label><br>
+            <label><input type="radio" name="q2" value="c"> block</label><br>
+            <label><input type="radio" name="q2" value="d"> inline-grid</label>
+        </div>
+
+        <div class="question">
+            <p>3. Який медіа-запит підходить для екранів шириною менше 600px?</p>
+            <label><input type="radio" name="q3" value="a"> @media (max-width: 600px)</label><br>
+            <label><input type="radio" name="q3" value="b"> @media (min-width: 600px)</label><br>
+            <label><input type="radio" name="q3" value="c"> @media (width: 600px)</label><br>
+            <label><input type="radio" name="q3" value="d"> @media only-screen</label>
+        </div>
+
+        <!-- Нові питання -->
+        <div class="question">
+            <p>4. Яка властивість Flexbox відповідає за вирівнювання елементів по поперечній осі?</p>
+            <label><input type="radio" name="q4" value="a"> align-items</label><br>
+            <label><input type="radio" name="q4" value="b"> justify-content</label><br>
+            <label><input type="radio" name="q4" value="c"> flex-direction</label><br>
+            <label><input type="radio" name="q4" value="d"> flex-wrap</label>
+        </div>
+
+        <div class="question">
+            <p>5. Яка властивість задає кількість колонок у CSS Grid?</p>
+            <label><input type="radio" name="q5" value="a"> grid-template-columns</label><br>
+            <label><input type="radio" name="q5" value="b"> grid-column</label><br>
+            <label><input type="radio" name="q5" value="c"> grid-template-rows</label><br>
+            <label><input type="radio" name="q5" value="d"> grid-template</label>
+        </div>
+
+        <div class="question">
+            <p>6. Як зробити Grid елемент адаптивним для різних розмірів екрану?</p>
+            <label><input type="radio" name="q6" value="a"> Використати медіа-запити</label><br>
+            <label><input type="radio" name="q6" value="b"> Використати flex-wrap</label><br>
+            <label><input type="radio" name="q6" value="c"> Застосувати клас "responsive"</label><br>
+            <label><input type="radio" name="q6" value="d"> Збільшити відстань між елементами</label>
+        </div>
+
+        <div class="question">
+            <p>7. Що робить властивість flex-wrap?</p>
+            <label><input type="radio" name="q7" value="a"> Визначає напрямок головної осі</label><br>
+            <label><input type="radio" name="q7" value="b"> Задає розмір елементів</label><br>
+            <label><input type="radio" name="q7" value="c"> Визначає, чи елементи можуть переноситися на новий
+                рядок</label><br>
+            <label><input type="radio" name="q7" value="d"> Вирівнює елементи по поперечній осі</label>
+        </div>
+
+        <div class="question">
+            <p>8. Яке значення має властивість grid-template-areas в CSS Grid?</p>
+            <label><input type="radio" name="q8" value="a"> Визначає імена зон для розмітки Grid</label><br>
+            <label><input type="radio" name="q8" value="b"> Визначає відстань між колонками</label><br>
+            <label><input type="radio" name="q8" value="c"> Задає кількість колонок</label><br>
+            <label><input type="radio" name="q8" value="d"> Задає ширину кожної колонки</label>
+        </div>
+
+        <div class="question">
+            <p>9. Яке значення display використовується для створення гнучкого контейнера?</p>
+            <label><input type="radio" name="q9" value="a"> flex</label><br>
+            <label><input type="radio" name="q9" value="b"> grid</label><br>
+            <label><input type="radio" name="q9" value="c"> inline-block</label><br>
+            <label><input type="radio" name="q9" value="d"> block</label>
+        </div>
+
+        <div class="question">
+            <p>10. Яка властивість задає відстань між елементами в Flexbox?</p>
+            <label><input type="radio" name="q10" value="a"> gap</label><br>
+            <label><input type="radio" name="q10" value="b"> margin</label><br>
+            <label><input type="radio" name="q10" value="c"> padding</label><br>
+            <label><input type="radio" name="q10" value="d"> justify-content</label>
+        </div>
+
+        <div class="question">
+            <p>11. Як створити фіксовану висоту для елементів в Grid?</p>
+            <label><input type="radio" name="q11" value="a"> grid-template-rows</label><br>
+            <label><input type="radio" name="q11" value="b"> grid-template-columns</label><br>
+            <label><input type="radio" name="q11" value="c"> align-items</label><br>
+            <label><input type="radio" name="q11" value="d"> flex-basis</label>
+        </div>
+
+        <div class="question">
+            <p>12. Що таке "fr" в CSS Grid?</p>
+            <label><input type="radio" name="q12" value="a"> Одиниця виміру для колонок і рядків</label><br>
+            <label><input type="radio" name="q12" value="b"> Одиниця виміру для відстані між елементами</label><br>
+            <label><input type="radio" name="q12" value="c"> Одиниця виміру для шрифтів</label><br>
+            <label><input type="radio" name="q12" value="d"> Властивість вирівнювання елементів</label>
+        </div>
+
+        <div class="question">
+            <p>13. Яка властивість визначає, скільки простору елемент займатиме в Flexbox?</p>
+            <label><input type="radio" name="q13" value="a"> flex-grow</label><br>
+            <label><input type="radio" name="q13" value="b"> flex-basis</label><br>
+            <label><input type="radio" name="q13" value="c"> justify-content</label><br>
+            <label><input type="radio" name="q13" value="d"> flex-wrap</label>
+        </div>
+
+        <div class="question">
+            <p>14. Як змінити напрямок елементів у Flexbox без зміни їх порядку?</p>
+            <label><input type="radio" name="q14" value="a"> flex-direction</label><br>
+            <label><input type="radio" name="q14" value="b"> align-items</label><br>
+            <label><input type="radio" name="q14" value="c"> justify-content</label><br>
+            <label><input type="radio" name="q14" value="d"> order</label>
+        </div>
+
+        <div class="question">
+            <p>15. Яка властивість у Flexbox визначає вирівнювання елементів по головній осі?</p>
+            <label><input type="radio" name="q15" value="a"> justify-content</label><br>
+            <label><input type="radio" name="q15" value="b"> align-items</label><br>
+            <label><input type="radio" name="q15" value="c"> flex-wrap</label><br>
+            <label><input type="radio" name="q15" value="d"> flex-basis</label>
+        </div>
+
+        <div class="question">
+            <p>16. Яка властивість Flexbox відповідає за вирівнювання елементів по вертикалі?</p>
+            <label><input type="radio" name="q16" value="a"> align-items</label><br>
+            <label><input type="radio" name="q16" value="b"> justify-content</label><br>
+            <label><input type="radio" name="q16" value="c"> flex-direction</label><br>
+            <label><input type="radio" name="q16" value="d"> flex-wrap</label>
+        </div>
+
+        <div class="question">
+            <p>17. Як задається розмір колонок у CSS Grid?</p>
+            <label><input type="radio" name="q17" value="a"> grid-template-columns</label><br>
+            <label><input type="radio" name="q17" value="b"> grid-template-areas</label><br>
+            <label><input type="radio" name="q17" value="c"> grid-row</label><br>
+            <label><input type="radio" name="q17" value="d"> grid-gap</label>
+        </div>
+
+        <div class="question">
+            <p>18. Які властивості використовуються для вирівнювання елементів в CSS Grid?</p>
+            <label><input type="radio" name="q18" value="a"> align-items, justify-items</label><br>
+            <label><input type="radio" name="q18" value="b"> justify-content, align-content</label><br>
+            <label><input type="radio" name="q18" value="c"> margin, padding</label><br>
+            <label><input type="radio" name="q18" value="d"> flex-wrap, order</label>
+        </div>
+
+        <div class="question">
+            <p>19. Як задати адаптивний розмір шрифта?</p>
+            <label><input type="radio" name="q19" value="a"> Використати одиниці vw або vh</label><br>
+            <label><input type="radio" name="q19" value="b"> Використати медіа-запити</label><br>
+            <label><input type="radio" name="q19" value="c"> Використати rem або em</label><br>
+            <label><input type="radio" name="q19" value="d"> Використати процентні одиниці</label>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Перевірити відповіді</button>
+    </form>
+    <p class="result" id="resultText"></p>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'a',
+                q4: 'a',
+                q5: 'a',
+                q6: 'a',
+                q7: 'c',
+                q8: 'a',
+                q9: 'a',
+                q10: 'a',
+                q11: 'a',
+                q12: 'a',
+                q13: 'a',
+                q14: 'a',
+                q15: 'a',
+                q16: 'a',
+                q17: 'a',
+                q18: 'a',
+                q19: 'a'
+            };
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+
+            for (let key in answers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                if (selected && selected.value === answers[key]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("resultText").innerText = `Ви відповіли правильно на ${score} з ${totalQuestions} питань.`;
+        }
+    </script>
+</body>
+
+</html>

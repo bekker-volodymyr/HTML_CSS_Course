@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог-картки</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 20px;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .blog-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-item h2 {
+            margin: 0;
+        }
+
+        .blog-item p {
+            margin: 10px 0;
+        }
+
+        .date {
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Картки блогу</h1>
+    <div class="blog-container">
+        <div class="blog-item">
+            <h2>Стаття 1</h2>
+            <p class="date">2025-02-06</p>
+            <p>Короткий опис блогу. Дізнайтесь більше про наші статті!</p>
+        </div>
+        <div class="blog-item">
+            <h2>Стаття 2</h2>
+            <p class="date">2025-02-06</p>
+            <p>Як навчитися CSS Grid Layout за 2 заняття?</p>
+        </div>
+        <div class="blog-item">
+            <h2>Стаття 3</h2>
+            <p class="date">2025-02-06</p>
+            <p>Практичні поради щодо верстки сучасних макетів.</p>
+        </div>
+    </div>
+</body>
+
+</html>

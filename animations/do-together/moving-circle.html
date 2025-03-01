@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Circle</title>
+    <style>
+        .anim-example-area {
+            display: flex;
+            height: 400px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .anim-example {
+            border-radius: 50%;
+            box-shadow: 2px 2px 5px olivedrab;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes example {
+            0% {
+                background-color: palevioletred;
+                left: -300px;
+                top: -100px;
+                box-shadow: 0px 2px 5px paleturquoise;
+            }
+
+            25% {
+                background-color: brown;
+                left: 300px;
+                top: -100px;
+                box-shadow: -2px 2px 5px paleturquoise;
+            }
+
+            50% {
+                background-color: burlywood;
+                left: 300px;
+                top: 100px;
+            }
+
+            75% {
+                background-color: seagreen;
+                left: -300px;
+                top: 100px;
+            }
+
+            100% {
+                background-color: palevioletred;
+                left: -300px;
+                top: -100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="anim-example-area">
+        <div class="anim-example"></div>
+    </div>
+</body>
+
+</html>

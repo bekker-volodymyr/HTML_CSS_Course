@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Макет сторінки</title>
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-rows: 80px 1fr 60px;
+      grid-template-areas: "header" "main" "footer";
+      height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      background-color: aquamarine;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    main {
+      grid-area: main;
+      background-color: beige;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: lightseagreen;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="grid-container">
+    <header>Шапка</header>
+    <main>Контент</main>
+    <footer>Футер</footer>
+  </div>
+</body>
+
+</html>
