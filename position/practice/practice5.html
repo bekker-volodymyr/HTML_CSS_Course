@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .projects {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .project {
+            position: relative;
+            width: 30%;
+            /* Фіксована ширина стовпчиків */
+            display: inline-block;
+            /* Вирівнювання горизонтально */
+            margin: 10px 1%;
+            /* Відступи між блоками */
+            overflow: hidden;
+            /* Обрізаємо зайве */
+            border-bottom: 5px solid orange;
+            /* Помаранчева рамка внизу */
+            vertical-align: top;
+            /* Вирівнювання блоків по верхньому краю */
+            text-align: left;
+        }
+
+        .project img {
+            width: 100%;
+            /* Заповнює блок по ширині */
+            display: block;
+        }
+
+        .project-info {
+            position: absolute;
+            bottom: -100%;
+            background: rgba(0, 0, 0, 0.7);
+            /* Напівпрозорий фон */
+            color: white;
+            width: 100%;
+            transition: all 0.5s;
+            /* Плавний ефект */
+        }
+
+        .project-info h3 {
+            background: orange;
+            padding: 10px;
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
+
+        .project-info p {
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+
+        .project-info p:last-child {
+            display: none;
+            /* Приховуємо другий абзац */
+        }
+
+        .project:hover .project-info {
+            /* Піднімаємо блок при наведенні */
+            bottom: 0;
+        }
+
+        .project:hover .project-info p:last-child {
+            display: block;
+            /* Відображення другого абзацу */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="projects">
+        <div class="project">
+            <img src="/resources/logo.png" alt="Project 1">
+            <div class="project-info">
+                <h3>Project 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="/resources/logo.png" alt="Project 2">
+            <div class="project-info">
+                <h3>Project 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="/resources/logo.png" alt="Project 3">
+            <div class="project-info">
+                <h3>Project 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

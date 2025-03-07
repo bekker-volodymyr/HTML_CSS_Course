@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="index.html" target="_blank">
+    <title>Блокова верстка</title>
+    <link rel="stylesheet" href="../general.css">
+</head>
+
+<body>
+    <header>
+        <h1>Блокова верстка</h1>
+    </header>
+
+    <div class="grid">
+        <div class="examples">
+            <h2>Посилання</h2>
+            <ul>
+                <li><a href="examples/width-example.html">Приклад налаштування ширини</a></li>
+                <li><a href="examples/height-example.html">Приклад фіксованої висоти</a></li>
+                <li><a href="examples/phone-example.html">Телефон за допомогою CSS</a></li>
+                <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_float3">Розміщення блоків
+                        поруч</a></li>
+                <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_float">Використання
+                        float для горизонтальних списків</a></li>
+                <li>
+                    <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clear">Приклад clear</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clearfix">Використання
+                        overflow</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clearfix2">Клас clearfix</a>
+                </li>
+                <li><a href="float/float_layout.html">Розмітка за допомгою float</a></li>
+                <li><a href="float/float_list.html">Горизонтальний список за допомогою float</a></li>
+                <li><a href="float/index.html">Приклад clearfix</a></li>
+            </ul>
+        </div>
+        <div class="contents">
+            <h2>Вміст</h2>
+            <ol>
+                <li><a href="#t1" target="_self">Блокова модель</a></li>
+                <li><a href="#t2" target="_self">Властивість overflow</a></li>
+                <li><a href="#t3" target="_self">Інструменти розробника (DevTools)</a></li>
+                <li><a href="#t4" target="_self">Плавуючі елементи: властивість float</a></li>
+                <li><a href="#t5" target="_self">Скасування float</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <!--Блокова модель-->
+    <div class="topic" id="t1">
+        <h2>Блокова модель</h2>
+
+        <p>
+            <strong>Блокова модель</strong> (box model) - набір властивостей блокових елементів, що впливають на розмір
+            елементу.
+        </p>
+
+        <p>
+            До блокової моделі входять:
+        </p>
+
+        <ul>
+            <li>внутрішні відступи (padding)</li>
+            <li>зовнішні відступи (margin)</li>
+            <li>товшина рамки (border-width)</li>
+            <li>висота елементу (height)</li>
+            <li>ширина елементу (width)</li>
+        </ul>
+
+        <p>
+            Блокова модель відштовхується від вмісту елементу (ширина та висота вмісту визначається властивостями
+            width/height). Інші властивості (border-width, padding, margin) поширюються на всі боки контенту.
+        </p>
+
+        <div class="img">
+            <img src="resources/block_model.png" alt="Block Model Demo">
+        </div>
+
+        <h3>Ширина блокового елементу</h3>
+
+        <p>
+            Для задання ширини використовується властивість <code>width</code>.
+        </p>
+
+        <p>
+            Властивість <code>width</code> підтримує значення <code>auto</code>. Це значення за замовченням. В такому
+            разі блоковий елемент займає всю доступну ширину батьківського елементу.
+        </p>
+
+        <p>
+            Також для <code>width</code> можна назначити значення в px, em, vw, cm, mm та інших одиницях або у %. Коли
+            ширина
+            задається у відсотках, її підрахунок однаково виконується браузером в пікселях відносно розміру
+            батьківського елементу.
+        </p>
+
+        <p>
+            Для контролю ширини також можна задати властивості <code>max-width</code>/<code>min-width</code>.
+            <code>max-width</code> обмежує максимальний простір, що може зайняти елемент по ширині, а
+            <code>min-width</code> не дозволяє елементу мати ширину менше за вказану.
+        </p>
+
+        <p>
+            Обидві властивості можуть бути вказані наступними значеннями:
+        </p>
+
+        <ul>
+            <li><code>max-width</code>: розмір в px, pt, em, in, % та ін. одиницях | none | inherit;</li>
+            <li><code>min-width</code>: розмір в px, pt, em, in, % та ін. одиницях | inherit.</li>
+        </ul>
+
+        <p>
+            За замовченням значення <code>max-width</code> встановлено <code>none</code>. Для <code>min-width</code>
+            стандартне значення <code>0</code>.
+        </p>
+
+        <a href="examples/width-example.html">Приклад</a>
+
+        <h3>Висота блокового елементу</h3>
+
+        <p>
+            Для висоти елементу, що визначається властивістю <code>height</code>, за замовчуванням задано значення auto,
+            яке враховує висоту будь-якого блоку, що визначається в залежності від висоти його вмісту (контенту).
+        </p>
+
+        <p>
+            Частіше за все такий підхід змінювати не потрібно, тому що кількість текстів в елементі визначається
+            замовником і, крім того, з часом може змінюватись, особливо в CMS — системах керування контентом. Тому
+            жорстко обмежувати його не потрібно. Тим не менш, в CSS передбачені 3 властивості, що дозволяють задати
+            висоту елементу наявно. Це властивості <code>height</code>, <code>min-height</code> і
+            <code>max-height</code>.
+        </p>
+
+        <p>
+            Доступні значення:
+        </p>
+
+        <ul>
+            <li><code>height</code>: розмір в px, pt, em, in, % та ін. одиницях | auto | inherit;</li>
+            <li><code>max-height</code>: розмір в px, pt, em, in, % та ін. одиницях| none | inherit;</li>
+            <li><code>min-height</code>: розмір в px, pt, em, in, % та ін. одиницях | inherit.</li>
+        </ul>
+
+        <p>
+            Для <code>min-height</code> значення за замовчуванням 0, для <code>max-height</code> — none.
+        </p>
+
+        <p>
+            Якщо значення властивості <code>height</code> буде менше, ніж його вміст, то вміст виходитиме за межі свого
+            контейнера і наповзати на наступний текст.
+        </p>
+
+        <a href="examples/height-example.html">Приклад</a>
+
+        <h3>Властивість box-sizing</h3>
+
+        <p>Як було зазначено раніше, властивості <code>width</code> та <code>height</code> задають лише ширину та висоту
+            для області контенту, а відступи та рамка додаються до цих розмірів.</p>
+
+        <p>В результаті розміри елементу відрізняються від від очікуваних.</p>
+
+        <p>
+            Ширина буде дорівнювати
+            <code>width + padding-left + padding-right + margin-left + margin-right + 2 x border-width.</code>
+        </p>
+
+        <p>
+            Висота буде дорівнювати
+            <code>height + padding-top + padding-bottom + margin-top + margin-bottom + 2 x border-width.</code>
+        </p>
+
+        <p>
+            Така ситуація може призвезти до труднощів та помилок. Наприклад при використанні функції calc() для
+            центрального фіксованого позиціонування.
+        </p>
+
+        <p>
+            Для вирішення цієї проблеми існує властивість <code>box-sizing</code>. Потрібно задати цій властивості
+            значення <code>border-box.</code>
+        </p>
+
+        <div style="display: flex; ">
+            <div
+                style="border: #213555 1px solid; width: 600px; height: 350px; border-radius: 4px; margin: 50px; padding: 20px;">
+                <pre>
+div {
+    width: 500px;
+    height: 350px;
+    margin: 50px;
+    padding: 10px;
+    border-radius: 4px;
+}  
+</pre>
+            </div>
+
+            <div
+                style="border: #213555 1px solid; width: 600px; height: 350px; border-radius: 4px; margin: 50px; padding: 20px; box-sizing: border-box;">
+                <pre>
+div {
+    width: 500px;
+    height: 350px;
+    margin: 50px;
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}  
+</pre>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--Властивість overflow-->
+    <div class="topic" id="t2">
+        <h2>Властивість <code>overflow</code></h2>
+
+        <p>
+            Ця властивість визначає, як вестиме себе контент блокового елементу, якщо він повністю не поміщається в
+            області, яку задають ширина і висота елементу.
+        </p>
+
+        <p>
+            Можливі значення:
+        </p>
+
+        <ul>
+            <li><code>visible</code></li>
+            <li><code>auto</code></li>
+            <li><code>hidden</code></li>
+            <li><code>scroll</code></li>
+            <li><code>inherit</code></li>
+        </ul>
+
+        <p>
+            Значення visible за замовчуванням показує весь вміст елементу, навіть, якщо він виходить за межі блоку.
+        </p>
+
+        <p>
+            Значення auto додає смугу (або 2 смуги) прокручування, коли вони необхідні.
+        </p>
+
+        <div style="height: 250px; overflow: auto; border: solid 1px #213555; border-radius: 4px; margin: 15px;">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eius saepe explicabo obcaecati, non amet
+                neque magnam laboriosam sequi dicta. Fugiat, at soluta? Dolorem aliquam esse cum rerum doloribus impedit
+                sunt, similique nam! Ducimus perferendis minus minima provident hic, vel dolorem quae aspernatur
+                distinctio debitis omnis repellat possimus itaque velit alias dolor harum inventore perspiciatis ad.
+                Magnam fugit nisi quos, quae placeat exercitationem molestiae atque cupiditate, doloribus voluptatem,
+                iste voluptate nobis distinctio hic in obcaecati. Accusamus, animi? Ullam voluptatibus ipsam nostrum
+                suscipit aliquid, harum deleniti non vero adipisci cum fuga dolores ut ratione nam. Quisquam
+                reprehenderit, in facilis consequuntur nisi maiores nihil soluta autem quod illum omnis? Nisi illo
+                blanditiis officiis! Voluptatibus, sapiente deleniti iusto repellendus quasi veniam voluptates.
+                Reiciendis expedita obcaecati sequi. Reprehenderit nisi quos asperiores id dolore quibusdam pariatur
+                laborum molestiae consequuntur recusandae accusantium repellat quidem sapiente itaque, omnis
+                exercitationem est atque? Dolorum sint labore sequi laboriosam id maxime aliquid unde quas ullam aut?
+                Corrupti vitae consectetur pariatur maxime labore, doloremque atque culpa est delectus adipisci quas
+                iusto commodi reprehenderit similique eius odio ab repellendus alias sit inventore tempore, modi et.
+                Nostrum asperiores ipsum a voluptatem aliquam corrupti aperiam reiciendis? Sint cupiditate impedit
+                placeat non odio perferendis repellat libero, fugit quaerat corrupti! Magnam aliquam quo recusandae aut
+                minus! Fugiat, labore, consequuntur at non sapiente quisquam soluta, ratione illo fugit exercitationem
+                hic dignissimos delectus nulla? Ipsa quo voluptatibus, quaerat corporis, harum vel saepe earum inventore
+                optio sapiente, natus necessitatibus cum ab a fugiat ratione vitae nihil consequuntur? Doloribus
+                adipisci laudantium facere quis qui cupiditate officiis aut numquam. Ea inventore repudiandae dolorum
+                maxime temporibus, libero repellendus expedita minus ut at voluptatum iure, in vitae nihil nesciunt
+                magni. Odio culpa repellat a quos cumque dignissimos magnam quas maxime accusamus iusto ipsam veritatis
+                deleniti asperiores veniam iure tenetur tempora, esse vel labore est dicta, quam nobis delectus. Porro
+                quis, a corrupti modi maiores ducimus inventore, pariatur obcaecati voluptate qui recusandae. Adipisci
+                mollitia ipsum ab totam asperiores velit debitis! Id, aliquid dicta dolor fuga facere accusantium
+                voluptatem illum aut, possimus quod eligendi nulla nesciunt suscipit recusandae repellat repudiandae
+                molestias doloribus aliquam voluptates odit, error repellendus ea ut! Illo blanditiis cumque
+                necessitatibus reiciendis explicabo facere cupiditate atque sint totam eius deserunt corrupti
+                recusandae, ipsa reprehenderit rerum nostrum accusantium quidem, quibusdam quae ab beatae. Soluta, sequi
+                animi. Suscipit dolorem non modi odio, commodi quia quod atque, corrupti odit iste eligendi voluptatibus
+                assumenda libero amet rem!
+            </p>
+        </div>
+
+        <pre>
+div {
+    height: 200px;
+    overflow: auto;
+}
+</pre>
+
+        <p>
+            Значення hidden відповідно до його перекладу з англійської мови приховує контент, який не помістився в межі
+            елементу.
+        </p>
+
+        <div style="height: 250px; overflow: hidden; border: solid 1px #213555; border-radius: 4px; margin: 15px;">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eius saepe explicabo obcaecati, non amet
+                neque magnam laboriosam sequi dicta. Fugiat, at soluta? Dolorem aliquam esse cum rerum doloribus impedit
+                sunt, similique nam! Ducimus perferendis minus minima provident hic, vel dolorem quae aspernatur
+                distinctio debitis omnis repellat possimus itaque velit alias dolor harum inventore perspiciatis ad.
+                Magnam fugit nisi quos, quae placeat exercitationem molestiae atque cupiditate, doloribus voluptatem,
+                iste voluptate nobis distinctio hic in obcaecati. Accusamus, animi? Ullam voluptatibus ipsam nostrum
+                suscipit aliquid, harum deleniti non vero adipisci cum fuga dolores ut ratione nam. Quisquam
+                reprehenderit, in facilis consequuntur nisi maiores nihil soluta autem quod illum omnis? Nisi illo
+                blanditiis officiis! Voluptatibus, sapiente deleniti iusto repellendus quasi veniam voluptates.
+                Reiciendis expedita obcaecati sequi. Reprehenderit nisi quos asperiores id dolore quibusdam pariatur
+                laborum molestiae consequuntur recusandae accusantium repellat quidem sapiente itaque, omnis
+                exercitationem est atque? Dolorum sint labore sequi laboriosam id maxime aliquid unde quas ullam aut?
+                Corrupti vitae consectetur pariatur maxime labore, doloremque atque culpa est delectus adipisci quas
+                iusto commodi reprehenderit similique eius odio ab repellendus alias sit inventore tempore, modi et.
+                Nostrum asperiores ipsum a voluptatem aliquam corrupti aperiam reiciendis? Sint cupiditate impedit
+                placeat non odio perferendis repellat libero, fugit quaerat corrupti! Magnam aliquam quo recusandae aut
+                minus! Fugiat, labore, consequuntur at non sapiente quisquam soluta, ratione illo fugit exercitationem
+                hic dignissimos delectus nulla? Ipsa quo voluptatibus, quaerat corporis, harum vel saepe earum inventore
+                optio sapiente, natus necessitatibus cum ab a fugiat ratione vitae nihil consequuntur? Doloribus
+                adipisci laudantium facere quis qui cupiditate officiis aut numquam. Ea inventore repudiandae dolorum
+                maxime temporibus, libero repellendus expedita minus ut at voluptatum iure, in vitae nihil nesciunt
+                magni. Odio culpa repellat a quos cumque dignissimos magnam quas maxime accusamus iusto ipsam veritatis
+                deleniti asperiores veniam iure tenetur tempora, esse vel labore est dicta, quam nobis delectus. Porro
+                quis, a corrupti modi maiores ducimus inventore, pariatur obcaecati voluptate qui recusandae. Adipisci
+                mollitia ipsum ab totam asperiores velit debitis! Id, aliquid dicta dolor fuga facere accusantium
+                voluptatem illum aut, possimus quod eligendi nulla nesciunt suscipit recusandae repellat repudiandae
+                molestias doloribus aliquam voluptates odit, error repellendus ea ut! Illo blanditiis cumque
+                necessitatibus reiciendis explicabo facere cupiditate atque sint totam eius deserunt corrupti
+                recusandae, ipsa reprehenderit rerum nostrum accusantium quidem, quibusdam quae ab beatae. Soluta, sequi
+                animi. Suscipit dolorem non modi odio, commodi quia quod atque, corrupti odit iste eligendi voluptatibus
+                assumenda libero amet rem!
+            </p>
+        </div>
+
+        <pre>
+div {
+    height: 200px;
+    overflow: hidden;
+}
+</pre>
+
+        <p>
+            Значення scroll додає дві смуги прокручування (горизонтальну та вертикальну) не залежно від того, потрібні
+            вони чи ні.
+        </p>
+
+        <div style="height: 250px; overflow: scroll; border: solid 1px #213555; border-radius: 4px; margin: 15px;">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eius saepe explicabo obcaecati, non amet
+                neque magnam laboriosam sequi dicta. Fugiat, at soluta? Dolorem aliquam esse cum rerum doloribus impedit
+                sunt, similique nam! Ducimus perferendis minus minima provident hic, vel dolorem quae aspernatur
+                distinctio debitis omnis repellat possimus itaque velit alias dolor harum inventore perspiciatis ad.
+                Magnam fugit nisi quos, quae placeat exercitationem molestiae atque cupiditate, doloribus voluptatem,
+                iste voluptate nobis distinctio hic in obcaecati. Accusamus, animi? Ullam voluptatibus ipsam nostrum
+                suscipit aliquid, harum deleniti non vero adipisci cum fuga dolores ut ratione nam. Quisquam
+                reprehenderit, in facilis consequuntur nisi maiores nihil soluta autem quod illum omnis? Nisi illo
+                blanditiis officiis! Voluptatibus, sapiente deleniti iusto repellendus quasi veniam voluptates.
+                Reiciendis expedita obcaecati sequi. Reprehenderit nisi quos asperiores id dolore quibusdam pariatur
+                laborum molestiae consequuntur recusandae accusantium repellat quidem sapiente itaque, omnis
+                exercitationem est atque? Dolorum sint labore sequi laboriosam id maxime aliquid unde quas ullam aut?
+                Corrupti vitae consectetur pariatur maxime labore, doloremque atque culpa est delectus adipisci quas
+                iusto commodi reprehenderit similique eius odio ab repellendus alias sit inventore tempore, modi et.
+                Nostrum asperiores ipsum a voluptatem aliquam corrupti aperiam reiciendis? Sint cupiditate impedit
+                placeat non odio perferendis repellat libero, fugit quaerat corrupti! Magnam aliquam quo recusandae aut
+                minus! Fugiat, labore, consequuntur at non sapiente quisquam soluta, ratione illo fugit exercitationem
+                hic dignissimos delectus nulla? Ipsa quo voluptatibus, quaerat corporis, harum vel saepe earum inventore
+                optio sapiente, natus necessitatibus cum ab a fugiat ratione vitae nihil consequuntur? Doloribus
+                adipisci laudantium facere quis qui cupiditate officiis aut numquam. Ea inventore repudiandae dolorum
+                maxime temporibus, libero repellendus expedita minus ut at voluptatum iure, in vitae nihil nesciunt
+                magni. Odio culpa repellat a quos cumque dignissimos magnam quas maxime accusamus iusto ipsam veritatis
+                deleniti asperiores veniam iure tenetur tempora, esse vel labore est dicta, quam nobis delectus. Porro
+                quis, a corrupti modi maiores ducimus inventore, pariatur obcaecati voluptate qui recusandae. Adipisci
+                mollitia ipsum ab totam asperiores velit debitis! Id, aliquid dicta dolor fuga facere accusantium
+                voluptatem illum aut, possimus quod eligendi nulla nesciunt suscipit recusandae repellat repudiandae
+                molestias doloribus aliquam voluptates odit, error repellendus ea ut! Illo blanditiis cumque
+                necessitatibus reiciendis explicabo facere cupiditate atque sint totam eius deserunt corrupti
+                recusandae, ipsa reprehenderit rerum nostrum accusantium quidem, quibusdam quae ab beatae. Soluta, sequi
+                animi. Suscipit dolorem non modi odio, commodi quia quod atque, corrupti odit iste eligendi voluptatibus
+                assumenda libero amet rem!
+            </p>
+        </div>
+
+        <pre>
+div {
+    height: 200px;
+    overflow: scroll;
+}
+</pre>
+
+    </div>
+
+    <!--Інструменти розробника-->
+    <div id="t3" class="topic">
+        <h2>Інструменти розробника (DevTools)</h2>
+
+        <p>
+            В процесі верстки сторінки або окремих її блоків у вас, напевно, будуть з'являтись складнощі, пов'язані з
+            тим, що деякі CSS-властивості, які ви використовуєте, застосовуються не так, як ви очікували або не
+            застосовуються зовсім.
+        </p>
+
+        <p>
+            Подивитись значення різних властивостей елементів і не тільки, можна, використовуючи Інструменти розробника,
+            або Інспектор властивостей, який наразі є в кожному відомому браузері, і навіть викликається однаковим
+            поєднанням клавіш: F12 або Ctrl+Shift+I.
+        </p>
+
+        <p>
+            Також ви можете відкрити Інспектор властивостей, обравши з контекстного меню пункт «Подивитись код
+            елементу», «Подивитись код» або «Досліджувати елемент» по правому кліку на будь-якому елементі на
+            HTML-сторінці.
+        </p>
+
+        <div class="img">
+            <img src="resources/dev-tools.png" alt="DevTools Demo">
+        </div>
+
+        <p>
+            Інструменти розробника зручно використовувати для дослідження наявних елементів та їх стилів.
+        </p>
+
+        <p>
+            Окрім того ви можете експерементувати зі значеннями CSS властивостей прямо в бравзері і бачити результат
+            моментально. Наприклад ви можете підбирати кольори:
+        </p>
+
+        <div class="img">
+            <img src="resources/colors-dev-tools.png" alt="Colors DevTools Demo">
+        </div>
+
+    </div>
+
+    <!--Плавуючі елементи-->
+    <div id="t4" class="topic">
+        <h2>Плавуючі елементи: властивість float</h2>
+
+        <p>
+            Властивість <code>float</code> визначає, з якої сторони буде розташовано елемент (справа або зліва) від
+            обтікаючого його тексту.
+        </p>
+
+        <p>
+            З боку CSS, властивість float може набувати таких значень:
+        </p>
+
+        <ul>
+            <li><code>float</code>: left | right | none | inherit</li>
+        </ul>
+
+        <p>
+            Значення left вирівнює елемент зліва від обтікаючого його тексту, right вирівнює елемент справа від тексту,
+            none — обтікання не застосовується до елементу (є значенням цієї властивості за замовчуванням), inherit —
+            значення успадковується від батьківського елементу.
+        </p>
+
+        <div style="border: solid #213555 1px; border-radius: 4px; margin: 15px;">
+            <div
+                style="float: left; border: solid #213555 1px; height: 100px; margin: 15px; width: 150px; padding: 10px;">
+                float: left;
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima vero consequuntur, praesentium placeat
+                officiis debitis dolorum. Labore officiis, corrupti aperiam, ab nulla velit aspernatur non deserunt
+                veniam unde corporis fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero pariatur
+                temporibus in cumque molestias enim asperiores, veritatis atque iusto, ea incidunt quod vero modi
+                distinctio ad voluptate ab tempore eius ullam corrupti, deleniti eligendi laboriosam. Nobis unde
+                laboriosam in illo commodi temporibus rem vero itaque numquam veniam, maxime quidem. At accusamus
+                temporibus ducimus eligendi hic commodi laudantium? Labore vero voluptatum voluptatibus magni doloribus
+                culpa dolorem nobis dolores ipsam ducimus. Illo cumque, officiis veniam ullam nulla placeat velit
+                recusandae commodi odit reiciendis quaerat officia praesentium accusantium alias iure dolores labore
+                voluptatem sequi at, consectetur dolorem sed ea quidem qui. Alias blanditiis deleniti quia? Minima, at
+                officiis labore magnam veritatis nihil optio repudiandae in a suscipit tempora laudantium sapiente
+                repellendus quas perferendis rem expedita exercitationem natus excepturi quo omnis itaque. Natus,
+                doloribus! Possimus molestias, tempora dolor aut labore sit dolorum fugit natus accusantium eaque
+                quaerat iure voluptates quasi, nihil necessitatibus aliquid rem ab omnis repellendus odio delectus
+                voluptatum!
+            </p>
+        </div>
+
+        <pre>
+div {
+    float: left;
+    border: solid #213555 1px; 
+    height: 100px; 
+    width: 150px;
+    margin: 15px;
+    padding: 10px;
+}
+</pre>
+
+        <div style="border: solid #213555 1px; border-radius: 4px; margin: 15px;">
+            <div
+                style="float: right; border: solid #213555 1px; height: 100px; margin: 15px; width: 150px; padding: 10px;">
+                float: right;
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima vero consequuntur, praesentium placeat
+                officiis debitis dolorum. Labore officiis, corrupti aperiam, ab nulla velit aspernatur non deserunt
+                veniam unde corporis fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero pariatur
+                temporibus in cumque molestias enim asperiores, veritatis atque iusto, ea incidunt quod vero modi
+                distinctio ad voluptate ab tempore eius ullam corrupti, deleniti eligendi laboriosam. Nobis unde
+                laboriosam in illo commodi temporibus rem vero itaque numquam veniam, maxime quidem. At accusamus
+                temporibus ducimus eligendi hic commodi laudantium? Labore vero voluptatum voluptatibus magni doloribus
+                culpa dolorem nobis dolores ipsam ducimus. Illo cumque, officiis veniam ullam nulla placeat velit
+                recusandae commodi odit reiciendis quaerat officia praesentium accusantium alias iure dolores labore
+                voluptatem sequi at, consectetur dolorem sed ea quidem qui. Alias blanditiis deleniti quia? Minima, at
+                officiis labore magnam veritatis nihil optio repudiandae in a suscipit tempora laudantium sapiente
+                repellendus quas perferendis rem expedita exercitationem natus excepturi quo omnis itaque. Natus,
+                doloribus! Possimus molestias, tempora dolor aut labore sit dolorum fugit natus accusantium eaque
+                quaerat iure voluptates quasi, nihil necessitatibus aliquid rem ab omnis repellendus odio delectus
+                voluptatum!
+            </p>
+        </div>
+
+        <pre>
+div {
+    float: right;
+    border: solid #213555 1px; 
+    height: 100px; 
+    width: 150px;
+    margin: 15px;
+    padding: 10px;
+}
+</pre>
+
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_float3">Розміщення блоків поруч</a>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_float">Використання float для
+            горизонтальних списків</a>
+
+    </div>
+
+    <div id="t5" class="topic">
+        <h2>Скасування float</h2>
+
+        <h3>Використання clear</h3>
+
+        <p>
+            У ряді випадків float-елемент може займати більше простору по висоті, ніж це необхідно відповідно до макету
+            дизайнера або за логікою розташування текстових елементів. Весь текст або інші блоки, які в HTML-розмітці
+            слідують за спливаючим елементом, будуть «обтікати» його зліва або справа, ламаючи зовнішній вигляд
+            сторінки.
+        </p>
+
+        <p>
+            У цих випадках слід використовувати CSS-властивість clear, яка має наступні значення:
+        </p>
+
+        <ul>
+            <li>clear: left | right | both | none | inherit</li>
+        </ul>
+
+        <p>
+            Значення none є значенням за замовчуванням і жодним чином не впливає на обтікання елементів. Значення left
+            застосовується для відміни обтікання елементів, що мають властивість float: left, right — для елементів із
+            властивістю float: right, а значення both відміняє обтікання з обох боків, тому використовується в тих
+            випадках, коли невідомо, яке було значення у властивості float, або обтікання застосовувалось із двох боків.
+        </p>
+
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clear">Приклад</a>
+
+        <h3>Використання overflow</h3>
+
+        <p>
+            Другим способом відміни обтікання є використання властивості <code>overflow</code> із значеннями hidden або
+            auto для батьківського блока-контейнера.
+        </p>
+
+        <p>
+            Справа в тому, що при розташуванні всередині якогось блокового елемента декількох спливаючих блоків, висота
+            батьківського елемента «схлопується», тобто перетворюється в 0. При необхідності задати цьому батьківському
+            елементу фоновий колір або фонове зображення, ви неминуче зіткнетеся з тим, що його висота дорівнює 0, та
+            ані колір, ні зображення неможливо побачити.
+        </p>
+
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clearfix">Приклад</a>
+
+        <h3>Клас clearfix</h3>
+
+        <p>
+            Клас clearfix був придуманий фронтенд-розробником Ніколасом Галахером (Nicolas Gallagher). Це, мабуть,
+            найпопулярніший і найбільш ефективний на даний момент спосіб відміни обтікання. Полягає він в тому, що для
+            псевдоелементів ::before та ::after селектора класу clearfix записуються наступні правила:
+        </p>
+
+        <pre>
+.clearfix::before,
+.clearfix::after {
+    content: ""; 
+    display: table; 
+}
+.clearfix::after { 
+    clear: both; 
+}
+</pre>
+
+        <p>
+            Потім сам клас записується в якості атрибуту для батьківського елементу:
+        </p>
+
+        <pre>
+&lt;div class="clearfix"&gt; … &lt;/div&gt;
+</pre>
+
+        <p>
+            В цьому випадку немає ані додаткових непотрібних елементів розмітки, ані приховування позиційованих
+            елементів. Очищення обтікання назначається після останнього елементу всередині батьківського контейнера, так
+            як описана в псевдоелементі ::after. Правила для ::before дозволяють уникнути проблем із схлопуванням
+            верхніх відступів в сучасних браузерах.
+        </p>
+
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_layout_clearfix2">Приклад</a>
+
+    </div>
+
+    <div class="grid">
+        <div class="hw">
+            <h2>Домашнє завдання</h2>
+            <ol>
+                <li><a href="hw/album.html">Фотоальбом</a></li>
+                <li><a href="hw/layout.html">Макет сторінки</a></li>
+            </ol>
+        </div>
+        <div class="practice">
+            <h2>Практичні завдання</h2>
+            <ol>
+                <li><a href="practice/cards.html">Карточка</a></li>
+                <li><a href="practice/news.html">Новини</a></li>
+                <li><a href="practice/gallery.html">Галерея</a></li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>

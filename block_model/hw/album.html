@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотоальбом</title>
+    <style>
+        body {
+            background-color: #F5EFE7;
+        }
+
+        .album {
+            width: 1200px;
+            margin: auto;
+            gap: 20px;
+        }
+
+        .album::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .photo {
+            width: 250px;
+            height: 300px;
+            border: 2px solid #213555;
+            float: left;
+            margin-right: 20px;
+            margin-top: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo p {
+            margin: 10px 0 0;
+            font-weight: bold;
+            color: #F5EFE7;
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            transition: bottom 0.3s ease;
+            background-color: #21355582;
+            font-size: 1em;
+        }
+
+        .photo:hover {
+            transform: scale(1.1);
+        }
+
+        .photo:hover p {
+            bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="album">
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 1">
+            <p>Веселий монстр</p>
+        </div>
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 2">
+            <p>Місто майбутнього з роботами</p>
+        </div>
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 3">
+            <p>Кіт на відпочинку</p>
+        </div>
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 4">
+            <p>Робот-пилосос у роботі</p>
+        </div>
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 5">
+            <p>Кавовий вибух енергії</p>
+        </div>
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 6">
+            <p>Шахіст-хом'як у дії</p>
+        </div>
+        <!-- Додаткові фото -->
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 7">
+            <p>Смартфон майбутнього</p>
+        </div>
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 8">
+            <p>Танцюючий робот</p>
+        </div>
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 9">
+            <p>Вітражні вікна</p>
+        </div>
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 10">
+            <p>Летючі автомобілі</p>
+        </div>
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 11">
+            <p>Космічний пейзаж</p>
+        </div>
+        <div class="photo">
+            <img src="resources/image.png" alt="Фото 12">
+            <p>Магічний ліс</p>
+        </div>
+    </div>
+</body>
+
+</html>

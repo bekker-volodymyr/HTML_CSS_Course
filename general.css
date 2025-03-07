@@ -1,0 +1,165 @@
+:root {
+    --bg-color: #D8C4B6;
+    --font-color: #213555;
+    --first-addition: #3E5879;
+    --second-addition: #F5EFE7;
+    --pre-bg: rgb(230, 175, 135);
+
+    --main-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --code-font: 'Courier New', Courier, monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.1em;
+    font-family: var(--main-font);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+header {
+    background-color: var(--font-color);
+    color: var(--bg-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: auto;
+
+    height: 10vh;
+
+    font-size: 2.3em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin: 0;
+    padding: 0;
+}
+
+.examples,
+.topic,
+.contents,
+.practice,
+.hw {
+    background-color: var(--second-addition);
+
+    margin: 25px;
+    padding: 20px 0;
+
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px var(--font-color);
+}
+
+h2 {
+    font-size: 1.6em;
+
+    margin-bottom: 5px;
+    padding-left: 25px;
+
+    background-color: var(--first-addition);
+    color: var(--second-addition)
+}
+
+h3 {
+    padding-left: 25px;
+}
+
+dl {
+    margin-left: 25px;
+}
+
+dd {
+    margin-left: 25px;
+}
+
+dt {
+    list-style: circle;
+}
+
+dd::before {
+    content: "- ";
+}
+
+dd::after {
+    content: ".";
+}
+
+ul,
+ol {
+    margin-left: 80px;
+    font-size: 0.9em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color);
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--first-addition);
+}
+
+p {
+    margin-top: 10px;
+    padding: 5px 15px;
+}
+
+.topic a {
+    margin: 10px 0;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--first-addition);
+    color: var(--bg-color);
+
+    transition: all 0.3s ease-out;
+}
+
+.topic a:hover {
+    background-color: var(--first-addition);
+    color: var(--second-addition);
+}
+
+code {
+    padding: 0px 5px;
+    font-style: italic;
+}
+
+code,
+pre {
+    font-family: var(--code-font);
+}
+
+pre {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--pre-bg);
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.img img { 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 1000px;
+}

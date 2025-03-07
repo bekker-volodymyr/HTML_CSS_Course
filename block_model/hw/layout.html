@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Макет сторінки</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            border: 2px solid #213555;
+        }
+
+        header,
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #213555;
+            color: white;
+        }
+
+        .content {
+            overflow: auto;
+            padding: 20px;
+        }
+
+        .left {
+            float: left;
+            width: calc(30% - 25px);
+            padding: 20px;
+            margin-right: 25px;
+            border: 2px solid #213555;
+            box-sizing: border-box;
+        }
+
+        .right {
+            float: right;
+            width: 70%;
+            padding: 20px;
+            border: 2px solid #213555;
+            box-sizing: border-box;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Шапка сторінки</h1>
+        </header>
+
+        <div class="content clearfix">
+            <div class="left">
+                <h2>Меню</h2>
+                <ul>
+                    <li>Головна</li>
+                    <li>Новини</li>
+                    <li>Послуги</li>
+                    <li>Контакти</li>
+                    <li>Про нас</li>
+                </ul>
+                <h3>Корисна інформація</h3>
+                <p>Тут може бути інформація про години роботи, адресу або спеціальні пропозиції.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, officiis?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, ipsa.</p>
+            </div>
+            <div class="right">
+                <h2>Головна стаття</h2>
+                <p>Це основний блок з контентом. Тут можна розмістити статті, текст або іншу інформацію.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, cum. Aliquam distinctio cumque
+                    nulla asperiores, hic voluptas aut commodi in quidem, repellat earum quisquam!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus fugiat ab atque harum
+                    laudantium maxime facere!</p>
+
+                <h3>Останні новини</h3>
+                <p>1. Робот-пилосос навчився варити каву — науковий прорив у сфері домашньої техніки.</p>
+                <p>2. Хом'як-шахіст виграв турнір у кота — спортивний світ шокований.</p>
+                <p>3. Новий додаток для смартфонів дозволяє спати під час роботи та все одно отримувати зарплату.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cum officiis iste. Exercitationem,
+                    ea?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem at fugit distinctio quo autem
+                    tempora!</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Футер сторінки © 2025</p>
+        </footer>
+    </div>
+</body>
+
+</html>
