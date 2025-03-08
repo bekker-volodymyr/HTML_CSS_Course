@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="index.html" target="_blank">
-    <title>Блокова модель. Псевдокласи</title>
+    <title>Псевдокласи та псевдоелементи</title>
     <link rel="stylesheet" href="../general.css">
+    <style>
+        .first-line-demo::first-line {
+            color: #3E5879;
+            text-shadow: 1px 1px 1px #213555;
+            font-family: "Segoe Script", cursive;
+        }
+
+        .first-letter-demo::first-letter {
+            color: #3E5879;
+            font-size: 2em;
+            font-weight: bold;
+            border: 1px solid #3E5879;
+            padding: 2px 8px;
+            margin-right: 10px;
+            margin-top: 7px;
+            float: left;
+        }
+
+        .selection-demo::selection {
+            color: #D8C4B6;
+            background-color: #213555;
+            text-shadow: 1px 1px 1px #3E5879;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <h1>Блокова верстка</h1>
@@ -14,39 +40,377 @@
 
     <div class="grid">
         <div class="examples">
+            <h2>Посилання</h2>
             <ul>
-                <li><a href=""></a></li>
+                <li><a href="examples/first-last-child.html">first-child | last-child</a></li>
+                <li><a href="examples/nth-child.html">nth-child</a></li>
+                <li><a href="examples/nth-child-3n.html">Кожен 3 елемент</a></li>
+                <li><a href="examples/even-odd.html">Парні/непарні елементи</a></li>
+                <li><a href="examples/only-child.html">only-child</a></li>
+                <li><a href="examples/nth-of-type.html">nth-of-type</a></li>
+                <li><a href="examples/nth-of-type-3n.html">Кожен третій nth-of-type</a></li>
+                <li><a href="examples/even-odd-of-type.html">Парні/непарні of-type</a></li>
             </ul>
         </div>
         <div class="contents">
-            <ul>
-                <li><a href="#t1" target="_self">Розрахунок ширини елементу. Властивість box-sizing</a></li>
-                <li><a href="#t2" target="_self">display: inline-block | block | inline</a></li>
-                <li><a href="#t3" target="_self">Рядкові та рядково-блокові елементи</a></li>
-                <li><a href="#t4" target="_self">Використання псевдоелементів</a></li>
-                <li><a href="#t5" target="_self">Псевдокласи для елементів</a></li>
-                <li><a href="#t6" target="_self">Використання властивості clear</a></li>
-                <li><a href="#t7" target="_self">Використання властивості overflow</a></li>
-                <li><a href="#t8" target="_self">Клас clearfix</a></li>
-            </ul>
+            <h2>Вміст:</h2>
+            <ol>
+                <li><a href="#t1" target="_self">Псевдоелементи</a></li>
+                <li><a href="#t2" target="_self">Псевдокласи</a></li>
+            </ol>
         </div>
     </div>
 
+    <!--Псевдоелементи-->
     <div class="topic" id="t1">
-        <h2>Блокова модель</h2>
+        <h2>Псевдоелементи</h2>
+
+        <p>
+            Псевдоелементи CSS використовуються для стилізації певних частин елемента.
+        </p>
+
+        <p>
+            Наприклад, їх можна використовувати для:
+        </p>
+
+        <ul>
+            <li>стилізації першої літери або рядка елемента (<code>first-letter/first-line</code>)</li>
+            <li>додавання контенту до або після елемену (<code>before/after</code>)</li>
+            <li>стилізації маркерів елементів списку</li>
+            <li>стилізації області перегляду (viewbox) за діалоговим вікном</li>
+        </ul>
+
+        <h3>Псевдоелемент <code>::first-line</code></h3>
+
+        <p>За назвою цього псевдоелемента можна здогадатися, що призначений він для форматування першого рядка блокових
+            елементів. Для оформлення першого рядка можна використовувати не всі CSS-властивості, а тільки ті, що
+            наведені в списку нижче:</p>
+
+        <ul>
+            <li>Властивості групи <code>font</code> (<code>font-family</code>, <code>font-size</code>,
+                <code>font-style</code>, <code>font-weight</code>, <code>font-variant</code> та ін.)
+            </li>
+            <li><code>color</code></li>
+            <li>Властивості групи <code>background</code></li>
+            <li><code>word-spacing</code></li>
+            <li><code>letter-spacing</code></li>
+            <li><code>text-decoration</code>, <code>text-decoration-color</code>, <code>text-decoration-line</code>,
+                <code>text-decoration-style</code>
+            </li>
+            <li><code>vertical-align</code></li>
+            <li><code>text-shadow</code></li>
+            <li><code>text-transform</code></li>
+            <li><code>line-height</code></li>
+            <li><code>clear</code></li>
+        </ul>
+
+        <p class="first-line-demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, eaque. Quasi
+            distinctio tempora accusantium, maiores maxime id ea debitis impedit placeat voluptas repellat quae dolorum
+            non, sequi ullam consequatur, libero minus ut vitae fuga. Enim, expedita! Illo unde odio deleniti quibusdam
+            doloremque nisi voluptate. Amet, ut asperiores voluptatibus vero eos sint cumque cupiditate, nihil quaerat
+            velit rerum facere reiciendis quasi, natus et voluptate neque. Reprehenderit aspernatur quidem expedita?
+            Nam, magni. Iusto cum consequuntur et! Eveniet repudiandae nemo, est ipsa perspiciatis hic fugiat,
+            laboriosam quisquam voluptate consequuntur minima cumque deleniti eligendi natus magni earum nostrum
+            possimus at neque provident.</p>
+
+        <pre>
+p::first-line {
+    color: #3E5879;
+    text-shadow: 1px 1px 1px #213555;
+    font-family: "Segoe Script", cursive;
+}
+</pre>
+
+        <h3>Псевдоелемент <code>::first-letter</code></h3>
+
+        <p>
+            За назвою цього псевдоелемента також можна зрозуміти, що його призначення — оформити першу літеру блокового
+            елемента.
+        </p>
+
+        <p>Властивості доступні для псевдоелементу <code>::first-letter</code></p>
+
+        <ul>
+            <li><code>font</code> (всі підвластивості: <code>font-family</code>, <code>font-size</code>,
+                <code>font-style</code>, <code>font-variant</code>, <code>font-weight</code>)
+            </li>
+            <li><code>color</code></li>
+            <li><code>background</code> (всі підвластивості)</li>
+            <li><code>margin</code></li>
+            <li><code>padding</code></li>
+            <li><code>border</code> (всі підвластивості)</li>
+            <li><code>text-decoration</code></li>
+            <li><code>text-transform</code></li>
+            <li><code>line-height</code></li>
+            <li><code>float</code></li>
+            <li><code>vertical-align</code></li>
+        </ul>
+
+        <p class="first-letter-demo">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus nostrum
+            corrupti, nihil sit possimus fugiat veritatis repudiandae iure, culpa quisquam, consectetur dolorum ut sint
+            eos eum alias quasi asperiores nulla doloribus itaque expedita omnis. Fuga, nihil nesciunt! Inventore dolor
+            totam exercitationem laborum assumenda distinctio modi culpa et voluptatem blanditiis sunt voluptatum
+            asperiores non quos expedita voluptatibus molestias eum dolorem autem ipsum est, quae repellat in ipsa?
+            Accusamus nulla et repellendus recusandae deleniti assumenda ipsa, doloribus mollitia ad eos necessitatibus
+            laboriosam nostrum. Itaque vitae similique quo recusandae ut, sint fugiat hic soluta rem eius nesciunt
+            asperiores, possimus nemo, commodi consequatur assumenda?
+        </p>
+
+        <pre>
+p::first-letter {
+    color: #3E5879;
+    font-size: 2em;
+    font-weight: bold;
+    border: 1px solid #3E5879;
+    padding: 2px 8px;
+    margin-right: 10px;
+    margin-top: 7px;
+    float: left;
+}
+</pre>
+
+        <h3>Псевдоелемент <code>::section</code></h3>
+
+        <p>
+            Псевдоелемент <code>::selection</code> можна застосувати для зміни вигляду тексту при виділенні. Це можна
+            зробити як для всього документа, так і для окремих елементів.
+        </p>
+
+        <ul>
+            <li><code>color</code></li>
+            <li><code>background-color</code></li>
+            <li><code>text-shadow</code></li>
+        </ul>
+
+        <p class="selection-demo">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vitae incidunt iste fugiat qui voluptatum
+            dolorem illo ipsam architecto blanditiis!
+        </p>
+
+        <pre>
+p {
+    color: #D8C4B6;
+    background-color: #213555;
+    text-shadow: 1px 1px 1px #3E5879;
+}
+</pre>
+
     </div>
 
-    <div class="grid">
-        <div class="hw">
-            <ol>
-                <li><a href=""></a></li>
-            </ol>
-        </div>
-        <div class="practice">
-            <ol>
-                <li><a href=""></a></li>
-            </ol>
-        </div>
+    <!--Псевдокласи-->
+    <div id="t2" class="topic">
+
+        <h2>Псевдокласи</h2>
+
+        <p>Псевдоклас використовується для визначення особливого стану елемента.</p>
+
+        <p>Наприклад, його можна використовувати для:</p>
+
+        <ul>
+            <li>стилізації елемента, коли користувач наводить на нього курсор</li>
+            <li>стилізації відвіданих і невідвіданих посилань по-різному</li>
+            <li>стилізації елемента, коли він отримує фокус</li>
+            <li>стилізації полів форми залежно від їхнього стану (валідні, невалідні, обов’язкові, необов’язкові)</li>
+        </ul>
+
+        <h3><code>:first-child | :last-child</code></h3>
+
+        <p>
+            <code>:first-child</code> та <code>:last-child</code> — це псевдокласи, які використовуються для вибору
+            першого або останнього дочірнього елемента всередині батьківського контейнера.
+        </p>
+
+        <h3>:first-child</h3>
+        <ul>
+            <li>Застосовується до <strong>першого дочірнього елемента</strong> в батьківському контейнері.</li>
+            <li>Спрацьовує <strong>тільки</strong> якщо елемент дійсно є першим серед усіх сусідів.</li>
+        </ul>
+
+        <h3>:last-child</h3>
+        <ul>
+            <li>Застосовується до <strong>останнього дочірнього елемента</strong> в батьківському контейнері.</li>
+        </ul>
+
+        <p>
+            <strong>Важливо:</strong> Якщо всередині батьківського контейнера є інші елементи (наприклад,
+            <code>h1</code>, <code>span</code>), то <code>:first-child</code> і <code>:last-child</code> спрацюють
+            тільки якщо відповідний елемент є справді першим або останнім серед усіх дочірніх елементів.
+        </p>
+
+        <pre>
+p:first-child {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+p:last-child {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.4rem;
+    background-color: #ffe0b2;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+</pre>
+
+        <a href="examples/first-last-child.html">Приклад</a>
+
+        <h3><code>:nth-child()</code></h3>
+
+        <p>
+            Для того, щоб відформатувати якийсь певний елемент, необхідно використовувати псевдоклас :nth-child(n).
+            Замість n потрібно поставити будь-яку цифру.
+        </p>
+
+        <pre>
+p:nth-child(2) {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+</pre>
+
+        <a href="examples/nth-child.html">Приклад</a>
+
+        <p>
+            Якщо необхідно задати форматування для кожного 3-го абзацу, варто використовувати псевдоклас :nth-child(3n).
+            Замість цифри 3 може бути будь-яка цифра або вираз, наприклад, 4n-1, 3n+1 тощо
+        </p>
+
+        <pre>
+p:nth-child(3n) {
+    background-color: #e0f7fa;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+</pre>
+
+        <a href="examples/nth-child-3n.html">Приклад</a>
+
+        <p>
+            Досить часто буває потріба у форматуванні парних або непарних елементів. Для цієї мети можна
+            використовувати, наприклад, псевдокласс :nth-child(2n) або :nth-child(2n-1). Крім того, існують спеціальні
+            ключові слова для парних (even) і непарних (odd) елементів.
+        </p>
+
+        <pre>
+.box:nth-child(odd) {
+    background-color: #f99;
+}
+.box:nth-child(even) {
+    background-color: #f8f48c;
+}
+</pre>
+
+        <a href="examples/even-odd.html">Приклад</a>
+
+        <h3><code>:nth-last-child</code></h3>
+
+        <p>
+            Псевдоклас :nth-last-child(n) призначений для форматування елементів, відлік яких ведеться не з початку їх
+            появи в коді, тобто з першого елемента, а навпаки — з кінця, тобто з останнього елемента.
+        </p>
+
+        <p>
+            В дужках замість n можна записувати число, вираз (2n, 3n-1, 4n+1 і т.п.), а також ключові слова odd (непарні
+            числа) або even (парні числа).
+        </p>
+
+        <pre>
+селектор:nth-last-child( число | вираз | odd | even) {
+    властивості;
+}
+</pre>
+
+        <h3><code>:only-child</code></h3>
+
+        <p>
+            Псевдоклас :only-child призначений для форматування елементів, які є єдиним дочірнім для свого батьківського
+            тега. Тобто він буде застосований тільки в тому випадку, якщо в батьківському елементі для зазначеного
+            селектора відсутні інші елементи такого ж типу.
+        </p>
+
+        <a href="examples/only-child.html">Приклад</a>
+
+        <h3><code>:nth-of-type()</code></h3>
+
+        <p>
+            Псевдоклас <code>:nth-of-type(n)</code> використовується для вибору елементів певного типу (наприклад,
+            <code>p</code>, <code>div</code>) в межах батьківського контейнера, враховуючи їхній порядок серед елементів
+            одного типу.
+        </p>
+
+        <pre>
+p:nth-of-type(2) {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+</pre>
+
+        <a href="examples/nth-of-type.html">Приклад</a>
+
+        <p>
+            Замість цифри 2 можна використовувати вирази, наприклад, <code>3n</code>, <code>4n-1</code> тощо, щоб задати
+            певні елементи на основі їхнього порядку серед елементів одного типу.
+        </p>
+
+        <pre>
+p:nth-of-type(3n) {
+    background-color: #e0f7fa;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+</pre>
+
+        <a href="examples/nth-of-type-3n.html">Приклад</a>
+
+        <p>
+            Аналогічно, можна використовувати ключові слова <code>odd</code> (непарні елементи) і <code>even</code>
+            (парні елементи) для вибору відповідних елементів.
+        </p>
+
+        <pre>
+.box:nth-of-type(odd) {
+    background-color: #f99;
+}
+.box:nth-of-type(even) {
+    background-color: #f8f48c;
+}
+</pre>
+
+        <a href="examples/even-odd-of-type.html">Приклад</a>
+
+        <h3><code>:nth-last-of-type</code></h3>
+
+        <p>
+            Псевдоклас <code>:nth-last-of-type(n)</code> працює аналогічно до <code>:nth-of-type</code>, але відлік
+            елементів ведеться з кінця, тобто з останнього елемента того ж типу.
+        </p>
+
+        <pre>
+селектор:nth-last-of-type(число | вираз | odd | even) {
+    властивості;
+}
+</pre>
+
+
     </div>
+
 </body>
+
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>only-child Приклад</title>
+    <style>
+        .container {
+            margin: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            width: 300px;
+        }
+
+        p {
+            padding: 10px;
+            margin: 10px;
+            background-color: lightblue;
+        }
+
+        p:only-child {
+            background-color: lightcoral;
+            /* Цей стиль застосовується, якщо абзац єдиний у контейнері */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <p>Це єдиний абзац у контейнері. Він буде стилізований по-іншому.</p>
+    </div>
+
+    <div class="container">
+        <p>Це перший абзац у контейнері.</p>
+        <p>Це другий абзац у контейнері.</p>
+    </div>
+
+</body>
+
+</html>
