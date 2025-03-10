@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: solid 2px crimson;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 20px;
+        }
+
+        tr:nth-of-type(odd) {
+            background-color: chocolate;
+        }
+
+        tr:nth-of-type(2n) {
+            background-color: brown;
+        }
+
+        tr:nth-of-type(2n):hover {
+            background-color: burlywood;
+        }
+
+        tr:nth-of-type(odd):hover {
+            background-color: darkgreen;
+        }
+
+        td:nth-of-type(odd),
+        th:nth-of-type(odd) {
+            background-color: rgba(127, 255, 212, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Contry</th>
+            <th>Contact</th>
+        </tr>
+        <tr>
+            <td>Максим Кузнецов</td>
+            <td>Україна</td>
+            <td>+380-08-075-0</td>
+        </tr>
+
+        <tr>
+            <td>Максим Кузнецов</td>
+            <td>Україна</td>
+            <td>+380-08-075-0</td>
+        </tr>
+        <tr>
+            <td>Максим Кузнецов</td>
+            <td>Україна</td>
+            <td>+380-08-075-0</td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
