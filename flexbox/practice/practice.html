@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+
+        .gallery {
+            padding: 20px;
+            background-color: #34495e;
+            border: 2px solid gray;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50px;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #2c3e50;
+        }
+
+        .menu li {
+            margin: 10px;
+        }
+
+        .menu a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #34495e;
+        }
+
+        .product-cards {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            height: 450px;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            flex: 1;
+            /* рівномірно розподіляє простір */
+            max-width: 300px;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Menu-->
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Головна</a></li>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Послуги</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <!--Gallery-->
+    <section>
+        <div class="gallery">
+            <img src="resources/photo1.png" alt="photo1">
+            <img src="resources/photo1.png" alt="photo2">
+            <img src="resources/photo1.png" alt="photo3">
+        </div>
+    </section>
+
+    <!--Product Cards-->
+    <div class="product-cards">
+        <div class="card">
+            <img src="resources/product.png" alt="зображення товару">
+            <h3>Продукт</h3>
+            <p>Опис продукту: лорем іпсум лалалала</p>
+        </div>
+        <div class="card">
+            <img src="resources/product.png" alt="зображення товару">
+            <h3>Продукт</h3>
+            <p>Опис продукту: лорем іпсум лалалала</p>
+        </div>
+        <div class="card">
+            <img src="resources/product.png" alt="зображення товару">
+            <h3>Продукт</h3>
+            <p>Опис продукту: лорем іпсум лалалала</p>
+        </div>
+        <div class="card">
+            <img src="resources/product.png" alt="зображення товару">
+            <h3>Продукт</h3>
+            <p>Опис продукту: лорем іпсум лалалала</p>
+        </div>
+    </div>
+</body>
+
+</html>

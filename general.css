@@ -117,8 +117,8 @@ p {
 }
 
 .topic a {
-    margin: 10px 0;
-    padding: 20px;
+    margin: 5px 0;
+    padding: 10px;
 
     display: flex;
     align-items: center;
@@ -158,9 +158,25 @@ pre {
     margin: 15px 0;
 }
 
-.img img { 
+.img img {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
     max-width: 1000px;
+}
+
+th,
+td {
+    padding: 15px;
+}
+
+table {
+    margin: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
 }

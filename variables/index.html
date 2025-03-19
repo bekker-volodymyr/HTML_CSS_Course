@@ -4,32 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="general.css">
-    <title>variables</title>
+    <base href="index.html" target="_blank">
+    <link rel="stylesheet" href="../general.css">
+    <title>Змінні та функції CSS</title>
 </head>
 
 <body>
     <header>
-        <h1>CSS Змінні</h1>
+        <h1>CSS - Змінні та функції</h1>
     </header>
 
     <div class="grid">
         <div class="examples">
-            <h2>Приклади</h2>
+            <h2>Посилання</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/cssref/css_functions.php">Функції CSS</a> </li>
+            </ul>
         </div>
 
         <div class="contents">
             <h2>Зміст</h2>
-            <ul>
+            <ol>
                 <li><a href="#t1">Для чого потрібні змінні та функція var()</a></li>
                 <li><a href="#t2">Синтаксис</a></li>
                 <li><a href="#t3">Як var() працює?</a></li>
                 <li><a href="#t4">Локальні змінні</a></li>
-                <li><a href="#t5">Змінні у медіа-запитах</a></li>
-            </ul>
+                <li><a href="#t5">Функції CSS</a></li>
+            </ol>
         </div>
     </div>
 
+    <!--Змінні-->
     <div class="topic" id="t1">
         <h2>Для чого потрібні змінні та функція var()</h2>
         <p>
@@ -45,6 +50,7 @@
         </p>
     </div>
 
+    <!--Синтаксис змінних-->
     <div class="topic" id="t2">
         <h2>Синтаксис</h2>
         <pre>
@@ -67,6 +73,7 @@ var (--name, value)
 
     </div>
 
+    <!--Області видимості-->
     <div class="topic" id="t3">
         <h2>Як var() працює?</h2>
         <p>Перш за все: змінні CSS можуть мати глобальну або локальну область видимості.</p>
@@ -84,24 +91,24 @@ var (--name, value)
 :root {
     --blue: #1e90ff;
     --white: #ffffff;
-  }
-  
-  body { background-color: var(--blue); }
-  
-  h2 { border-bottom: 2px solid var(--blue); }
-  
-  .container {
-    color: var(--blue);
-    background-color: var(--white);
-    padding: 15px;
-  }
-  
-  button {
-    background-color: var(--white);
-    color: var(--blue);
-    border: 1px solid var(--blue);
-    padding: 5px;
-  }
+}
+
+body { background-color: var(--blue); }
+
+h2 { border-bottom: 2px solid var(--blue); }
+
+.container {
+  color: var(--blue);
+  background-color: var(--white);
+  padding: 15px;
+}
+
+button {
+  background-color: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 5px;
+}
 </pre>
         <p>
             Переваги використання var() такі:
@@ -115,6 +122,7 @@ var (--name, value)
         </p>
     </div>
 
+    <!--Локальні змінні-->
     <div class="topic" id="t4">
         <h2>Локальні змінні</h2>
         <p>
@@ -148,27 +156,76 @@ button {
 </pre>
     </div>
 
-    <div class="topic" id="t5">
-        <h2>Змінні у медіа-запитах</h2>
-        <p>Тепер ми хочемо змінити значення змінної в медіа-запиті.</p>
-        <pre>
-.container {
-    --fontsize: 25px;
-}
+    <!--Функції-->
+    <div id="t5" class="topic">
+        <h2>Функції CSS</h2>
 
-.container {
-    color: var(--blue);
-    background-color: var(--white);
-    padding: 15px;
-    font-size: var(--fontsize);
-}
-  
-  @media screen and (min-width: 450px) {
-    .container {
-      --fontsize: 50px;
-    }
+        <p>
+            У CSS функції — це спеціальні інструкції, які виконують обчислення або маніпуляції значеннями властивостей.
+            Вони можуть бути використані для динамічного налаштування стилів, як от колір, відстань або трансформація
+            елементів.
+        </p>
+
+        <p>
+            Повний перелік функцій за посиалнням:
+        </p>
+
+        <a href="https://www.w3schools.com/cssref/css_functions.php">Функції CSS</a>
+
+        <h3>Функція blur()</h3>
+
+        <p>
+            Функція <code>blur()</code> дозволяє додати ефект розмиття до елементу. Використовується для властивості
+            filter.
+        </p>
+
+        <p style="filter: blur(1px)">
+            Це розмитий текст.
+        </p>
+
+        <pre>
+p {
+    filter: blur(1px);
 }
 </pre>
+
+        <h3>Функції min/max</h3>
+
+        <p>
+            Функції <code>min()</code>/<code>max()</code> - обчислюють мінімальне або максимальне значення з набору.
+        </p>
+
+        <pre>
+width: min(50%, 200px);
+</pre>
+
+        <a href="https://www.w3schools.com/cssref/tryit.php?filename=trycss_func_min">Приклад</a>
+
+        <h3>Функція url()</h3>
+
+        <p>
+            Функція <code>url()</code> дозволяє використовувати посилання всередині CSS коду. Наприклад, для вказання
+            зображення для фону.
+        </p>
+
+        <pre>
+div {
+    background-color: url("url-to-img");
+}
+</pre>
+
+    </div>
+
+    <div id="t6" class="topic">
+        <h2>Завдання</h2>
+
+        <p>
+            Повторити верстку за прикладом на зображенні. Використовуйте блоки та семантичні елементи.
+        </p>
+
+        <div class="img">
+            <img src="resources/image.png" alt="Task example">
+        </div>
     </div>
 </body>
 

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flex-Box Introduction</title>
+    <base href="index.html" target="_blank">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="flexbox.css">
+</head>
+
+<body>
+    <header>
+        <h1>Flex Layout</h1>
+    </header>
+
+    <div class="grid">
+        <div class="examples">
+            <h2>Приклади</h2>
+            <ul>
+                <li><a href="examples/wrap-example.html">Приклад wrap</a></li>
+                <li><a href="https://www.w3schools.com/css/css3_flexbox_container.asp">Приклади align-content</a></li>
+                <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_flex-shrink">Приклад flex-shrink</a></li>
+                <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_align-self_center">Приклад align-self</a></li>
+            </ul>
+        </div>
+        <div class="contents">
+            <h2>Вміст</h2>
+            <ol>
+                <li><a href="#t1" target="_self">Що таке flexbox?</a></li>
+                <li><a href="#t2" target="_self">Flex-контейнер</a></li>
+                <li><a href="#t3" target="_self">Flex-елементи</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <!--Що таке flexbox?-->
+    <div id="t1" class="topic">
+        <h2>Що таке flexbox?</h2>
+
+        <p>
+            Flexbox - це скорочення для <strong>Flexible Box Layout module</strong>.
+        </p>
+
+        <p>
+            Flexbox - це спосіб розміщення елементів на сторінці в рядки та стовпчики.
+        </p>
+
+        <p>
+            Flexbox дозволяє легко розробляти гнучкий адаптивний дизайн без використання float чи position.
+        </p>
+
+        <p>
+            Уявіть, що ви створюєте фотогалерею. У вас є декілька фотографій різного розміру, і вам потрібно рівномірно
+            розташувати їх по горизонталі так, щоб між ними був однаковий простір та всі фото були гармонійно вирівняні
+            по центру.
+        </p>
+
+        <p>
+            Без Flexbox вам доведеться вручну задавати відступи та вирівнювання, що може бути складно і не завжди
+            виглядає естетично.
+        </p>
+
+        <p>
+            Flexbox складається з:
+        </p>
+
+        <ul>
+            <li>Flex-контейнер - батьківський контейнер (<code>display: flex</code>).</li>
+            <li>Flex-елемент - всі елементи всередині батьківського flex-контейнеру.</li>
+        </ul>
+
+        <h3>Flexbox vs. Grid</h3>
+
+        <p>
+            Flexbox - одно-направлена розмітка - рядки АБО колонки.
+        </p>
+
+        <p>
+            Grid - дво-направлена розмітка - рядки ТА колонки.
+        </p>
+
+        <h3>Приклад без Flexbox</h3>
+
+        <div class="gallery non-flex-gallery">
+            <img src="resources/photo1.png" alt="Фото 1" class="gallery-photo">
+            <img src="resources/photo1.png" alt="Фото 2" class="gallery-photo">
+            <img src="resources/photo1.png" alt="Фото 3" class="gallery-photo">
+        </div>
+
+        <pre>
+&lt;div style="border: 1px solid #000; padding: 10px;"&gt;
+    &lt;img src="resources/photo1.png" alt="Фото 1" style="width: 200px; margin-right: 10px;"&gt;
+    &lt;img src="resources/photo2.png" alt="Фото 2" style="width: 200px; margin-right: 10px;"&gt;
+    &lt;img src="resources/photo3.png" alt="Фото 3" style="width: 200px;"&gt;
+&lt;/div&gt;
+</pre>
+
+        <ul>
+            <li>Фото можуть виглядати нерівномірно через різні розміри та жорстко задані відступи.</li>
+            <li>При зміні розміру вікна браузера розташування може порушуватися.</li>
+        </ul>
+
+        <h3>Приклад з Flexbox</h3>
+
+        <div class="gallery flex-gallery">
+            <img src="resources/photo1.png" alt="Фото 1" class="gallery-photo">
+            <img src="resources/photo1.png" alt="Фото 2" class="gallery-photo">
+            <img src="resources/photo1.png" alt="Фото 3" class="gallery-photo">
+        </div>
+
+        <pre>
+&lt;div style="display: flex; justify-content: space-around; align-items: center;"&gt;
+    &lt;img src="resources/photo1.png" alt="Фото 1" style="width: 200px;"&gt;
+    &lt;img src="resources/photo2.png" alt="Фото 2" style="width: 200px;"&gt;
+    &lt;img src="resources/photo3.png" alt="Фото 3" style="width: 200px;"&gt;
+&lt;/div&gt;
+</pre>
+
+        <ul>
+            <li><strong>display: flex;</strong> – робить контейнер гнучким.</li>
+            <li><strong>justify-content: space-around;</strong> – автоматично розподіляє простір між фото.</li>
+            <li><strong>align-items: center;</strong> – вирівнює фото по вертикалі.</li>
+        </ul>
+
+    </div>
+
+    <!--Flex-контейнер-->
+    <div id="t2" class="topic">
+        <h2>Flex-контейнер</h2>
+
+        <p>
+            Елемент стає flex-контейнером, якщо йому встановити властивість <code>display</code> на значення
+            <code>flex</code>.
+        </p>
+
+        <pre>
+.flex-container {
+    display: flex;
+}
+</pre>
+
+        <p>
+            Flex-контейнеру доступні наступні властивості:
+        </p>
+
+        <ul>
+            <li><code>flex-direction</code></li>
+            <li><code>flex-wrap</code></li>
+            <li><code>flex-flow</code></li>
+            <li><code>justify-content</code></li>
+            <li><code>align-items</code></li>
+            <li><code>align-content</code></li>
+            <li><code>gap</code></li>
+        </ul>
+
+        <h3>flex-direction</h3>
+
+        <p>
+            Властивість <code>flex-direction</code> визначає напрямок розміщення елементів - рядок чи стовпчик.
+        </p>
+
+        <p>
+            Вісь, зазначена у властивості flex-direction називається основною. Інша, перпендикулярна до основної
+            називається поперечною.
+        </p>
+
+        <p>
+            Доступні значення:
+        </p>
+
+        <ul>
+            <li><code>row</code>(за замовчуванням)</li>
+            <li><code>column</code></li>
+            <li><code>row-reverse</code></li>
+            <li><code>column-reverse</code></li>
+        </ul>
+
+        <pre>
+.flex-container {
+    display: flex;
+    flex-direction: row | column | row-reverse | column-reverse;
+}
+</pre>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>Row</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="flex-direction: row;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>Column</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="flex-direction: column;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>Row-reverse</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="flex-direction: row-reverse;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>Column-reverse</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="flex-direction: column-reverse;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <h3>gap</h3>
+
+        <p>
+            Властивість <code>gap</code> додає відстань між елементами flex-контейнера.
+        </p>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>Column-reverse</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="gap: 10px">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <h3>flex-wrap</h3>
+
+        <p>
+            Властивість <code>flex-wrap</code> визначає, Властивість flex-wrap визначає, чи повинні елементи
+            флекс-контейнера переноситися на новий рядок (або стовпчик), якщо для них не вистачає місця.
+        </p>
+
+        <p>Доступні значення</p>
+
+        <ul>
+            <li>nowrap (за замовчуванням)</li>
+            <li>wrap</li>
+            <li>wrap-reverse</li>
+        </ul>
+
+        <a href="examples/wrap-example.html">Приклад</a>
+
+        <h3>justify-content</h3>
+
+        <p>
+            Властивість <code>justify-content</code> вирівнює флекс-елементи по основній осі. Основні значення:
+        </p>
+
+        <ul>
+            <li><code>flex-start</code> – елементи вирівнюються на початку контейнера.</li>
+            <li><code>flex-end</code> – елементи вирівнюються в кінці контейнера.</li>
+            <li><code>center</code> – елементи вирівнюються по центру.</li>
+            <li><code>space-between</code> – елементи розподіляються з рівномірними відступами, перший елемент
+                вирівнюється з початком, останній – з кінцем.</li>
+            <li><code>space-around</code> – елементи мають рівномірні відступи з обох боків.</li>
+            <li><code>space-evenly</code> - простір рівномірно розподіляється між елементами.</li>
+        </ul>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>flex-start</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="justify-content: flex-start;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>flex-end</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="justify-content: flex-end;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>center</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="justify-content: center;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>space-between</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="justify-content: space-between;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>space-around</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="justify-content: space-around;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>space-evenly</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="justify-content: space-evenly;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <h3>align-items</h3>
+
+        <p>
+            Властивість <code>align-items</code> вирівнює флекс-елементи по поперечній осі. Основні значення:
+        </p>
+
+        <ul>
+            <li><code>flex-start</code> – елементи вирівнюються зверху контейнера.</li>
+            <li><code>flex-end</code> – елементи вирівнюються знизу.</li>
+            <li><code>center</code> – елементи вирівнюються по центру.</li>
+            <li><code>baseline</code> – вирівнювання за базовою лінією тексту.</li>
+            <li><code>stretch</code> – елементи розтягуються по висоті контейнера (за замовчуванням).</li>
+        </ul>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>flex-start</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="align-items: flex-start; height: 200px;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>flex-end</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="align-items: flex-end;  height: 200px">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>center</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="align-items: center; height: 200px;">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>baseline</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="align-items: baseline; height: 200px;">
+                <div class="demo-item" style="font-size: 2.5em;">1</div>
+                <div class="demo-item" style="font-size: 0.6em;">2</div>
+                <div class="demo-item" style="font-size: 1.4em;">3</div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>stretch</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block" style="align-items: stretch; height: 200px;">
+                <div class="demo-item" style="height: 100%;">1</div>
+                <div class="demo-item" style="height: 100%;">2</div>
+                <div class="demo-item" style="height: 100%;">3</div>
+            </div>
+        </div>
+
+        <h3>align-content</h3>
+
+        <p>Властивість <code>align-content</code> використовується для вирівнювання рядків(стовпчиків) флекс-контейнера.
+        </p>
+
+        <p>Властивість <code>align-content</code> схожа на <code>align-items</code>, але замість вирівнювання елементів
+            флекс-контейнера, вона вирівнює самі флекс-рядки(стовпчики).</p>
+
+        <p>Властивість <code>align-content</code> може мати одне з наступних значень:</p>
+
+        <ul>
+            <li><code>center</code></li>
+            <li><code>stretch</code></li>
+            <li><code>flex-start</code></li>
+            <li><code>flex-end</code></li>
+            <li><code>space-around</code></li>
+            <li><code>space-between</code></li>
+            <li><code>space-evenly</code></li>
+        </ul>
+
+        <a href="https://www.w3schools.com/css/css3_flexbox_container.asp">Приклади</a>
+
+    </div>
+
+    <!--Flex-елементи-->
+    <div id="t3" class="topic">
+        <h2>Flex-елементи</h2>
+
+        <p>
+            Всі дочірні елементи flex-контейнеру стають flex-елементами автоматично.
+        </p>
+
+        <p>
+            Властивості, доступні flex-елементам:
+        </p>
+
+        <ul>
+            <li><code>order</code></li>
+            <li><code>flex-grow</code></li>
+            <li><code>flex-shrink</code></li>
+            <li><code>flex-basis</code></li>
+            <li><code>flex</code></li>
+            <li><code>align-self</code></li>
+        </ul>
+
+        <h3>order</h3>
+
+        <p>
+            Властивість <code>order</code> визначає порядок елементу всередині контейнеру.
+        </p>
+
+        <pre>
+&lt;div class="flex-container"&gt;
+    &lt;div style="order: 3"&gt;1&lt;/div&gt;
+    &lt;div style="order: 2"&gt;2&lt;/div&gt;
+    &lt;div style="order: 4"&gt;3&lt;/div&gt;
+    &lt;div style="order: 1"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>Row</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-item" style="order: 3;">1</div>
+                <div class="demo-item" style="order: 2;">2</div>
+                <div class="demo-item" style="order: 4;">3</div>
+                <div class="demo-item" style="order: 1;">4</div>
+            </div>
+        </div>
+
+        <h3>flex-grow</h3>
+
+        <p>
+            Властивість <code>flex-grow</code> визначає, наскільки елемент може розтягуватись у порівнянні з іншими
+            елементами.
+        </p>
+
+        <p>
+            Якщо для одного з елементів задано значення <code>flex-grow: 2;</code>, а для інших
+            <code>flex-grow: 1;</code>, цей елемент займе вдвічі більше простору.
+        </p>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>flex-grow</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-item" style="flex-grow: 1;">1 (grow: 1)</div>
+                <div class="demo-item" style="flex-grow: 2;">2 (grow: 2)</div>
+                <div class="demo-item" style="flex-grow: 1;">3 (grow: 1)</div>
+            </div>
+        </div>
+
+        <h3>flex-shrink</h3>
+
+        <p>
+            Властивість <code>flex-shrink</code> визначає, наскільки елемент може зменшуватись у розмірах у
+            порівнянні з іншими елементами при нестачі простору.
+        </p>
+
+        <p>
+            Якщо для одного з елементів задано значення <code>flex-shrink: 0;</code>, він не буде зменшуватись.
+        </p>
+
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_flex-shrink">Приклад</a>
+
+        <h3>flex-basis</h3>
+
+        <p>
+            Властивість <code>flex-basis</code> задає початковий розмір елемента перед тим, як буде застосовано
+            властивості <code>flex-grow</code> і <code>flex-shrink</code>.
+        </p>
+
+        <p>
+            Вона може бути задана у пікселях, відсотках або автоматично (за значенням <code>auto</code>).
+        </p>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h4>flex-basis</h4>
+                <hr>
+            </div>
+
+            <div class="demo-block">
+                <div class="demo-item" style="flex-basis: 50px;">1 (basis: 50px)</div>
+                <div class="demo-item" style="flex-basis: 100px;">2 (basis: 100px)</div>
+                <div class="demo-item" style="flex-basis: 150px;">3 (basis: 150px)</div>
+            </div>
+        </div>
+
+        <h3>align-self</h3>
+
+        <p>
+            Властивість <code>align-self</code> визначає вирівнювання вибраного елемента всередині флекс-контейнера.
+        </p>
+
+        <p>
+            Властивість <code>align-self</code> переважає за замовчуванням вирівнювання, яке встановлюється властивістю
+            <code>align-items</code> контейнера.
+        </p>
+
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_align-self_center">Приклад</a>
+
+    </div>
+
+    <div class="grid">
+        <div class="practice">
+            <h2>Практика</h2>
+            <ul>
+                <li><a href="practice/gallery.html">Галерея</a></li>
+                <li><a href="practice/shop-cards.html">Картки товарів</a></li>
+                <li><a href="practice/menu.html">Меню сайту</a></li>
+            </ul>
+        </div>
+        <div class="hw">
+            <h2>Домашнє завдання</h2>
+            <ul>
+                <li><a href="hw/hw.html">Розклад</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

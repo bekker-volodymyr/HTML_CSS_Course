@@ -1,0 +1,67 @@
+/* Галереї фото */
+.gallery {
+    margin: 10px 15px;
+    border: black solid 1px;
+    border-radius: 4px;
+    background-color: #3E5879;
+}
+
+.non-flex-gallery img {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.flex-gallery {
+    border: 1px solid #000;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.flex-gallery img {
+    width: 200px;
+}
+
+.demo-container {
+    margin: 15px 20px;
+
+    border: #000 solid 1px;
+    border-radius: 5px;
+}
+
+.demo-block {
+    display: flex;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.demo-item {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.demo-item:nth-of-type(1n) {
+    background-color: #e74c3c;
+}
+
+.demo-item:nth-of-type(2n) {
+    background-color: #2ecc71;
+}
+
+.demo-item:nth-of-type(3n) {
+    background-color: #3498db;
+}
+
+.demo-header {
+    margin: 10px;
+}

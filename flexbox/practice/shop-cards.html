@@ -4,29 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice</title>
-    <link rel="stylesheet" href="practice_styles.css">
+    <title>Картки товарів</title>
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+
+        .product-cards {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            height: 450px;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            flex: 1;
+            /* рівномірно розподіляє простір */
+            max-width: 300px;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+        }
+    </style>
 </head>
 
 <body>
-    <!--Menu-->
-    <nav>
-        <ul class="menu">
-            <li><a href="#">Головна</a></li>
-            <li><a href="#">Про нас</a></li>
-            <li><a href="#">Послуги</a></li>
-            <li><a href="#">Контакти</a></li>
-        </ul>
-    </nav>
-
-    <!--Gallery-->
-    <section>
-        <div class="gallery">
-            <img src="resources/photo1.png" alt="photo1">
-            <img src="resources/photo2.png" alt="photo2">
-            <img src="resources/photo3.png" alt="photo3">
-        </div>
-    </section>
 
     <!--Product Cards-->
     <div class="product-cards">
@@ -51,6 +72,7 @@
             <p>Опис продукту: лорем іпсум лалалала</p>
         </div>
     </div>
+
 </body>
 
 </html>
