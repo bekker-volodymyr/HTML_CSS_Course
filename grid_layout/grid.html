@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="grid.html" target="_blank">
+  <title>Grid Layout</title>
+  <link rel="stylesheet" href="../general.css">
+  <link rel="stylesheet" href="grid.css">
+</head>
+
+<body>
+  <header>
+    <h1>Grid Layout</h1>
+  </header>
+
+  <div class="grid">
+    <div class="examples">
+      <h2>Посилання</h2>
+      <ul>
+        <li><a href="https://www.w3schools.com/css/css_grid.asp">Урок W3School</a></li>
+      </ul>
+    </div>
+    <div class="contents">
+      <h2>Вміст</h2>
+      <ol>
+        <li><a href="#t1" target="_self">Що таке Grid Layout?</a></li>
+        <li><a href="#t2" target="_self">Грід-контейнер</a></li>
+        <li><a href="#t3" target="_self">Грід-елементи</a></li>
+        <li><a href="#t4" target="_self">Властивість grid-area</a></li>
+      </ol>
+    </div>
+  </div>
+
+  <!--Що таке Grid-->
+  <div class="topic" id="t1">
+    <h2>Що таке Grid Layout</h2>
+
+    <p>
+      Grid Layout — це інструмент CSS для створення гнучких та структурованих макетів веб-сторінок за допомогою
+      поділу на рядки та колонки.
+    </p>
+
+    <p>
+      На відміну від Flexbox, який краще підходить для вирівнювання елементів по одному напряму, Grid дозволяє працювати
+      з двома вимірами одночасно.
+    </p>
+
+    <h3>Основні поняття</h3>
+    <ul>
+      <li><strong>Грід-контейнер</strong>: батьківський елемент, на якому застосовується властивість
+        <code>display: grid;</code>.
+      </li>
+      <li><strong>Грід-елементи</strong>: дочірні елементи грід-контейнера, які автоматично розташовуються в рядках і
+        колонках.</li>
+      <li><strong>Лінія сітки (Grid Line)</strong>: лінія, що розділяє елементи сітки. Вона може бути горизонтальною чи
+        вертикальною.</li>
+      <li><strong>Трек сітки (Grid Track)</strong>: простір між двома паралельними лініями сітки. Можна вважати, що це
+        рядок або стовпець сітки.</li>
+      <li><strong>Комірка сітки (Grid Cell)</strong>: простір між двома сусідніми рядками і двома сусідніми стовпцями
+        ліній сітки, аналогічно комірці в таблиці. Це ділянка, в якій можна розмістити контент. Комірка є найменшою
+        одиницею сітки, на яку можна посилатися при позиціонуванні елементів сітки.</li>
+      <li><strong>Ділянка сітки (Grid Area)</strong>: будь-який простір між чотирма лініями сітки, може складатися зі
+        скількох завгодно
+        комірок. Ділянка сітки може бути такою ж малою, як одна комірка, або такою ж великою, як всі комірки сітки.</li>
+    </ul>
+
+    <div class="img">
+      <img src="resources/image.png" alt="Основні компоненти сітки">
+    </div>
+  </div>
+
+  <!--Грід контейнер-->
+  <div class="topic" id="t2">
+    <h2>Грід-контейнер</h2>
+
+    <p>Для початку необхідно задати контейнеру властивість <code>display: grid;</code>. Наприклад:</p>
+
+    <pre>
+.grid-container-demo {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: dodgerblue;
+  padding: 10px;
+}
+
+.grid-container-demo > div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+</pre>
+
+    <p>Цей код створює грід із трьома колонками рівної ширини.</p>
+
+    <p>Кожен дочірній елемент такого контейнеру розміщуватиметься в окремій комірці.</p>
+
+    <div class="grid-container-demo">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <h3>Властивості <code>grid-template-columns</code> та <code>grid-template-rows</code></h3>
+
+    <p>
+      Властивість <code>grid-template-columns</code> визначає кількість стовпців у вашому макеті сітки і може визначати
+      ширину кожного стовпця.
+    </p>
+
+    <p>
+      Значення є списком, розділеним пробілами, де кожне значення визначає ширину відповідного стовпчика.
+    </p>
+
+    <p>
+      Якщо ви хочете, щоб макет сітки містив 4 стовпчики, вкажіть ширину цих 4-х стовпчиків або <code>auto</code>, якщо
+      всі стовпчики повинні мати однакову ширину.
+    </p>
+
+    <pre>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+</pre>
+
+    <div class="grid-container-demo" style="grid-template-columns: auto auto auto auto;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p>В наступному прикладі перша колонка має ширину 100px, друга — 200px, а третя займає весь залишковий простір.</p>
+
+    <pre>
+.example-grid {
+  display: grid;
+  grid-template-columns: 100px 200px 1fr;
+  grid-template-rows: 50px auto;
+}
+</pre>
+
+    <div class="grid-container-demo" style="grid-template-columns: 100px 200px 1fr; grid-template-rows: 50px auto;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+
+    <p>
+      Якщо ви маєте більше 4 елементів сітки в 4-х стовпчиках, сітка автоматично додасть новий рядок для розміщення
+      елементів.
+    </p>
+
+    <p>
+      <code>fr</code> це одиниця вимірювання у CSS Grid, яка означає "частку від доступного простору" (fraction). Вона
+      використовується для розподілу простору між рядками або стовпцями гріда.
+    </p>
+
+    <p>
+      fr розподіляє тільки вільний простір, тобто той, що лишився після віднімання фіксованих значень (наприклад, px, em
+      тощо).
+    </p>
+
+    <p>
+      Властивість <code>grid-template-rows</code> визначає висоту кожного рядка.
+    </p>
+
+    <pre>
+.grid-container {
+  display: grid;
+  grid-template-rows: 80px 200px;
+}
+</pre>
+
+    <div class="grid-container-demo" style="grid-template-rows: 80px 200px;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <p>
+      Зверніть увагу, що перший рядок у цій сітці має висоту 80px, а другий - 200px. У наступних рядках буде використано
+      значення auto за замовчуванням
+    </p>
+
+    <h3>Властивості <code>gap</code>, <code>column-gap</code>, <code>row-gap</code></h3>
+
+    <p>Визначають відступи між рядками та колонками.</p>
+
+    <ul>
+      <li><code>column-gap</code> - відступи між колонками.</li>
+      <li><code>row-gap</code> - відступи між рядками.</li>
+      <li><code>gap</code> - скорочення для задання відступів між колонками та рядками</li>
+    </ul>
+
+    <pre>
+.grid-gap-example {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+</pre>
+    <p>Цей код встановлює відступи у 20px між усіма грід-елементами.</p>
+
+    <div class="grid-container-demo" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+
+    <h3>Функція repeat</h3>
+
+    <p>
+      Функція repeat() дозволяє створювати фрагменти списку треків, які повто­рюють­ся. Це дозволяє записати в більш
+      компактній формі велику кількість однакових за розмірами стовпців або рядків.
+    </p>
+
+    <pre>
+.container {  
+  grid-template-columns: repeat(3, 1fr);
+}
+</pre>
+
+    <div class="grid-container-demo" style="grid-template-columns: repeat(3, 1ft)">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+
+  </div>
+
+  <!--Грід елементи-->
+  <div class="topic" id="t3">
+    <h2>Грід-елементи</h2>
+
+    <p>
+      Контейнер сітки містить один або кілька елементів сітки.
+    </p>
+
+    <p>
+      За замовчуванням контейнер містить по одному елементу сітки для кожного стовпця і кожного рядка, але ви можете
+      змінити стиль елементів сітки так, щоб вони охоплювали кілька стовпців і/або рядків.
+    </p>
+
+    <h3>Властивості grid-column-start, grid-column-end</h3>
+
+    <p>
+      Властивість <code>grid-column-start</code> вказує, де починається елемент сітки.
+    </p>
+
+    <p>
+      Властивість <code>grid-column-end</code> вказує, де закінчується елемент сітки.
+    </p>
+
+    <pre>
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+</pre>
+
+    <div class="grid-container-demo">
+      <div style="grid-column-start: 1; grid-column-end: 3;">1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <h3>Властивість grid-column</h3>
+
+    <p>
+      Властивість стовпчик сітки є скороченою назвою для властивостей початок стовпчика сітки та кінець стовпчика сітки.
+    </p>
+
+    <p>
+      Щоб розмістити елемент, ви можете посилатися на номери рядків або використовувати ключове слово «span», щоб
+      вказати, скільки стовпців буде охоплено елементом.
+    </p>
+
+    <pre>
+.item2 {
+  grid-column: 2 / span 2;
+}
+</pre>
+
+    <div class="grid-container-demo">
+      <div>1</div>
+      <div style="grid-column: 2 / span 2">2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <h3>Властивості grid-row-start та grid-row-end</h3>
+
+    <p>
+      Властивість grid-row-start вказує, де починається елемент сітки.
+    </p>
+
+    <p>
+      Властивість grid-row-end вказує, де закінчується елемент сітки.
+    </p>
+
+    <pre>
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+</pre>
+
+    <div class="grid-container-demo">
+      <div style="grid-row-start: 1; grid-row-end: 3;">1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+  </div>
+
+  <!--Властивість grid-area-->
+  <div class="topic" id="t4">
+    <h2>Властивість grid-area</h2>
+
+    <p>
+      Властивість grid-area є скороченням для властивостей grid-row-start, grid-column-start, grid-row-end і
+      grid-column-end.
+    </p>
+
+    <p>
+      Синтаксис: grid-row-start / grid-column-start / grid-row-end / grid-column-end.
+    </p>
+
+    <p>
+      Зробіть так, щоб «item4» починався з рядка 1 і стовпчика 2, а закінчувався в рядку 3 і стовпчику 2:
+    </p>
+
+    <pre>
+.item4 {
+  grid-area: 1 / 2 / 3 / 2;
+}
+</pre>
+
+    <div class="grid-container-demo">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div style="grid-area: 1 / 2 / 3 / 2;">4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <h3>Іменування елементів за допомогою grid-area</h3>
+
+    <p>
+      Властивість grid-area також можна використовувати для присвоєння імен елементам сітки.
+    </p>
+
+    <p>
+      На названі елементи сітки можна посилатися за допомогою властивості grid-template-areas контейнера сітки.
+    </p>
+
+    <pre>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main right'
+    'menu footer footer footer footer footer';
+}
+</pre>
+
+    <div class="grid-container-demo grid-container-area-demo">
+      <div style="grid-area: header;">Header</div>
+      <div style="grid-area: menu;">Menu</div>
+      <div style="grid-area: main">Main</div>
+      <div style="grid-area: right">Right</div>
+      <div style="grid-area: footer">Footer</div>
+    </div>
+
+  </div>
+
+  <div class="grid">
+    <div class="practice">
+      <h2>Практика</h2>
+      <ul>
+        <li><a href="practice/practice.html">Розмітка</a></li>
+        <li><a href="practice/practice2.html">Галерея зображень</a></li>
+        <li><a href="practice/practice3.html">Новини</a></li>
+        <li><a href="practice/practice4.html">Розклад уроків</a></li>
+      </ul>
+    </div>
+    <div class="hw">
+      <h2>Домашнє завдання</h2>
+      <ul>
+        <li><a href="hw/practice5.html">Блог</a></li>
+        <li><a href="hw/practice6.html">Панель управління розкладом</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
