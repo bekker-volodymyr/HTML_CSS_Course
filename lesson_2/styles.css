@@ -1,0 +1,35 @@
+* {
+    background-color: cadetblue;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+        селектор {
+            властивість: значення;
+            властивість: значення;
+            властивість: значення;
+            властивість: значення;
+        }
+        */
+p,
+div {
+    background-color: aquamarine;
+    color: brown !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#header_1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: azure;
+    background-color: black;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.color-blue {
+    color: blue;
+}
