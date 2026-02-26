@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="./resources/img/css_icon.jpg">
-    
+
     <title>Заняття 3 - Графіка в веб-дизайні</title>
     <style>
         * {
@@ -17,6 +17,14 @@
 
         img {
             vertical-align: middle;
+        }
+
+        .float-left {
+            float: left;
+        }
+
+        .float-right {
+            float: right;
         }
 
         .image-container {
@@ -49,11 +57,58 @@
             opacity: 0.7;
             cursor: pointer;
         }
+
+        .figure-container {
+            width: 100%;
+            text-align: center;
+        }
+
+        figure {
+            border: 2px solid #38675d;
+            width: 75%;
+            text-align: center;
+        }
+
+        figure img {
+            width: 70%;
+            height: auto;
+        }
+
+        .img-background {
+            background-image: url("resources/img/emojy.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+        }
     </style>
 </head>
 
 <body>
     <h1>Тег &lt;img&gt;</h1>
+
+    <p class="img-background">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid quis odio quia rerum,
+        inventore repellat consectetur dolorum voluptas beatae, amet quaerat rem. Beatae sint numquam animi voluptas,
+        similique corrupti suscipit sapiente iste cum alias, consequatur quidem hic dicta magnam ex soluta! Amet
+        mollitia doloremque perferendis optio possimus laboriosam dolore modi illo libero ipsum, officiis voluptas sit
+        omnis, reprehenderit exercitationem accusamus eveniet, temporibus nisi cum sequi? Consequatur quidem alias iste
+        voluptas rem inventore odit minus earum ullam mollitia, totam nostrum ab asperiores culpa dolorum autem
+        recusandae non corrupti, rerum soluta? Assumenda ex distinctio fuga exercitationem nemo id modi repellendus,
+        asperiores nostrum error enim nesciunt, quod ullam. Magnam aliquid labore amet quam voluptatem beatae, cum
+        suscipit excepturi omnis illum esse dignissimos odio id maxime odit, deleniti incidunt cumque enim repellat?
+        Tenetur eveniet, quisquam maxime fugiat minima libero. Quae, dolorem dolorum voluptatibus omnis nostrum facere
+        quam esse labore mollitia consequuntur, dolore minus molestiae, optio accusamus sint. Consequatur facilis ab
+        pariatur in, voluptas quidem, aliquam vero beatae soluta cumque deserunt doloribus quibusdam possimus placeat
+        voluptatum voluptatibus et nisi autem sed nemo. Cum aliquid consequatur dignissimos vel at eius cupiditate
+        exercitationem, veniam ullam non, neque tempora blanditiis sed voluptate incidunt error! Quam veritatis ratione
+        ab recusandae eius maxime delectus! Nisi, dolores nam repudiandae suscipit minima similique iure facere. Quod,
+        dolor totam veniam dicta, ad tempore labore, reiciendis nesciunt quos voluptatibus nemo fugit nisi consequatur
+        fugiat ipsam provident error aspernatur possimus itaque! Corporis beatae odio ex asperiores iure nesciunt qui
+        enim, delectus repellat sed, quaerat laborum quisquam laboriosam expedita temporibus dignissimos sint minus
+        excepturi et praesentium voluptates. Doloremque mollitia quod culpa provident. Nisi facilis accusantium cumque!
+        Animi molestias, ipsa reiciendis nulla ad hic est debitis ea nam nisi! Nobis, eligendi eveniet repellat autem
+        totam deleniti tempora laborum blanditiis error cupiditate voluptas nisi eius illo explicabo ullam.</p>
+
+
     <p>
         <img src="./resources/img/emojy.jpg" alt="emojy funny guy" width=500 height=250>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nulla aperiam ipsa, laboriosam minima quas
@@ -61,7 +116,31 @@
         doloribus nostrum nisi quasi, ducimus repellendus natus tempora maxime numquam ad itaque earum ab, quidem fugit!
     </p>
     <div class="image-container">
-        <img src="./resources/img/emojy.jpg" alt="emojy funny guy" class="bordered shadowed hovered" height=500 width="auto">
+        <img src="./resources/img/emojy.jpg" alt="emojy funny guy" class="bordered shadowed hovered" height=500
+            width="auto">
+    </div>
+
+
+    <p>
+        <img src="./resources/img/emojy.jpg" alt="emojy funny guy" width=500 height=250 class="float-left">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nulla aperiam ipsa, laboriosam minima quas
+        reiciendis amet, quisquam tempora expedita ratione illum soluta, pariatur eos. Iste temporibus vitae alias
+        doloribus nostrum nisi quasi, ducimus repellendus natus tempora maxime numquam ad itaque earum ab, quidem fugit!
+    </p>
+
+
+    <p>
+        <img src="./resources/img/emojy.jpg" alt="emojy funny guy" width=500 height=250 class="float-right">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nulla aperiam ipsa, laboriosam minima quas
+        reiciendis amet, quisquam tempora expedita ratione illum soluta, pariatur eos. Iste temporibus vitae alias
+        doloribus nostrum nisi quasi, ducimus repellendus natus tempora maxime numquam ad itaque earum ab, quidem fugit!
+    </p>
+
+    <div class="figure-container">
+        <figure>
+            <img src="./resources/img/emojy.jpg" alt="emojy funny guy">
+            <figcaption>Підпис під картинкою</figcaption>
+        </figure>
     </div>
 </body>
 
