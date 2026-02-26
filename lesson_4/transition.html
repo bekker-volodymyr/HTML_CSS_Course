@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приклад зі шторкою</title>
+    <style>
+        /* Додаємо стилі для блоку з посиланнями */
+        .block {
+            /* display: inline-block; */
+            height: 80px;
+            width: 20vw;
+            position: relative;
+        }
+
+        /* Додаємо стилі для посилання в блоках */
+        .block a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            padding: 2em 0;
+            position: absolute;
+            z-index: 2;
+        }
+
+        /* Колір фону для кожного блоку */
+        .bl-1 {
+            background: #686E8F;
+        }
+
+        .bl-2 {
+            background: #FCCC41;
+        }
+
+        /* За допомогою псевдоелемента ::before додаємо «шторку, що піднімається» 
+   для кожного блоку зі своїм кольором */
+        .bl-1::before {
+            content: '';
+            background-color: rgba(252, 204, 65, 0.7);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0%;
+            transition: 1s;
+        }
+
+        .bl-2::before {
+            content: '';
+            background-color: rgba(104, 110, 143, 0.7);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0%;
+            transition: 1s;
+        }
+
+        /* При наведенні «шторка» буде висотою у 100% */
+        .bl-1:hover::before,
+        .bl-2:hover::before {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="block bl-1"><a href="">Розділ сайту №1</a></div>
+
+    <div class="block bl-2"><a href="">Розділ сайту №2</a></div>
+</body>
+</html>
