@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Стилі для блоку з тестом */
+        #callback {
+            width: 300px;
+            height: 150px;
+            background-color: grey;
+        }
+
+        /* стилі абзацу */
+        #callback p {
+            color: #fff;
+            padding: 30px;
+        }
+
+        /* Стилі для пседвоелементу */
+        #callback:after {
+            content: "Зворотній зв' язок";
+            background-color: pink;
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+            padding: 5px 0;
+            width: 150px;
+            /* ширина псевдоелемента дорівнює висоті блоку, 
+                           оскільки виконуватиметься поворот*/
+            position: absolute;
+            /* абсолютне позиціонування */
+            left: 300px;
+            /* позиція ліворуч дорівнює ширині блоку #callback */
+            top: 150px;
+            /* позиція зверху дорівнює висоті блоку */
+            transform-origin: 0 0;
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="callback">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime asperiores porro ratione nostrum blanditiis
+            laboriosam?</p>
+    </div>
+</body>
+
+</html>
