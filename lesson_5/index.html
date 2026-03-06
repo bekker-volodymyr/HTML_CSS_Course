@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заняття 5 - Таблиці</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .avatar {
+            width: 30%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        td:first-child {
+            text-align: center;
+            width: 20%
+        }
+
+        .hide-empty {
+            border-collapse: separate;
+            empty-cells: hide;
+        }
+
+        thead,
+        tfoot {
+            background-color: aquamarine;
+        }
+
+        .highlight-col {
+            background-color: #ffe8a1;
+            /* Світло-жовтий фон */
+            border: 2px solid #ffaa00;
+            /* Яскравіша рамка */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Таблиці</h1>
+
+    <table>
+        <caption>Користувачі</caption>
+
+        <thead>
+            <tr>
+                <th>Аватар</th>
+                <th>Ім'я</th>
+                <th>Адреса</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><img src="../shared_resources/emoji.jpg" alt="avatar generic" class="avatar"></td>
+                <td>Артур Оболонський</td>
+                <td><a href="mailto:artur.obolon@outlook.com">artur.obolon@outlook.com</a></td>
+            </tr>
+            <tr>
+                <td><img src="../shared_resources/emoji.jpg" alt="avatar generic" class="avatar"></td>
+                <td>Артур Оболонський</td>
+                <td><a href="mailto:artur.obolon@outlook.com">artur.obolon@outlook.com</a></td>
+            </tr>
+            <tr>
+                <td><img src="../shared_resources/emoji.jpg" alt="avatar generic" class="avatar"></td>
+                <td>Артур Оболонський</td>
+                <td><a href="mailto:artur.obolon@outlook.com">artur.obolon@outlook.com</a></td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="3">Це футер таблиці</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <table>
+        <tr>
+            <th colspan="2">Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>57</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>Jill</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Phone</th>
+            <td>555-1234</td>
+        </tr>
+        <tr>
+            <td>555-8745</td>
+        </tr>
+    </table>
+
+    <table class="hide-empty">
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum dolor.</td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>Lorem, ipsum.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table>
+        <colgroup>
+            <col>
+            <col class="highlight-col">
+            <col>
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th>Базовий</th>
+                <th>Про (Популярний)</th>
+                <th>Преміум</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>10 ГБ пам'яті</td>
+                <td>50 ГБ пам'яті</td>
+                <td>Безліміт</td>
+            </tr>
+            <tr>
+                <td>Підтримка email</td>
+                <td>Підтримка 24/7</td>
+                <td>Персональний менеджер</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
