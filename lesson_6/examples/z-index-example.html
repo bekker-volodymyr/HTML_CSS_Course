@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pos-a {
+            position: absolute;
+            left: 30%;
+            top: 30%;
+            z-index: 1;
+            background-color: blanchedalmond;
+        }
+
+        .pos-b {
+            position: absolute;
+            left: 35%;
+            top: 36%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>z-index</h1>
+    <div class="div-demo pos-a">z-index: 1</div>
+    <div class="div-demo pos-b">z-index: -1</div>
+</body>
+
+</html>
