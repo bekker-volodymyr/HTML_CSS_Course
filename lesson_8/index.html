@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Нижня лінія додасться до всіх <li>, окрім останнього в списку */
+        .menu-item:not(:last-child) {
+            border-bottom: 1px solid #cccccc;
+            margin-bottom: 10px;
+        }
+
+        /* Робимо всі кнопки напівпрозорими, окрім тих, що мають клас .active */
+        button:not(.active) {
+            opacity: 0.5;
+        }
+
+        /* Блок прихований за замовчуванням */
+        #news {
+            display: none;
+        }
+
+        /* Коли URL закінчується на #news, блок з'являється і підсвічується */
+        #news:target {
+            display: block;
+            background-color: #fff9c4;
+            border: 2px dashed #fbc02d;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <li class="menu-item">Головна</li>
+        <li class="menu-item">Про нас</li>
+        <li class="menu-item">Послуги</li>
+        <li class="menu-item">Контакти</li>
+    </ul>
+
+    <a href="#news">Читати новину</a>
+
+    <article id="news">
+        Текст новини...
+    </article>
+</body>
+
+</html>

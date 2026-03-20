@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заняття 7 - Блокова модель елементів</title>
+
+    <style>
+        
+        .content-box {
+            /* Ширина 100% мінус 40 пікселів */
+            width: calc(100% - 40px);
+
+            /* Центрування блоку */
+            margin: 0 auto;
+            background-color: #f0f0f0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; ">
+        <div
+            style="border: #213555 1px solid; width: 600px; height: 350px; border-radius: 4px; margin: 50px; padding: 20px;">
+            <pre>
+div {
+    width: 500px;
+    height: 350px;
+    margin: 50px;
+    padding: 10px;
+    border-radius: 4px;
+}  
+</pre>
+        </div>
+
+        <div
+            style="border: #213555 1px solid; width: 600px; height: 350px; border-radius: 4px; margin: 50px; padding: 20px; box-sizing: border-box;">
+            <pre>
+div {
+    width: 500px;
+    height: 350px;
+    margin: 50px;
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}  
+</pre>
+        </div>
+
+    </div>
+</body>
+
+</html>
