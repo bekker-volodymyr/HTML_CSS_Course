@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заняття 12 - Форми</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        form {
+            border: solid black 2px;
+            border-radius: 15px;
+
+            max-width: 900px;
+            width: 80vw;
+            max-width: 1200px;
+
+            margin: 1.3em auto;
+            padding: 0.8em;
+
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            /* flex-direction: column; */
+            /* justify-content: center; */
+            gap: 0.7em;
+        }
+
+        form h2 {
+            grid-column: 1 / span 2;
+        }
+
+        form input:last-child {
+            grid-column: 1/ span 2;
+        }
+
+        form fieldset {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form action="">
+        <h2>Реєстрація</h2>
+        <label for="username">Ім'я користувача: </label>
+        <input type="text" name="username" id="username">
+
+        <label for="email">E-mail: </label>
+        <input type="email" name="email" id="email">
+
+        <label for="passwd">Пароль: </label>
+        <input type="password" name="password" id="passwd">
+
+        <label for="about">Про себе:</label>
+        <textarea name="about" id="about"></textarea>
+
+        <label for="agree">Погоджуюсь з політикою конфіденційності</label>
+        <input type="checkbox" id="agree" name="agree">
+
+        <fieldset>
+            <legend>Gender</legend>
+            <input type="radio" id="genderM" value="male" name="gender">
+            <label for="genderM">Male</label>
+            <input type="radio" id="genderF" value="female" name="gender">
+            <label for="genderF">Female</label>
+            <input type="radio" id="genderO" value="other" name="gender">
+            <label for="genderO">Other</label>
+        </fieldset>
+
+        <label for="fav-pizza">Улюблена піца: </label>
+        <select name="fav-pizza" id="fav-pizza">
+            <option value="Pepperoni">Pepperoni</option>
+            <option value="Margarita">Margarita</option>
+            <option value="Quattro-Formaggi">Quattro Formaggi</option>
+        </select>
+
+        <label for="birth-date">Дата народження:</label>
+        <input type="date" name="birth-date" id="birth-date">
+
+        <label for="link">Посилання на соц.мережі: </label>
+        <input type="url" name="link" id="link">
+
+        <label for="tall">Ваш зріст: </label>
+        <input type="number" name="tall" id="tall">
+
+        <label for="fav-genre">Улюблений жанр: </label>
+        <input type="text" name="genre" id="fav-genre" list="genres">
+        <datalist id="genres">
+            <option value="horror">Горор</option>
+            <option value="action">Екшн</option>
+            <option value="drama">Драма</option>
+        </datalist>
+
+        <input type="submit">
+    </form>
+
+    <form action="/search" method="get">
+
+        <h2>Форма пошуку</h2>
+
+        <input type="text">
+        <input type="submit" value="Пошук">
+        <input type="reset" value="Скинути">
+
+    </form>
+
+</body>
+
+</html>
