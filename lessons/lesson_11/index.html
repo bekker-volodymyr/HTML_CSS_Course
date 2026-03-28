@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заняття 11 - Grid Layout</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .grid-container {
+            width: 80vw;
+            background-color: cadetblue;
+
+            padding: 1.3em;
+            margin: 1.4em auto;
+
+            display: grid;
+            /* Три стовпці рівної ширини */
+            /* grid-template-columns: auto auto auto; */
+            grid-template-columns: 100px 200px auto;
+            grid-template-rows: 100px 80px;
+            gap: 2em;
+            /* Пропорційни розподіл місця між 4ма стовпцями */
+            /* grid-template-columns: 1fr 2fr 1fr 3fr; */
+
+            /* justify-content: center; */
+            /* align-content: center; */
+            justify-items: center;
+            align-items: center;
+        }
+
+        .grid-container div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 20px;
+            width: 50px;
+
+            background-color: beige;
+            border: black solid 1px;
+        }
+
+        /* header {
+            position: sticky;
+            top: 0;
+
+            background-color: cornflowerblue;
+
+            height: 5vh;
+            padding: 1.1em;
+
+            display: flex;
+            gap: 2em;
+        }
+
+        header div {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 1em;
+            text-transform: uppercase;
+        }
+
+        header div:nth-child(3) {
+            margin-left: auto;
+        } */
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 10vh auto 10vh;
+            grid-gap: 10px;
+            min-height: 100vh;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #0d233d;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .container>nav,
+        main,
+        footer,
+        aside {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container>* {
+            border-radius: 3px;
+        }
+
+        header {
+            grid-column: span 12;
+            display: flex;
+            background-color: #aa2f26;
+        }
+
+        nav {
+            grid-column: span 2;
+            background-color: #b2a429;
+        }
+
+        main {
+            grid-column: span 8;
+            background-color: #1769aa;
+        }
+
+        aside {
+            grid-column: span 2;
+            background-color: #01796f;
+        }
+
+        footer {
+            grid-column: span 12;
+            background-color: #482880;
+        }
+
+        header>div {
+            padding: 10px 20px;
+            align-content: center;
+        }
+
+        header>div:nth-child(3) {
+            margin-left: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div>Home</div>
+            <div>Search</div>
+            <div>Log out</div>
+        </header>
+        <nav>Menu</nav>
+        <main>Content</main>
+        <aside>Right</aside>
+        <footer>Footer</footer>
+    </div>
+
+    <!-- <div class="grid-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div> -->
+</body>
+
+</html>
